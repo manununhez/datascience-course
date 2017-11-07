@@ -1,4 +1,4 @@
-# Data Science con Impacto Social - manununhez
+# Data Science con Impacto Social
 
 Curso práctico sobre la ciencia de los datos y su aplicación al estudios de fenómenos sociales mediante el uso de _**datos abiertos**_ por el gobierno nacional. El curso ofrece una introducción a las principales conceptos, técnicas, y herramientas necesarios para extraer conocimiento de los datos. En el curso se aprenderá a colectar y pre-procesar datos, plantear preguntas de investigación, responder a estas preguntas, y visualizar los resultados.
 
@@ -37,3 +37,25 @@ Completar el formulario de inscripción al curso [aquí](https://goo.gl/forms/tO
 4. Análisis Exploratorio de datos
 5. Inferencia Estadística
 6. Aprendizaje supervisado
+
+
+## Programa BECAL
+
+Becas destinadas a egresados de una carrera con el fin de llevar a cabo sus estudios de especialización (maestrías o doctorados en un país extranjero). El principal desafío de BECAL es mejorar la oferta del capital humano avanzado, mediante el financiamiento de becas de estudios de entrenamiento docente y postgrados en centros de excelencia del exterior. El mismo, tiene por objetivo contribuir a aumentar los niveles de generación y aplicación de conocimiento en las áreas de Ciencias y Tecnología (CyT) y en los niveles de aprendizaje en la educación. El principal problema a ser abordado por este programa es la baja capacidad del país para generar y aplicar conocimiento requerido para el desarrollo. Fuente: [Programa Becal](http://www.becal.gov.py/)
+
+### Datasets
+
+#### Dataset 1: *becal-cobertura.csv*
+
+* No:  Número de identificador de registro.
+* C.I.:  Cédula de identidad. Tipo *string*.
+* Nombre y Apellido:  Nombre y apellido del egresado. Tipo *string*.
+* Tipo de Beca :  Tipo de beca otorgado según programa aprobado. Tipo *string*.
+* Maestria / Doctorado:  Nombre o área de especialización de la maestría / doctorado. Tipo *string*.
+* Universidad de Destino: Universidad donde el becario cursará la maestría/doctorado.
+* País:  País de la universidad.
+* Dept. de Origen: Departamento de origen del becario. 
+* Total General: Monto total del programa aprobado. Tipo *string*.
+
+#### Dataset 2: *becal2017.csv*
+* 
