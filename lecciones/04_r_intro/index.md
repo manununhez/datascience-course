@@ -451,6 +451,8 @@ x
 
 ## Data Frames
 
+Número de filas del data frame
+
 
 ```r
 nrow(x)
@@ -460,8 +462,11 @@ nrow(x)
 ## [1] 5
 ```
 
+Número de columnas del data frame
+
+
 ```r
-ncol(x)
+ncol(x)  
 ```
 
 ```
@@ -470,86 +475,343 @@ ncol(x)
 
 ---
 
----
+## Names
 
-## Atributos
-
-En R los objetos tienen los siguientes atributos
-
--   names, dimnames
-
--   dimensions (e.g. arrays, matrices)
-
--   class
-
--   length
-
--   otros definidos por el usuario
-
-Mediante la función ```attributes()``` se puede acceder a los atributos de un objeto
-
----
-
-## Atributos
+Nombre de las columnas del data frame
 
 
+```r
+x
+```
 
----
+```
+##   c1    c2 c3
+## 1  1  TRUE  a
+## 2  2  TRUE  b
+## 3  3 FALSE  c
+## 4  4 FALSE  d
+## 5  5  TRUE  e
+```
 
-## Operaciones básicas
+```r
+names(x)
+```
 
-...
+```
+## [1] "c1" "c2" "c3"
+```
 
 ---
 
-## Estructuras de control
+## Names
 
-...
+Las listas pueden también tener nombre
+
+
+```r
+x = list(a = 1, b = 2, c = 3)
+names(x)
+```
+
+```
+## [1] "a" "b" "c"
+```
+
+---
+
+## Estructura de control: if
+
+```r
+if(<condicion>) {
+        ## hacer algo
+} else {
+        ## hacer otra cosa
+}
+if(<condicion1>) {
+        ## hacer algo
+} else if(<condicion2>)  {
+        ## hacer algo diferente
+} else {
+        ## hacer otra cosa
+}
+```
+
+---
+
+## Estructura de control: if
+
+Ejemplo
+
+
+```r
+x = 2
+y = 0
+if (x > 3) {
+  y = 10
+} else {
+  y = 50
+}
+y
+```
+
+```
+## [1] 50
+```
+
+---
+
+## Estructura de control: if
+
+La clausula ```else``` no es siempre necesaria  
+
+```r
+if (<condicion>) {
+  # hacer algo
+}
+```
+
+
+```r
+x = 10
+if (x==10) {  # !=
+  print('El valor de x es el esperado')
+}
+```
+
+```
+## [1] "El valor de x es el esperado"
+```
+
+---
+
+## Ciclos: for
+
+Los ciclos `for` toman una variable *interator* y le asignan valores sucesivos de una secuencia o vector. Los ciclos ```for``` son los más utilizados para iterar sobre los elementos de un objeto
+
+
+```r
+x = data.frame(c1 = 4:6, c2 = 18:20)
+for(i in seq_len(nrow(x))) {
+  print(x[i, 'c1'])  # por cada fila imprimo el valor de la primera columna (nombre)
+  print(x[i, 2])     # por cada fila imprimo el valor de la segunda columna (número)
+}
+```
+
+```
+## [1] 4
+## [1] 18
+## [1] 5
+## [1] 19
+## [1] 6
+## [1] 20
+```
+
+Este ciclo toma la variable `i` y en cada iteración le asigna un nro de fila (1, 2, 3) y luego termina.
+
+---
+
+## Iteraciones: apply
+
+La función ```apply``` nos permite ejecutar operaciones repetitivas sobre matrices y data frames
+
+
+```r
+x = data.frame(c1 = 1:3, c2 = 10:12); x
+```
+
+```
+##   c1 c2
+## 1  1 10
+## 2  2 11
+## 3  3 12
+```
+
+```r
+apply(x, 2, median)  # apply(<objeto>, <fila (1) o columna (2)>, <funcion>)
+```
+
+```
+## c1 c2 
+##  2 11
+```
+
+Otras funciones que se puede utilizar: max, min, mean, sum
+
+---
+
+## Iteraciones: apply
+
+
+```r
+x = data.frame(c1 = 1:2, c2 = 10:11)
+x
+```
+
+```
+##   c1 c2
+## 1  1 10
+## 2  2 11
+```
+
+```r
+mult = function(x, c) {
+  return (x+c)
+}
+apply(x, 2, mult, 5)  # apply(<objeto>, <fila (1) o columna (2)>, <funcion>, <parametro>)
+```
+
+```
+##      c1 c2
+## [1,]  6 15
+## [2,]  7 16
+```
+
+---
+
+## Funciones especiales para operaciones comúnes
+
+rowSums, rowMeans, colSums, colMeans
+
+
+```r
+x = data.frame(c1 = 1:5, c2 = 10:14)
+x
+```
+
+```
+##   c1 c2
+## 1  1 10
+## 2  2 11
+## 3  3 12
+## 4  4 13
+## 5  5 14
+```
+
+```r
+rowSums(x)
+```
+
+```
+## [1] 11 13 15 17 19
+```
 
 ---
 
 ## Lectura de datos
 
-...
+```read.csv``` es las función más utilizadas para la lectura de datos en formato csv. Algunos de sus parámetros son:
+
+- `file`, nombre del archivo, incluyendo la ruta al mismo
+- `header`, parámetro lógico indicando si el archivo cuenta con un encabezado
+- `skip`, número de filas a ignorar desde el inicio del archivo
+- `colClasses`, un vector de caracteres indicando la clase de cada columna en el dataset
+- `nrows`, el número de filas del dataset a leer
+- `comment.char`, cadena de caracteres indicando el caracter usado para comentarios
+- `stringsAsFactors`, parámetro lógico indicando si las variables de tipo caracter deben ser codificadas como factores
+
+
+```r
+data = read.csv(file = 'becal-cobertura.csv', header = T, stringsAsFactors = F)
+```
 
 ---
 
-## Visualización con ggplot2
+## Estructura de datos
 
-...
+La función ```str``` se utiliza para una exploración rápida de la estructura del dataset
+
+
+```r
+str(data, vec.len=1)
+```
+
+```
+## 'data.frame':	907 obs. of  9 variables:
+##  $ No                                    : int  1 2 ...
+##  $ C.I.                                  : chr  "2.485.187" ...
+##  $ Nombre.y.Apellido                     : chr  "Alejandra Recalde Carballo" ...
+##  $ Tipo.de.Beca..según.Programa.aprobado.: chr  "Doctorado para Investigadores en CyT" ...
+##  $ Maestria...Doctorado                  : chr  "Doctorado en Biotecnología Molecular" ...
+##  $ Universidad.de.Destino                : chr  "Universidad de Chile" ...
+##  $ Pais                                  : chr  "Chile" ...
+##  $ Dept..de.Origen                       : chr  "Capital" ...
+##  $ Total.General                         : chr  "$             82.896" ...
+```
 
 ---
 
-## Gramática
+## Visualización
 
-...
+Funciones de visualización más comunes:
+
+1 variable:
+* Histogramas
+* Boxplots
+* Barra
+* Linea
+
+2 variables:
+* Scatterplots
+
 
 ---
 
 ## Histograma
 
-...
+
+```r
+hist(autos$mpg, col='green', main='Distribución de las millas por galón', 
+     xlab='Millas por galón', ylab='Frecuencia')
+```
+
+<img src="assets/fig/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" style="display: block; margin: auto;" />
 
 ---
 
-## Scatter plots
+## Boxplots
 
-...
 
----
+```r
+boxplot(autos$hp, col='red', main='Distribución de caballos de fuerza', 
+        ylab='Caballos de fuerza')
+```
 
-## Bar charts
-
-...
-
----
-
-## Línea
-
-...
+<img src="assets/fig/unnamed-chunk-38-1.png" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" style="display: block; margin: auto;" />
 
 ---
 
-## Box plots
+## Barra
 
-...
+
+
+
+```r
+barplot(table(autos$am), col='green', xlab='Tipo de transmisión',
+        main='Nro. de vehículos por tipo de transmisión')
+```
+
+<img src="assets/fig/unnamed-chunk-40-1.png" title="plot of chunk unnamed-chunk-40" alt="plot of chunk unnamed-chunk-40" style="display: block; margin: auto;" />
+
+---
+
+## Linea
+
+
+```r
+plot(presidents, ylab = 'Porcentage de aprobación (%)', xlab='Año',
+     main = 'Aprobación (1er cuatrimestre) Presidentes de EEUU')
+```
+
+<img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" style="display: block; margin: auto;" />
+
+---
+
+## Scatterplots
+
+
+```r
+plot(autos$mpg, autos$wt, col='blue', xlab='Millas por galón', ylab='Peso (libras)',
+     main='Relación entre peso del vehículo y millas recorridas por galón')
+```
+
+<img src="assets/fig/unnamed-chunk-42-1.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" style="display: block; margin: auto;" />

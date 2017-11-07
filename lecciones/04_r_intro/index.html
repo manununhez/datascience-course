@@ -506,13 +506,17 @@ x
     <h2>Data Frames</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">nrow(x)
+    <p>Número de filas del data frame</p>
+
+<pre><code class="r">nrow(x)
 </code></pre>
 
 <pre><code>## [1] 5
 </code></pre>
 
-<pre><code class="r">ncol(x)
+<p>Número de columnas del data frame</p>
+
+<pre><code class="r">ncol(x)  
 </code></pre>
 
 <pre><code>## [1] 3
@@ -523,28 +527,46 @@ x
 </slide>
 
 <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Names</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <p>Nombre de las columnas del data frame</p>
+
+<pre><code class="r">x
+</code></pre>
+
+<pre><code>##   c1    c2 c3
+## 1  1  TRUE  a
+## 2  2  TRUE  b
+## 3  3 FALSE  c
+## 4  4 FALSE  d
+## 5  5  TRUE  e
+</code></pre>
+
+<pre><code class="r">names(x)
+</code></pre>
+
+<pre><code>## [1] &quot;c1&quot; &quot;c2&quot; &quot;c3&quot;
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-22" style="background:;">
   <hgroup>
-    <h2>Atributos</h2>
+    <h2>Names</h2>
   </hgroup>
   <article data-timings="">
-    <p>En R los objetos tienen los siguientes atributos</p>
+    <p>Las listas pueden también tener nombre</p>
 
-<ul>
-<li><p>names, dimnames</p></li>
-<li><p>dimensions (e.g. arrays, matrices)</p></li>
-<li><p>class</p></li>
-<li><p>length</p></li>
-<li><p>otros definidos por el usuario</p></li>
-</ul>
+<pre><code class="r">x = list(a = 1, b = 2, c = 3)
+names(x)
+</code></pre>
 
-<p>Mediante la función <code>attributes()</code> se puede acceder a los atributos de un objeto</p>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -552,121 +574,339 @@ x
 
 <slide class="" id="slide-23" style="background:;">
   <hgroup>
-    <h2>Atributos</h2>
+    <h2>Estructura de control: if</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">if(&lt;condicion&gt;) {
+        ## hacer algo
+} else {
+        ## hacer otra cosa
+}
+if(&lt;condicion1&gt;) {
+        ## hacer algo
+} else if(&lt;condicion2&gt;)  {
+        ## hacer algo diferente
+} else {
+        ## hacer otra cosa
+}
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-24" style="background:;">
   <hgroup>
-    <h2>Operaciones básicas</h2>
+    <h2>Estructura de control: if</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>Ejemplo</p>
 
- '></article>
+<pre><code class="r">x = 2
+y = 0
+if (x &gt; 3) {
+  y = 10
+} else {
+  y = 50
+}
+y
+</code></pre>
+
+<pre><code>## [1] 50
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-25" style="background:;">
   <hgroup>
-    <h2>Estructuras de control</h2>
+    <h2>Estructura de control: if</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>La clausula <code>else</code> no es siempre necesaria  </p>
 
- '></article>
+<pre><code class="r">if (&lt;condicion&gt;) {
+  # hacer algo
+}
+</code></pre>
+
+<pre><code class="r">x = 10
+if (x==10) {  # !=
+  print(&#39;El valor de x es el esperado&#39;)
+}
+</code></pre>
+
+<pre><code>## [1] &quot;El valor de x es el esperado&quot;
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-26" style="background:;">
   <hgroup>
-    <h2>Lectura de datos</h2>
+    <h2>Ciclos: for</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>Los ciclos <code>for</code> toman una variable <em>interator</em> y le asignan valores sucesivos de una secuencia o vector. Los ciclos <code>for</code> son los más utilizados para iterar sobre los elementos de un objeto</p>
 
- '></article>
+<pre><code class="r">x = data.frame(c1 = 4:6, c2 = 18:20)
+for(i in seq_len(nrow(x))) {
+  print(x[i, &#39;c1&#39;])  # por cada fila imprimo el valor de la primera columna (nombre)
+  print(x[i, 2])     # por cada fila imprimo el valor de la segunda columna (número)
+}
+</code></pre>
+
+<pre><code>## [1] 4
+## [1] 18
+## [1] 5
+## [1] 19
+## [1] 6
+## [1] 20
+</code></pre>
+
+<p>Este ciclo toma la variable <code>i</code> y en cada iteración le asigna un nro de fila (1, 2, 3) y luego termina.</p>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-27" style="background:;">
   <hgroup>
-    <h2>Visualización con ggplot2</h2>
+    <h2>Iteraciones: apply</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>La función <code>apply</code> nos permite ejecutar operaciones repetitivas sobre matrices y data frames</p>
 
- '></article>
+<pre><code class="r">x = data.frame(c1 = 1:3, c2 = 10:12); x
+</code></pre>
+
+<pre><code>##   c1 c2
+## 1  1 10
+## 2  2 11
+## 3  3 12
+</code></pre>
+
+<pre><code class="r">apply(x, 2, median)  # apply(&lt;objeto&gt;, &lt;fila (1) o columna (2)&gt;, &lt;funcion&gt;)
+</code></pre>
+
+<pre><code>## c1 c2 
+##  2 11
+</code></pre>
+
+<p>Otras funciones que se puede utilizar: max, min, mean, sum</p>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-28" style="background:;">
   <hgroup>
-    <h2>Gramática</h2>
+    <h2>Iteraciones: apply</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <pre><code class="r">x = data.frame(c1 = 1:2, c2 = 10:11)
+x
+</code></pre>
 
- '></article>
+<pre><code>##   c1 c2
+## 1  1 10
+## 2  2 11
+</code></pre>
+
+<pre><code class="r">mult = function(x, c) {
+  return (x+c)
+}
+apply(x, 2, mult, 5)  # apply(&lt;objeto&gt;, &lt;fila (1) o columna (2)&gt;, &lt;funcion&gt;, &lt;parametro&gt;)
+</code></pre>
+
+<pre><code>##      c1 c2
+## [1,]  6 15
+## [2,]  7 16
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-29" style="background:;">
   <hgroup>
-    <h2>Histograma</h2>
+    <h2>Funciones especiales para operaciones comúnes</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>rowSums, rowMeans, colSums, colMeans</p>
 
- '></article>
+<pre><code class="r">x = data.frame(c1 = 1:5, c2 = 10:14)
+x
+</code></pre>
+
+<pre><code>##   c1 c2
+## 1  1 10
+## 2  2 11
+## 3  3 12
+## 4  4 13
+## 5  5 14
+</code></pre>
+
+<pre><code class="r">rowSums(x)
+</code></pre>
+
+<pre><code>## [1] 11 13 15 17 19
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-30" style="background:;">
   <hgroup>
-    <h2>Scatter plots</h2>
+    <h2>Lectura de datos</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p><code>read.csv</code> es las función más utilizadas para la lectura de datos en formato csv. Algunos de sus parámetros son:</p>
 
- '></article>
+<ul>
+<li><code>file</code>, nombre del archivo, incluyendo la ruta al mismo</li>
+<li><code>header</code>, parámetro lógico indicando si el archivo cuenta con un encabezado</li>
+<li><code>skip</code>, número de filas a ignorar desde el inicio del archivo</li>
+<li><code>colClasses</code>, un vector de caracteres indicando la clase de cada columna en el dataset</li>
+<li><code>nrows</code>, el número de filas del dataset a leer</li>
+<li><code>comment.char</code>, cadena de caracteres indicando el caracter usado para comentarios</li>
+<li><code>stringsAsFactors</code>, parámetro lógico indicando si las variables de tipo caracter deben ser codificadas como factores</li>
+</ul>
+
+<pre><code class="r">data = read.csv(file = &#39;becal-cobertura.csv&#39;, header = T, stringsAsFactors = F)
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-31" style="background:;">
   <hgroup>
-    <h2>Bar charts</h2>
+    <h2>Estructura de datos</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>La función <code>str</code> se utiliza para una exploración rápida de la estructura del dataset</p>
 
- '></article>
+<pre><code class="r">str(data, vec.len=1)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    907 obs. of  9 variables:
+##  $ No                                    : int  1 2 ...
+##  $ C.I.                                  : chr  &quot;2.485.187&quot; ...
+##  $ Nombre.y.Apellido                     : chr  &quot;Alejandra Recalde Carballo&quot; ...
+##  $ Tipo.de.Beca..según.Programa.aprobado.: chr  &quot;Doctorado para Investigadores en CyT&quot; ...
+##  $ Maestria...Doctorado                  : chr  &quot;Doctorado en Biotecnología Molecular&quot; ...
+##  $ Universidad.de.Destino                : chr  &quot;Universidad de Chile&quot; ...
+##  $ Pais                                  : chr  &quot;Chile&quot; ...
+##  $ Dept..de.Origen                       : chr  &quot;Capital&quot; ...
+##  $ Total.General                         : chr  &quot;$             82.896&quot; ...
+</code></pre>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-32" style="background:;">
   <hgroup>
-    <h2>Línea</h2>
+    <h2>Visualización</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <p>Funciones de visualización más comunes:</p>
 
- '></article>
+<p>1 variable:</p>
+
+<ul>
+<li>Histogramas</li>
+<li>Boxplots</li>
+<li>Barra</li>
+<li>Linea</li>
+</ul>
+
+<p>2 variables:</p>
+
+<ul>
+<li>Scatterplots</li>
+</ul>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-33" style="background:;">
   <hgroup>
-    <h2>Box plots</h2>
+    <h2>Histograma</h2>
   </hgroup>
   <article data-timings="">
-    <p class='..</p>
+    <pre><code class="r">hist(autos$mpg, col=&#39;green&#39;, main=&#39;Distribución de las millas por galón&#39;, 
+     xlab=&#39;Millas por galón&#39;, ylab=&#39;Frecuencia&#39;)
+</code></pre>
 
- '></article>
+<p><img src="assets/fig/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Boxplots</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">boxplot(autos$hp, col=&#39;red&#39;, main=&#39;Distribución de caballos de fuerza&#39;, 
+        ylab=&#39;Caballos de fuerza&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-38-1.png" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Barra</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">barplot(table(autos$am), col=&#39;green&#39;, xlab=&#39;Tipo de transmisión&#39;,
+        main=&#39;Nro. de vehículos por tipo de transmisión&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-40-1.png" title="plot of chunk unnamed-chunk-40" alt="plot of chunk unnamed-chunk-40" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Linea</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot(presidents, ylab = &#39;Porcentage de aprobación (%)&#39;, xlab=&#39;Año&#39;,
+     main = &#39;Aprobación (1er cuatrimestre) Presidentes de EEUU&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Scatterplots</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot(autos$mpg, autos$wt, col=&#39;blue&#39;, xlab=&#39;Millas por galón&#39;, ylab=&#39;Peso (libras)&#39;,
+     main=&#39;Relación entre peso del vehículo y millas recorridas por galón&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-42-1.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" style="display: block; margin: auto;" /></p>
+
+  </article>
   <!-- Presenter Notes -->
 </slide>
 
@@ -796,80 +1036,104 @@ x
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='NA'>
+        data-slide=21 title='Names'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Atributos'>
+        data-slide=22 title='Names'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Atributos'>
+        data-slide=23 title='Estructura de control: if'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Operaciones básicas'>
+        data-slide=24 title='Estructura de control: if'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Estructuras de control'>
+        data-slide=25 title='Estructura de control: if'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Lectura de datos'>
+        data-slide=26 title='Ciclos: for'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Visualización con ggplot2'>
+        data-slide=27 title='Iteraciones: apply'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Gramática'>
+        data-slide=28 title='Iteraciones: apply'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Histograma'>
+        data-slide=29 title='Funciones especiales para operaciones comúnes'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Scatter plots'>
+        data-slide=30 title='Lectura de datos'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Bar charts'>
+        data-slide=31 title='Estructura de datos'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Línea'>
+        data-slide=32 title='Visualización'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Box plots'>
+        data-slide=33 title='Histograma'>
          33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Boxplots'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Barra'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Linea'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Scatterplots'>
+         37
       </a>
     </li>
   </ul>
