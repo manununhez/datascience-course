@@ -45,17 +45,57 @@ Becas destinadas a egresados de una carrera con el fin de llevar a cabo sus estu
 
 ### Datasets
 
-#### Dataset 1: *becal-cobertura.csv*
+#### Dataset 1: *Cobertura BECAL*
 
-* No:  Número de identificador de registro.
-* C.I.:  Cédula de identidad. Tipo *string*.
-* Nombre y Apellido:  Nombre y apellido del egresado. Tipo *string*.
-* Tipo de Beca :  Tipo de beca otorgado según programa aprobado. Tipo *string*.
-* Maestria / Doctorado:  Nombre o área de especialización de la maestría / doctorado. Tipo *string*.
-* Universidad de Destino: Universidad donde el becario cursará la maestría/doctorado.
-* País:  País de la universidad.
-* Dept. de Origen: Departamento de origen del becario. 
-* Total General: Monto total del programa aprobado. Tipo *string*.
+* No, número de identificador de registro en el dataset, tipo *numerico*.
+* C.I., cédula de identidad, tipo *texto*.
+* Nombre y Apellido, nombre y apellido del egresado, tipo *texto*.
+* Tipo de Beca (según Programa aprobado):  Tipo de beca otorgado según programa aprobado. Valores: 	Doctorado para Investigadores en CyT/Maestría para Profesionales en otras áreas relevantes/	Maestría para Profesionales en Educación/Maestría para Profesionales en CyT/Maestría para Investigadores en CyT.Tipo *categorico*.
+* Maestria / Doctorado, nombre o área de especialización de la maestría / doctorado, tipo *texto*.
+* Universidad de Destino, universidad donde el becario cursará la maestría/doctorado, tipo *texto*.
+* País, país de la universidad destino (*Ej. EE.UU, Francia, Inglaterra, entre otros*), tipo *categorico*.
+* Dept. de Origen, departamento de origen del becario, tipo *texto*.
+* Total General, monto total del programa aprobado, tipo *texto*.
 
-#### Dataset 2: *becal2017.csv*
-* 
+#### Dataset 2: *BECAL 2017*
+* Nº:  Número de identificador de registro en el dataset. Tipo *numerico*.
+* Condición:  Becario / No Becario / Becario retornado / Pendiente. Tipo *categorico*.
+* N:
+* Tipo de Convocatoria: 1era. Convocatoria Autogestionada/2da. Convocatoria Autogestionada/3era. Convocatoria Autogestionada/Laspau/Convocatoria Francia - SFERE/Convocatoria Docente 01 - España/Convocatoria Laspau -Doctorado/Convocatoria Chevening/Convocatoria Fulbright/
+4ta. Convocatoria autogestionada/Convocatoria Docente - Francia. Tipo *categorico*.
+* Fecha de adjudicación: Fecha de adjudicación de la beca. Tipo *textual*.
+* C.I.: Cédula de identidad del becario. Tipo *textual*.
+* Sexo: Femenino/Masculino. Tipo Tipo *categorico*.
+* Edad: Edad del becario. Tipo *numérico/discreto*.
+* Funcionario Público (Institución): Indica si el becario es funcionario o no de una institución pública. Tipo *textual*.
+* Cargo: Cargo o modalidad del contrato del becario como funcionario de la institucion publica. Tipo *textual*.
+* Goce de sueldo: Indica si el becario, como funcionario publico, tiene goce de sueldo. Tipo *binario*.
+* Tipo de Beca (según Programa aprobado): 
+* Área de la ciencia:
+* Disciplina:
+* Sector priorizado Conacyt:
+* Subsector priorizado:
+* Maestría / Doctorado:
+* Universidad de Destino:
+* Ranking:
+* Nº:
+* Ranking de Área Específica:
+* Nº:
+* Ciudad de destino (en español):
+* País de Destino:
+* Meses de duración de estudios:
+* Inicio (cobertura de beca):
+* Fin (cobertura de beca):
+* Ciudad de Origen:
+* Departamento de Origen: 
+* Ciudad de Residencia:
+* Departamento de Residencia:
+* Nivel socioeconómico:
+* Tiempo de cobertura:
+* Contrato Nº:
+* Fecha firma de Contrato:
+* Fecha firma de Adenda:
+
+
+
+
