@@ -47,55 +47,55 @@ Becas destinadas a egresados de una carrera con el fin de llevar a cabo sus estu
 
 #### Dataset 1: *Cobertura BECAL*
 
-* No, número de identificador de registro en el dataset, tipo *numerico*.
-* C.I., cédula de identidad, tipo *texto*.
-* Nombre y Apellido, nombre y apellido del egresado, tipo *texto*.
-* Tipo de Beca (según Programa aprobado):  Tipo de beca otorgado según programa aprobado. Valores: 	Doctorado para Investigadores en CyT/Maestría para Profesionales en otras áreas relevantes/	Maestría para Profesionales en Educación/Maestría para Profesionales en CyT/Maestría para Investigadores en CyT.Tipo *categorico*.
-* Maestria / Doctorado, nombre o área de especialización de la maestría / doctorado, tipo *texto*.
-* Universidad de Destino, universidad donde el becario cursará la maestría/doctorado, tipo *texto*.
-* País, país de la universidad destino (*Ej. EE.UU, Francia, Inglaterra, entre otros*), tipo *categorico*.
-* Dept. de Origen, departamento de origen del becario, tipo *texto*.
-* Total General, monto total del programa aprobado, tipo *texto*.
+|         Campos         |                         Descripción                         | Tipo de datos |                                                   Valores ejemplo                                                  |
+|:----------------------:|:-----------------------------------------------------------:|:-------------:|:------------------------------------------------------------------------------------------------------------------:|
+| No                     | número de identificador de registro en el dataset           |    Numerico   |                                                                                                                    |
+| C.I.                   | cédula de identidad del becario                             |     Texto     |                                                                                                                    |
+| Nombre y apellido      | nombre y apellido del becario                               |     Texto     |                                                                                                                    |
+| Tipo de Beca           | Tipo de beca otorgado según programa aprobado               |   Categorico  | Doctorado para Investigadores en CyT, Maestría para Profesionales en CyT, Maestría para Investigadores en CyT, ... |
+| Maestria/Doctorado     | nombre o área de especialización de la maestría / doctorado |   Categorico  |                                                                                                                    |
+| Universidad de destino | universidad donde el becario cursará la maestría/doctorado  |   Categorico  | EE.UU, Francia, Inglaterra, ...                                                                                    |
+| País                   | país de la universidad destino                              |   Categorico  |                                                                                                                    |
+| Dpto. de origen        | departamento de origen del becario                          |   Categorico  |                                                                                                                    |
+| Total General          | monto o costo total del programa aprobado                   |     Texto     |                                                                                                                    |
 
-#### Dataset 2: *BECAL 2017*
-* Nº:  Número de identificador de registro en el dataset. Tipo *numerico*.
-* Condición:  Becario / No Becario / Becario retornado / Pendiente. Tipo *categorico*.
-* N:
-* Tipo de Convocatoria: 1era. Convocatoria Autogestionada/2da. Convocatoria Autogestionada/3era. Convocatoria Autogestionada/Laspau/Convocatoria Francia - SFERE/Convocatoria Docente 01 - España/Convocatoria Laspau -Doctorado/Convocatoria Chevening/Convocatoria Fulbright/
-4ta. Convocatoria autogestionada/Convocatoria Docente - Francia. Tipo *categorico*.
-* Fecha de adjudicación: Fecha de adjudicación de la beca. Tipo *textual*.
-* C.I.: Cédula de identidad del becario. Tipo *textual*.
-* Sexo: Femenino/Masculino. Tipo Tipo *categorico*.
-* Edad: Edad del becario. Tipo *numérico/discreto*.
-* Funcionario Público (Institución): Indica si el becario es funcionario o no de una institución pública. Tipo *textual*.
-* Cargo: Cargo o modalidad del contrato del becario como funcionario de la institucion publica. Tipo *textual*.
-* Goce de sueldo: Indica si el becario, como funcionario publico, tiene goce de sueldo. Tipo *binario*.
-* Tipo de Beca (según Programa aprobado): 
-* Área de la ciencia:
-* Disciplina:
-* Sector priorizado Conacyt:
-* Subsector priorizado:
-* Maestría / Doctorado:
-* Universidad de Destino:
-* Ranking:
-* Nº:
-* Ranking de Área Específica:
-* Nº:
-* Ciudad de destino (en español):
-* País de Destino:
-* Meses de duración de estudios:
-* Inicio (cobertura de beca):
-* Fin (cobertura de beca):
-* Ciudad de Origen:
-* Departamento de Origen: 
-* Ciudad de Residencia:
-* Departamento de Residencia:
-* Nivel socioeconómico:
-* Tiempo de cobertura:
-* Contrato Nº:
-* Fecha firma de Contrato:
-* Fecha firma de Adenda:
+#### Dataset 2: *BECAL 2017* 
 
-
-
-
+|               Campo               	|                                       Descripción                                      	|    Tipo de dato   	|                                                Valores ejemplo                                                	|
+|:---------------------------------:	|:--------------------------------------------------------------------------------------:	|:-----------------:	|:-------------------------------------------------------------------------------------------------------------:	|
+| Nº                                	| Número de identificador de registro en el dataset                                      	|      numérico     	|                                                                                                               	|
+| Condición                         	|                                                                                        	|     categórico    	| Becario, No Becario, Becario retornado,  Pendiente, ...                                                       	|
+| N                                 	|                                                                                        	|                   	|                                                                                                               	|
+| Tipo de Convocatoria              	|                                                                                        	|                   	| 1era. Convocatoria Autogestionada,  2da. Convocatoria Autogestionada,  3era. Convocatoria Autogestionada, ... 	|
+| Fecha de adjudicación             	| Fecha de adjudicación de la beca                                                       	|      textual      	|                                                                                                               	|
+| C.I.                              	| Cédula de identidad del becario                                                        	|      textual      	|                                                                                                               	|
+| Sexo                              	|                                                                                        	|     categórico    	| Femenino/Masculino                                                                                            	|
+| Edad                              	| Edad del becario                                                                       	| numérico/discreto 	|                                                                                                               	|
+| Funcionario Público (Institución) 	| Indica si el becario es funcionario o no de una institución pública                    	|      textual      	|                                                                                                               	|
+| Cargo                             	| Cargo o modalidad del contrato del becario como  funcionario de la institucion publica 	|      textual      	|                                                                                                               	|
+| Goce de sueldo                    	| Indica si el becario, como funcionario publico, tiene goce de sueldo                   	|      binario      	|                                                                                                               	|
+| Tipo de Beca                      	|                                                                                        	|                   	|                                                                                                               	|
+| Área de la ciencia                	|                                                                                        	|                   	|                                                                                                               	|
+| Disciplina                        	|                                                                                        	|                   	|                                                                                                               	|
+| Sector priorizado Conacyt         	|                                                                                        	|                   	|                                                                                                               	|
+| Subsector priorizado              	|                                                                                        	|                   	|                                                                                                               	|
+| Maestría / Doctorado              	|                                                                                        	|                   	|                                                                                                               	|
+| Universidad de Destino            	|                                                                                        	|                   	|                                                                                                               	|
+| Ranking                           	|                                                                                        	|                   	|                                                                                                               	|
+| Nº                                	|                                                                                        	|                   	|                                                                                                               	|
+| Ranking de Área Específica        	|                                                                                        	|                   	|                                                                                                               	|
+| Nº                                	|                                                                                        	|                   	|                                                                                                               	|
+| Ciudad de destino (en español)    	|                                                                                        	|                   	|                                                                                                               	|
+| País de Destino                   	|                                                                                        	|                   	|                                                                                                               	|
+| Meses de duración de estudios     	|                                                                                        	|                   	|                                                                                                               	|
+| Inicio (cobertura de beca)        	|                                                                                        	|                   	|                                                                                                               	|
+| Fin (cobertura de beca)           	|                                                                                        	|                   	|                                                                                                               	|
+| Ciudad de Origen                  	|                                                                                        	|                   	|                                                                                                               	|
+| Departamento de Origen            	|                                                                                        	|                   	|                                                                                                               	|
+| Ciudad de Residencia              	|                                                                                        	|                   	|                                                                                                               	|
+| Departamento de Residencia        	|                                                                                        	|                   	|                                                                                                               	|
+| Nivel socioeconómico              	|                                                                                        	|                   	|                                                                                                               	|
+| Tiempo de cobertura               	|                                                                                        	|                   	|                                                                                                               	|
+| Contrato Nº                       	|                                                                                        	|                   	|                                                                                                               	|
+| Fecha firma de Contrato           	|                                                                                        	|                   	|                                                                                                               	|
+| Fecha firma de Adenda             	|                                                                                        	|                   	|                                                                                                               	|
