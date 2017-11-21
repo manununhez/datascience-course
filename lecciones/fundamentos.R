@@ -18,6 +18,7 @@ y = c(1.7, 'a') #character
 y #tanto 1.7 y a son caracteres -> "1.7" y "a". Siempre debe tener el mismo tipo, entonces R convierte a caracteres
 
 
+
 y = c(FALSE, 2) #numeric
 y #convirtio a numerico. 1, 2. Son numericos, no tienen comillas.   FALSE = 0, TRUE = 1
 
@@ -105,3 +106,67 @@ for(i in seq_len(ncol(x))){ #imprimimos todos los elementos del data frame (por 
   print(x[1, i]) #imprimos el valor de la primera fila (nombre)
   print(x[2,i]) #imprimimos el valor de la segunda fila (numero)
 }
+
+########11-21-17
+#apply
+x = data.frame(c1 = 1:3, c2 = 10:12); x
+apply(x, 2, median)  # apply(<objeto>, <fila (1) o columna (2)>, <funcion>)
+
+#funciones con apply
+mult = function(x, c) {
+  return (x*c)
+}
+apply(x, 2, mult, 5)  # apply(<objeto>, <fila (1) o columna (2)>, <funcion>, <parametro>)
+
+area_circulo = function(r) {
+  return (3.14*r^2)
+}
+area_circulo = function(r,p) {
+  return (p*r^2)
+}
+sapply(x[,'c1'], area_circulo) #solo los elementos de la primera columna
+
+
+#Files management
+data = read.csv(file = '../proyecto/data/becal-cobertura.csv', header = T, stringsAsFactors = F)
+write.csv(x, 'leccion4.csv', row.names=F)
+
+
+#Graphics
+library(datasets) #datasets in R
+autos = mtcars
+hist(autos$mpg, col='green', main='Distribución de las millas por galón', 
+     +      xlab='Millas x galón', ylab='Frecuencia') #en este ejemplo, la distribucion no es normal, es decir, los autos en este dataset consumen relativamente poco combustible
+
+boxplot(autos$hp, col='red', main='Distribución de caballos de fuerza', 
+        ylab='Caballos de fuerza') #si la barra dentro del rectangulo rojo esta en el medio, la distribucion es normal. En este ejemplo no es normal.
+
+barplot(table(autos$am), col='green', xlab='Tipo de transmisión',
+        main='Nro. de vehículos por tipo de transmisión') #table(autos$am) cuenta la frecuencia de los tipos automaticos o no.
+
+plot(presidents$start, ylab = 'Porcentage de aprobación (%)', xlab='Año',
+     main = 'Aprobación (1er cuatrimestre) Presidentes de EEUU')
+
+plot(autos$mpg, autos$wt, col='blue', xlab='Millas por galón', ylab='Peso (libras)',
+     main='Relación entre peso del vehículo y millas recorridas por galón') #los vehiculos mas pesados, consumen mas combustible
+
+
+#Particion
+x = data.frame('var1'=sample(1:3),'var2'=sample(6:8),'var3'=sample(11:13)) #sample toma los valores dentro del rango definido, pero no utiliza siempre el mismo orden
+#select data frame: (specific value, range, vector, logic expresions)
+x[x$var1 < 5 & x$var2 > 10,] #and
+x[x$var1 < 5 | x$var2 > 10,] #or
+x[x$apellido == 'gonzalez',] #equal
+
+#ordenamiento
+sort(x$var1) #ascendente
+sort(x$var2, decreasing = T) #descendente
+
+
+
+#BECAL
+becal = read.csv(file = '../proyecto/data/becal2017.csv', header = T, stringsAsFactors = F)
+becal[1:5,'Sexo'] #seleccionar el sexo de los primeros 5 registros
+tolower(becal[,'Sexo'])[1:5] #convertir en minuscula los valores de la columna sexo, y solo mostrar como resultado los primeros 5 resultados
+becal$Sexo = tolower(becal[,'Sexo']) #asignar forma 1
+becal[,'Sexo'] = tolower(becal[,'Sexo']) #asignar forma 2
