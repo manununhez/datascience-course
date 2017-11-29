@@ -165,8 +165,80 @@ sort(x$var2, decreasing = T) #descendente
 
 
 #BECAL
-becal = read.csv(file = '../proyecto/data/becal2017.csv', header = T, stringsAsFactors = F)
+becal = read.csv(file = '../proyecto/data/becal2017.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8")
+
+becal_c = read.csv(file = '../proyecto/data/becal-cobertura.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8", strip.white = TRUE)
+
+
 becal[1:5,'Sexo'] #seleccionar el sexo de los primeros 5 registros
 tolower(becal[,'Sexo'])[1:5] #convertir en minuscula los valores de la columna sexo, y solo mostrar como resultado los primeros 5 resultados
 becal$Sexo = tolower(becal[,'Sexo']) #asignar forma 1
 becal[,'Sexo'] = tolower(becal[,'Sexo']) #asignar forma 2
+
+becal[1:2,'Fecha.firma.de.Contrato']
+as.character(becal[1:5,'Fecha firma de Contrato'])
+strsplit(as.character(becal[1:5,'Fecha firma de Contrato']), '/')
+strsplit(becal[1:2,'Fecha firma de Contrato'],"/")
+
+str(becal[1:2,'Fecha firma de Contrato'])
+
+becal[1:2,'C.I.']
+gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto cédula
+becal$C.I. <- gsub(',', '', becal[,'C.I.'])
+
+
+becal[1:2,'Fecha.firma.de.Contrato']
+strsplit(becal[1:2,'Fecha.firma.de.Contrato'], '/')  # divir el texto de fecha utilizando la barra como separ
+
+becal[1:2,'C.I.']
+gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto cédula
+
+
+becal_c[c(1,210,843),'Total.General']
+grep('???',becal_c[c(1,210,211, 843),'Total.General'])  # buscar la presenciar de caracter euro
+grepl('???',becal_c[c(1,210,843),'Total.General'])  # buscar la presenciar de caracter euro
+
+
+library(stringr)
+becal[1:2,'Condición']
+str_trim(becal[1:2,'Condición'])  # eliminar espacios vacío al inicio y final del texto
+str_trim(becal_c[c(1,210,843),'Total.General'])  # eliminar espacios vacío al inicio y final del texto 
+                                                 # (NO FUNCIONA ACA porQUE STR_TRIM SOLO TE ELIMINA LOS ESPACIoS REDUNDANTES AL COMIENZO Y AL FINAL. SE deberia hacer una expresion regular para quitar los espacios en medio)
+
+becal_c[1,'Universidad.de.Destino']
+nchar(becal_c[1,'Universidad.de.Destino'])  # contar el número de caracteres del texto
+substr(becal_c[1,'Universidad.de.Destino'],16,20)  # extraer parte del texto
+
+becal_c[1,c(5,6)]
+paste0(becal_c[1,5],' (',becal_c[1,6],')')
+
+
+#merge
+becal$C.I.<- str_trim(gsub(',', '', becal[,'C.I.'])) #quitar comas
+becal$C.I.<- str_trim(gsub('\\.', '', becal[,'C.I.'])) #quitar puntos
+
+becal_c$C.I.<- str_trim(gsub(',', '', becal_c[,'C.I.'])) #quitar comas
+becal_c$C.I.<- str_trim(gsub('\\.', '', becal_c[,'C.I.'])) #quitar puntos
+
+ambos_becal = merge(becal, becal_c, by.x="C.I.", by.y="C.I.", all.y=TRUE) #all.y porque los que estan en bacal2017 no todos recibieron la beca. En becal_cobertura si recibieron las becas. 
+                                                                          #VERIFICAR -- EL MERGE SOLO TIENE 907 filas x 44 columnas
+
+
+#Dplyr
+library(dplyr)
+select(becal, C.I., Sexo, Edad) #Select columns
+head(select(becal, C.I., Sexo, Edad))  # head sirve para mostrar las primeras n filas del dataframe
+
+dataset_filtrado = filter(becal, Sexo=='Femenino')
+
+dataset_ordenado = arrange(becal, Edad)
+dataset_ordenado_desc = arrange(becal, desc(Edad))
+head(select(dataset_ordenado, C.I., Sexo, Edad))
+
+#rename
+becal_renombrado = rename(becal, ci = C.I., sexo = Sexo, edad = Edad)
+head(select(dataset_ordenado_desc, C.I., Sexo, Edad)) 
+
+#mutate
+becal_gs = mutate(becal_c, total_gs=5500*convertir_totalgeneral(Total.General))
+head(select(becal_gs, Total.General, total_gs), 5)
