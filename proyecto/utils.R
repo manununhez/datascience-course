@@ -19,8 +19,8 @@ convertir_totalgeneral = function(monto) {
     return(monto)
   }  else {
     monto = gsub('\\$', '', monto)  # eliminar signo dolar
-    monto = gsub('\\.', '', monto)   # eliminar punto
     monto = gsub(' ', '', monto)     # eliminar espacios vacios
+    monto = gsub('\\.', '', monto)   # eliminar punto
     monto = gsub('\\,', '.', monto)  # remplazar coma por punto
     monto = as.numeric(monto)        # convertir a tipo numerico
     monto = round(monto)

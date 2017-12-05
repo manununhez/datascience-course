@@ -18,8 +18,7 @@ becal_cobertura = read.csv('./data/becal-cobertura.csv', header = T, stringsAsFa
 # conteniendo solo caracteres a-z sin artículos (no acentos, no ñs, no paréntesis, no /, etc.)
 # Sugerencia: Utilizar funciones utilitarias de utilis.R
 ##
-columnames = names(becal17) #traemos todas las columnas del data frame
-names(becal17) = sapply(columnames, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
+names(becal17) = sapply(names(becal17), limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 ##
 # B
@@ -70,6 +69,7 @@ becal17$ci = gsub('\\.', '', becal17$ci)   # eliminar punto
 becal17$ci = gsub('\\,', '', becal17$ci)  # remplazar coma por punto
 becal17$ci = as.numeric(becal17$ci)        # convertir a tipo numerico
 
+becal17$ci = str_trim(becal17$ci) #eliminamos espacios redundantes
 
 
 ##
@@ -78,7 +78,6 @@ becal17$ci = as.numeric(becal17$ci)        # convertir a tipo numerico
 # Eliminar registros sin datos en la cédula de identidad
 ##
 
-becal17$ci = str_trim(becal17$ci,"both") #eliminamos espacios redundantes
 # filter(becal17, is.na(becal17$ci)) #NA -> 7 registros
 
 becal17 = filter(becal17, !(is.na(becal17$ci))) #Registros que No son NA
@@ -104,7 +103,7 @@ becal17$maestriadoctorado = gsub('\n', ' ', becal17$maestriadoctorado) #reemplaz
 ##
 
 categoria_ranking = function(ranking) {
-  if(is.na(ranking))
+  if(is.na(ranking) | ranking == 0) #NA o ranking = 0, es igual a SIN DATO
     return("sin dato")
   if(ranking <= 10)
     return("top_10")
@@ -121,6 +120,7 @@ categoria_ranking = function(ranking) {
 }
 
 str_trim(becal17$nrorankuni) #eliminamos espacios redundantes
+becal17$nrorankuni = as.numeric(becal17$nrorankuni) #convertimos a numerico
 becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 #nrow(filter(becal17, is.na(as.numeric(becal17$nrorankuni))))
 
@@ -131,6 +131,8 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 #[515] "201/300"                                                             
 #[557] "0" 
 #[838] "" 
+
+
 ##
 # I
 # Colocar aquí el código que realice la siguiente tarea:
@@ -138,7 +140,20 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 # maestria_academica, o doctorado, dependiendo del tipo de beca
 ##
 
+# Con grep buscamos los registros con las cadenas especificas en tipo de becas. 
+# Una vez retornada la lista, se asigna la cadena del tipo correspondiente a la nueva columna
+becal17[grep('Doctorado',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'doctorado'
+becal17[grep('Maestría para Profesionales',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_profesional'
+becal17[grep('Maestría para Investigadores',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_academica'
 
+
+##
+# J
+# Limpiar campo tipo de beca segun programa aprobado eliminando acentos y pasando
+# el texto a minúscula. Sugerencia: utilizar la función normalizar_texto en utils.R
+##
+
+becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprogramaaprobado, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 
 
@@ -151,8 +166,7 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 ##
 
 
-
-
+becal_cobertura = rename(becal_cobertura, tipodebecasegunprogramaaprobado = Tipo.de.Beca..según.Programa.aprobado., totalgralusd = Total.General, ci = C.I.)
 
 ##
 # B
@@ -161,9 +175,11 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 # de miles (coma o punto)
 ##
 
+becal_cobertura$ci = gsub('\\.', '', becal_cobertura$ci)   # eliminar punto
+becal_cobertura$ci = gsub('\\,', '', becal_cobertura$ci)  # remplazar coma por punto
+becal_cobertura$ci = as.numeric(becal_cobertura$ci)        # convertir a tipo numerico
 
-
-
+becal_cobertura$ci = str_trim(becal_cobertura$ci) #eliminamos espacios redundantes
 
 ##
 # C
@@ -171,8 +187,7 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 # Eliminar registros sin datos en la cédula de identidad
 ##
 
-
-
+becal_cobertura = filter(becal_cobertura, !(is.na(becal_cobertura$ci))) #Registros que No son NA
 
 
 ##
@@ -184,8 +199,7 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 ##
 
 
-
-
+becal_cobertura$totalgralusd = sapply(becal_cobertura$totalgralusd, convertir_totalgeneral)
 
 ##########  PARTE 3 ###################
 
@@ -193,9 +207,16 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 # Agregar al dataset _becal2017.csv_ la columna **totalgralusd** del dataset _becal-cobertura.csv_ utilizando la 
 # columna **ci** (disponible en ambos datasets) como referencia
 
+names(becal_cobertura) = sapply(names(becal_cobertura), limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
+becal_cobertura$tipodebecasegunprogramaaprobado = sapply(becal_cobertura$tipodebecasegunprogramaaprobado, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 
 
+becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprogramaaprobado","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
+
+becal_completo = merge(becal17, becal_cobertura_filtrado, by = c("ci","tipodebecasegunprogramaaprobado"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
+
+becal_completo = becal_completo[!duplicated(becal_completo),] #eliminamos filas duplicadas (provenientes del merge)
 
 ##########  PARTE 4 ###################
 
