@@ -135,20 +135,20 @@ write.csv(x, 'leccion4.csv', row.names=F)
 #Graphics
 library(datasets) #datasets in R
 autos = mtcars
-hist(autos$mpg, col='green', main='Distribuci髇 de las millas por gal髇', 
-     +      xlab='Millas x gal髇', ylab='Frecuencia') #en este ejemplo, la distribucion no es normal, es decir, los autos en este dataset consumen relativamente poco combustible
+hist(autos$mpg, col='green', main='Distribuci?n de las millas por gal?n', 
+     +      xlab='Millas x gal?n', ylab='Frecuencia') #en este ejemplo, la distribucion no es normal, es decir, los autos en este dataset consumen relativamente poco combustible
 
-boxplot(autos$hp, col='red', main='Distribuci髇 de caballos de fuerza', 
+boxplot(autos$hp, col='red', main='Distribuci?n de caballos de fuerza', 
         ylab='Caballos de fuerza') #si la barra dentro del rectangulo rojo esta en el medio, la distribucion es normal. En este ejemplo no es normal.
 
-barplot(table(autos$am), col='green', xlab='Tipo de transmisi髇',
-        main='Nro. de veh韈ulos por tipo de transmisi髇') #table(autos$am) cuenta la frecuencia de los tipos automaticos o no.
+barplot(table(autos$am), col='green', xlab='Tipo de transmisi?n',
+        main='Nro. de veh?culos por tipo de transmisi?n') #table(autos$am) cuenta la frecuencia de los tipos automaticos o no.
 
-plot(presidents$start, ylab = 'Porcentage de aprobaci髇 (%)', xlab='A駉',
-     main = 'Aprobaci髇 (1er cuatrimestre) Presidentes de EEUU')
+plot(presidents$start, ylab = 'Porcentage de aprobaci?n (%)', xlab='A?o',
+     main = 'Aprobaci?n (1er cuatrimestre) Presidentes de EEUU')
 
-plot(autos$mpg, autos$wt, col='blue', xlab='Millas por gal髇', ylab='Peso (libras)',
-     main='Relaci髇 entre peso del veh韈ulo y millas recorridas por gal髇') #los vehiculos mas pesados, consumen mas combustible
+plot(autos$mpg, autos$wt, col='blue', xlab='Millas por gal?n', ylab='Peso (libras)',
+     main='Relaci?n entre peso del veh?culo y millas recorridas por gal?n') #los vehiculos mas pesados, consumen mas combustible
 
 
 #Particion
@@ -183,7 +183,7 @@ strsplit(becal[1:2,'Fecha firma de Contrato'],"/")
 str(becal[1:2,'Fecha firma de Contrato'])
 
 becal[1:2,'C.I.']
-gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto c閐ula
+gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto c?dula
 becal$C.I. <- gsub(',', '', becal[,'C.I.'])
 
 
@@ -191,7 +191,7 @@ becal[1:2,'Fecha.firma.de.Contrato']
 strsplit(becal[1:2,'Fecha.firma.de.Contrato'], '/')  # divir el texto de fecha utilizando la barra como separ
 
 becal[1:2,'C.I.']
-gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto c閐ula
+gsub(',', '', becal[,'C.I.'])[1:2]   # eliminar (o remplazar por vacio) las comas del texto c?dula
 
 
 becal_c[c(1,210,843),'Total.General']
@@ -200,13 +200,13 @@ grepl('???',becal_c[c(1,210,843),'Total.General'])  # buscar la presenciar de ca
 
 
 library(stringr)
-becal[1:2,'Condici髇']
-str_trim(becal[1:2,'Condici髇'])  # eliminar espacios vac韔 al inicio y final del texto
-str_trim(becal_c[c(1,210,843),'Total.General'])  # eliminar espacios vac韔 al inicio y final del texto 
+becal[1:2,'Condici?n']
+str_trim(becal[1:2,'Condici?n'])  # eliminar espacios vac?o al inicio y final del texto
+str_trim(becal_c[c(1,210,843),'Total.General'])  # eliminar espacios vac?o al inicio y final del texto 
                                                  # (NO FUNCIONA ACA porQUE STR_TRIM SOLO TE ELIMINA LOS ESPACIoS REDUNDANTES AL COMIENZO Y AL FINAL. SE deberia hacer una expresion regular para quitar los espacios en medio)
 
 becal_c[1,'Universidad.de.Destino']
-nchar(becal_c[1,'Universidad.de.Destino'])  # contar el n鷐ero de caracteres del texto
+nchar(becal_c[1,'Universidad.de.Destino'])  # contar el n?mero de caracteres del texto
 substr(becal_c[1,'Universidad.de.Destino'],16,20)  # extraer parte del texto
 
 becal_c[1,c(5,6)]
@@ -242,3 +242,75 @@ head(select(dataset_ordenado_desc, C.I., Sexo, Edad))
 #mutate
 becal_gs = mutate(becal_c, total_gs=5500*convertir_totalgeneral(Total.General))
 head(select(becal_gs, Total.General, total_gs), 5)
+
+
+#5/12/17 analisis exploratorio
+hist(as.numeric(becal17$edad), main=paste("Distribuci贸n de becarios por edad (n=",nrow(becal17),")"), 
+     ylab="Frecuencia", xlab="Edad", col = "red")
+
+hist(as.numeric(becal17$edad), main=paste("Distribuci贸n de becarios por edad (n=",nrow(becal17),")"), 
+     ylab="Frecuencia", xlab="Edad", col = "red", xlim = c(20, 40))
+
+summary(as.numeric(becal17$edad)) #min, max, media, mean
+
+quantile(as.numeric(becal17$edad)) #para variables numericas
+
+quantile(as.numeric(becal17$edad), probs = c(0.40, 0.65, 0.90)) #valores especificos de quantiles
+
+quantile(as.numeric(becal17$edad), probs = c(0.40, 0.65, 0.90), na.rm = TRUE) #na.rm elimina NA
+
+boxplot(as.numeric(becal17$edad), col='red', main='Distribuci贸n de edad de becarios', 
+        ylab='Edad')
+
+var(becal17$edad) #varianza para variables numericas
+
+sd(becal17$edad)#standard deviation para variables numericas
+
+table(becal17$sexo) #para variables categoricas
+
+barplot(table(becal17$universidaddedestino),
+        main=paste("Becarios por rango de ranking de universidad (n=",nrow(becal17),")"), 
+        ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
+
+#limpieza del grafico ##
+becal_limpio = subset(becal17, categoriauni != "sin dato") # elimina los registros "sin dato"
+dis_categoriauni = table(droplevels(as.factor(becal_limpio$categoriauni)))
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
+barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de universidad (n=",
+                                        nrow(becal_limpio),")"), ylab="Total", xlab="Rango de ranking", col="blue")
+
+library(stringi)
+library(dplyr)
+library(stringr)
+source('utils.R')
+becal17$paisdedestino = limpiar_nombres(becal17$paisdedestino)
+dis_pais_destino = table(droplevels(as.factor(becal17$paisdedestino)))
+categoria_ordenadas = sort(dis_pais_destino, decreasing = T)  # ordena las categorias de mayor a menor
+barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de universidad (n=",
+                                        nrow(becal17),")"), ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
+
+### Scatter Plots, grafico de puntos - Relaciones entre dos variables numericas!!!!
+
+plot(becal_completo$mesesdeduraciondeestudios, becal_completo$totalgralusd, 
+     ylab="Costo Total en USD", xlab="Duraci贸n Estudio en Meses",
+     main="Meses de Duraci贸n por Costo de Estudio")
+
+#promedios condicionales - PARA SOLUCIONAR OVERPLOTTING
+groupo_meses = group_by(becal_completo, mesesdeduraciondeestudios)
+total_x_gm = summarize(groupo_meses, 
+                       total_mean = mean(totalgralusd))
+plot(total_x_gm$mesesdeduraciondeestudios, total_x_gm$total_mean, 
+     ylab="Costo Total Promedio en USD", xlab="Duraci贸n Estudio en Meses",
+     main="Meses de Duraci贸n por Costo de Estudio")
+
+
+#Relaciones entre dos variables: cateogircas y numericas:::: BOXplots
+
+
+#correlaciones
+becal_sin_na = filter(becal_completo, totalgralusd != 'NA')  # elimino los valores ausentes
+cor(as.numeric(becal_sin_na$mesesdeduraciondeestudios), becal_sin_na$totalgralusd) #estas dos variables estan fuermente relaciones. 
+                                                                      #Mientras mas largo el estudio, es mas costoso. 
+
+#Pero no se puede decir que es una relacion de causalidad, pueden haber mas factores. 
+                                                                      #Correlacion no implica causalidad.
