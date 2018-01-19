@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Escribir aqui el código para eliminar los registros cuyo tipo de estudio no sean
-becal_completo = subset(becal_completo, tipoestudio == 'NA') # elimina los registros "NA" !(is.na(tipoestudio))
+becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # elimina los registros "NA"
 # maestría o doctorado
 ```
 

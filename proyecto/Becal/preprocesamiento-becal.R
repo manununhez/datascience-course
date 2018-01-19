@@ -153,7 +153,7 @@ becal17[grep('Maestría para Investigadores',becal17$tipodebecasegunprogramaapro
 # el texto a minúscula. Sugerencia: utilizar la función normalizar_texto en utils.R
 ##
 
-becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprogramaaprobado, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
+becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprogramaaprobado, normalizar_texto) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 
 
@@ -197,7 +197,6 @@ becal_cobertura = filter(becal_cobertura, !(is.na(becal_cobertura$ci))) #Registr
 # (utilizar el cambio 1USD->0.86E), eliminar los signos de dolar y euro también los puntos y espacios vacios, 
 # redondear los montos decimales incrementando el parte entera si el primer digito después de la coma es mayor a 5
 ##
-
 
 becal_cobertura$totalgralusd = sapply(becal_cobertura$totalgralusd, convertir_totalgeneral)
 
