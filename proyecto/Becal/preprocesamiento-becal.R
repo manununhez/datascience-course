@@ -213,11 +213,12 @@ becal_cobertura$tipodebecasegunprogramaaprobado = sapply(becal_cobertura$tipodeb
 
 becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprogramaaprobado","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
 
-becal_completo = merge(becal17, becal_cobertura_filtrado, by = c("ci","tipodebecasegunprogramaaprobado"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
+becal17 = merge(becal17, becal_cobertura_filtrado, by = c("ci"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
 
-becal_completo = becal_completo[!duplicated(becal_completo),] #eliminamos filas duplicadas (provenientes del merge)
+becal17 = becal17[!duplicated(becal17),] #eliminamos filas duplicadas (provenientes del merge)
 
+write.csv(becal17, './data/becal2017.csv', row.names = F) #actualizamos el archivo becal2017.csv con la nueva columna
 ##########  PARTE 4 ###################
 
 # Escribir nuevo dataset
-write.csv(becal_completo, './data/becal_completo.csv', row.names = F)
+write.csv(becal17, './data/becal_completo.csv', row.names = F)
