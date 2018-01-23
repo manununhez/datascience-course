@@ -5,14 +5,21 @@ date: "12/3/2017"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+```{r, echo=FALSE}
+library(stringr)
+becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8")
+```
+
 ```{r, echo=FALSE}
 # Escribir aqui el código para eliminar los registros cuyo tipo de estudio no sean
-becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # elimina los registros "NA"
 # maestría o doctorado
+becal_completo = subset(becal_completo, !(is.na(tipoestudio)))
 ```
 
 ## Perfil demográfico de los becarios
@@ -25,14 +32,39 @@ Describir aquí el análisis (técnica, cantidad de registros, etc.)
 # ciudad y departamento de residencia
 
 #edad
-becal_completo$edad = as.numeric(becal_completo$edad)
-hist(becal_completo$edad, main=paste("Distribución de becarios por edad (n=",nrow(becal_completo),")"), ylab="Frecuencia", xlab="Edad", col = "red", xlim = c(20, 50))
+hist(becal_completo$edad, main=paste("Distribución de becarios por edad (n=",nrow(becal_completo),")"), ylab="Frecuencia", xlab="Edad", col = "red", xlim = c(20, 45)) #limitamos esto en base a los valores min,max de la columna edad
+
+boxplot(becal_completo$edad, col='red', main='Distribución de edad de becarios', ylab='Edad')
+
+summary(becal_completo$edad)
 
 #sexo
 table(becal_completo$sexo) #para variables categoricas
+
+#sector laboral (público/privado)
+becal_completo$funcionariopublicoinstitucion = str_trim(becal_completo$funcionariopublicoinstitucion)
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),'sectortrabajofuncionario'] = 'privado'
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),'sectortrabajofuncionario'] = 'publico' #con invert traemos aquellos registros que no hacen match con la condicion puesta
+table(becal_completo$sectortrabajofuncionario) #para variables categoricas
+
+barplot(table(becal_completo$funcionariopublicoinstitucion), main=paste("Becarios por rango de ranking de universidad (n=",nrow(becal_completo),")"),  ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
+
+#ciudad y departamento de origen
+
+#ciudad y departamento de residencia
 ```
 
 Describir aquí los resultados
+
+####edad
+
+####sexo
+
+####sector laboral (público/privado)
+
+####ciudad y departamento de origen
+
+####ciudad y departamento de residencia
 
 ## Tipo de estudios, aréas de la ciencia, y disciplinas
 

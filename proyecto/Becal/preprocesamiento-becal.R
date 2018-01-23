@@ -8,7 +8,6 @@ source('utils.R')
 becal17 = read.csv('./data/becal2017.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8")
 becal_cobertura = read.csv('./data/becal-cobertura.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8")
 
-
 ##########  PARTE 1 - DATASET: becal2017.csv  ###################
 
 ##
@@ -213,12 +212,12 @@ becal_cobertura$tipodebecasegunprogramaaprobado = sapply(becal_cobertura$tipodeb
 
 becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprogramaaprobado","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
 
-becal17 = merge(becal17, becal_cobertura_filtrado, by = c("ci"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
+becal_completo = merge(becal17, becal_cobertura_filtrado, by = c("ci"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
 
-becal17 = becal17[!duplicated(becal17),] #eliminamos filas duplicadas (provenientes del merge)
+becal_completo = becal17[!duplicated(becal17),] #eliminamos filas duplicadas (provenientes del merge)
 
-write.csv(becal17, './data/becal2017.csv', row.names = F) #actualizamos el archivo becal2017.csv con la nueva columna
+#write.csv(becal17, './data/becal2017.csv', row.names = F) #actualizamos el archivo becal2017.csv con la nueva columna
 ##########  PARTE 4 ###################
 
 # Escribir nuevo dataset
-write.csv(becal17, './data/becal_completo.csv', row.names = F)
+write.csv(becal_completo, './data/becal_completo.csv', row.names = F, fileEncoding = "utf-8", eol = "\n")
