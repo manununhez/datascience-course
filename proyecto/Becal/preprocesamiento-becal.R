@@ -12,16 +12,16 @@ becal_cobertura = read.csv('./data/becal-cobertura.csv', header = T, stringsAsFa
 
 ##
 # A
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Renombrar las columnas al siguiente formato: nombres en minÃºscula sin espacios vacÃ­os y 
-# conteniendo solo caracteres a-z sin artÃ­culos (no acentos, no Ã±s, no parÃ©ntesis, no /, etc.)
+# Colocar aquí el código que realice la siguiente tarea:
+# Renombrar las columnas al siguiente formato: nombres en minúscula sin espacios vacíos y 
+# conteniendo solo caracteres a-z sin artículos (no acentos, no ñs, no paréntesis, no /, etc.)
 # Sugerencia: Utilizar funciones utilitarias de utilis.R
 ##
 names(becal17) = sapply(names(becal17), limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 ##
 # B
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
+# Colocar aquí el código que realice la siguiente tarea:
 # Renombrar las columnas llamdas 'n' de la siguiente manera: columna 1 = 'nroreg', 
 # columna 3 = 'nroconv', columna 20 = 'nrorankuni', columna 22 = 'nrorankcur'
 ##
@@ -30,9 +30,9 @@ names(becal17)[c(1,3,20,22)] = c('nroreg','nroconv','nrorankuni','nrorankcur') #
 
 ##
 # C
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Eliminar los espacios al final de la cadena que indica la condiciÃ³n del becario y eliminar los registros 
-# cuya condiciÃ³n sea 'No becario' o 'Pendiente'
+# Colocar aquí el código que realice la siguiente tarea:
+# Eliminar los espacios al final de la cadena que indica la condición del becario y eliminar los registros 
+# cuya condición sea 'No becario' o 'Pendiente'
 ##
 
 becal17$condicion = str_trim(becal17$condicion,"right") #eliminamos los espacios al final de condicion del becario
@@ -45,8 +45,8 @@ becal17 = filter(becal17, !(becal17$condicion=='No becario') & !(becal17$condici
 
 ##
 # D
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Convertir la fecha de adjudicaciÃ³n al formato dd/mm/yyyy
+# Colocar aquí el código que realice la siguiente tarea:
+# Convertir la fecha de adjudicación al formato dd/mm/yyyy
 ##
 
 
@@ -59,8 +59,8 @@ becal17$fechadeadjudicacion = sapply(becal17$fechadeadjudicacion, convertir_fech
 
 ##
 # E
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Convertir la columna cÃ©dula de identidad al tipo numÃ©rico removiendo primeramente el 
+# Colocar aquí el código que realice la siguiente tarea:
+# Convertir la columna cédula de identidad al tipo numérico removiendo primeramente el 
 # separador de miles (coma o punto)
 ##
 
@@ -73,8 +73,8 @@ becal17$ci = str_trim(becal17$ci) #eliminamos espacios redundantes
 
 ##
 # F
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Eliminar registros sin datos en la cÃ©dula de identidad
+# Colocar aquí el código que realice la siguiente tarea:
+# Eliminar registros sin datos en la cédula de identidad
 ##
 
 # filter(becal17, is.na(becal17$ci)) #NA -> 7 registros
@@ -83,9 +83,9 @@ becal17 = filter(becal17, !(is.na(becal17$ci))) #Registros que No son NA
 
 ##
 # G
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
+# Colocar aquí el código que realice la siguiente tarea:
 # Convertir los registros cuyo contenido de la columna **maestriadoctorado** 
-# sea de mÃ¡s de una lÃ­nea (p.ej., 554) a contenido de una sola lÃ­nea
+# sea de más de una línea (p.ej., 554) a contenido de una sola línea
 # Sugerencia: Eliminar el caracter '\n'
 ##
 
@@ -95,9 +95,9 @@ becal17$maestriadoctorado = gsub('\n', ' ', becal17$maestriadoctorado) #reemplaz
 
 ##
 # H
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Agregar la columna **categoriauni** para contener la categorÃ­a de la 
-# universidad de acuerdo a su ranking. Las categorÃ­as a considerar son: top_10, 
+# Colocar aquí el código que realice la siguiente tarea:
+# Agregar la columna **categoriauni** para contener la categoría de la 
+# universidad de acuerdo a su ranking. Las categorías a considerar son: top_10, 
 # top_50, top_100, top_150, top_200, mas_200
 ##
 
@@ -124,9 +124,9 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 #nrow(filter(becal17, is.na(as.numeric(becal17$nrorankuni))))
 
 #errores: (Considerar como sin datos o investigar?????)
-#[173] "Subject o Ã¡rea: IngenierÃ­a civil y estructural - Puesto entre 51/100"
+#[173] "Subject o área: Ingeniería civil y estructural - Puesto entre 51/100"
 #[279] "251-300"                                                             
-#[305] "5 SEGÃšN ESPECIALIDAD"                                                
+#[305] "5 SEGÚN ESPECIALIDAD"                                                
 #[515] "201/300"                                                             
 #[557] "0" 
 #[838] "" 
@@ -134,7 +134,7 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 
 ##
 # I
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
+# Colocar aquí el código que realice la siguiente tarea:
 # Agregar la columna **tipoestudio** que puede tomar uno de tres valores, maestria_profesional, 
 # maestria_academica, o doctorado, dependiendo del tipo de beca
 ##
@@ -142,14 +142,14 @@ becal17$categoriauni = sapply(becal17$nrorankuni, categoria_ranking)
 # Con grep buscamos los registros con las cadenas especificas en tipo de becas. 
 # Una vez retornada la lista, se asigna la cadena del tipo correspondiente a la nueva columna
 becal17[grep('Doctorado',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'doctorado'
-becal17[grep('MaestrÃ­a para Profesionales',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_profesional'
-becal17[grep('MaestrÃ­a para Investigadores',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_academica'
+becal17[grep('Maestría para Profesionales',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_profesional'
+becal17[grep('Maestría para Investigadores',becal17$tipodebecasegunprogramaaprobado),'tipoestudio'] = 'maestria_academica'
 
 
 ##
 # J
 # Limpiar campo tipo de beca segun programa aprobado eliminando acentos y pasando
-# el texto a minÃºscula. Sugerencia: utilizar la funciÃ³n normalizar_texto en utils.R
+# el texto a minúscula. Sugerencia: utilizar la función normalizar_texto en utils.R
 ##
 
 becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprogramaaprobado, normalizar_texto) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
@@ -160,17 +160,17 @@ becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprograma
 
 ##
 # A
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
+# Colocar aquí el código que realice la siguiente tarea:
 # Renombrar las columnas Total General y C.I. siguiendo las reglas mencionadas anteriormente
 ##
 
 
-becal_cobertura = rename(becal_cobertura, tipodebecasegunprogramaaprobado = Tipo.de.Beca..segÃºn.Programa.aprobado., totalgralusd = Total.General, ci = C.I.)
+becal_cobertura = rename(becal_cobertura, tipodebecasegunprogramaaprobado = Tipo.de.Beca..según.Programa.aprobado., totalgralusd = Total.General, ci = C.I.)
 
 ##
 # B
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Convertir la columna **ci** al tipo numÃ©rico removiendo primeramente el separador 
+# Colocar aquí el código que realice la siguiente tarea:
+# Convertir la columna **ci** al tipo numérico removiendo primeramente el separador 
 # de miles (coma o punto)
 ##
 
@@ -182,8 +182,8 @@ becal_cobertura$ci = str_trim(becal_cobertura$ci) #eliminamos espacios redundant
 
 ##
 # C
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Eliminar registros sin datos en la cÃ©dula de identidad
+# Colocar aquí el código que realice la siguiente tarea:
+# Eliminar registros sin datos en la cédula de identidad
 ##
 
 becal_cobertura = filter(becal_cobertura, !(is.na(becal_cobertura$ci))) #Registros que No son NA
@@ -191,17 +191,17 @@ becal_cobertura = filter(becal_cobertura, !(is.na(becal_cobertura$ci))) #Registr
 
 ##
 # D
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
-# Convertir la columna **Total General** al tipo entero despuÃ©s de convertir los montos en euros a dolares 
-# (utilizar el cambio 1USD->0.86E), eliminar los signos de dolar y euro tambiÃ©n los puntos y espacios vacios, 
-# redondear los montos decimales incrementando el parte entera si el primer digito despuÃ©s de la coma es mayor a 5
+# Colocar aquí el código que realice la siguiente tarea:
+# Convertir la columna **Total General** al tipo entero después de convertir los montos en euros a dolares 
+# (utilizar el cambio 1USD->0.86E), eliminar los signos de dolar y euro también los puntos y espacios vacios, 
+# redondear los montos decimales incrementando el parte entera si el primer digito después de la coma es mayor a 5
 ##
 
 becal_cobertura$totalgralusd = sapply(becal_cobertura$totalgralusd, convertir_totalgeneral)
 
 ##########  PARTE 3 ###################
 
-# Colocar aquÃ­ el cÃ³digo que realice la siguiente tarea:
+# Colocar aquí el código que realice la siguiente tarea:
 # Agregar al dataset _becal2017.csv_ la columna **totalgralusd** del dataset _becal-cobertura.csv_ utilizando la 
 # columna **ci** (disponible en ambos datasets) como referencia
 
@@ -214,7 +214,7 @@ becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprograma
 
 becal_completo = merge(becal17, becal_cobertura_filtrado, by = c("ci"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
 
-becal_completo = becal17[!duplicated(becal17),] #eliminamos filas duplicadas (provenientes del merge)
+becal_completo = becal_completo[!duplicated(becal_completo),] #eliminamos filas duplicadas (provenientes del merge)
 
 #write.csv(becal17, './data/becal2017.csv', row.names = F) #actualizamos el archivo becal2017.csv con la nueva columna
 ##########  PARTE 4 ###################

@@ -73,7 +73,7 @@ completitud = function(inicio, duracion) {
   hoy = Sys.Date()
   duracion = as.numeric(duracion)
   inicio = as.Date(strptime(inicio, "%m/%d/%Y"))
-  aux_fin = seq(inicio, by='months',length=duracion)
+  aux_fin = seq(inicio, by='months',length.out=duracion)
   fin = aux_fin[length(aux_fin)]
   if (hoy >= fin) {
     return (100)
