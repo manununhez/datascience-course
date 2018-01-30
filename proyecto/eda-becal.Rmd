@@ -1,5 +1,5 @@
 ---
-title: "Template Tarea: Análisis Exploratorio de Datos"
+title: "Análisis Exploratorio de Datos"
 author: ""
 date: "12/3/2017"
 output: html_document
@@ -13,133 +13,150 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 library(stringr)
-source('utils.R')
-becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8")
+source('utils.R') #importamos libreria
+becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8") #leemos los datos del archivo correspondiente y lo guardamos en una variable local
 ```
 
 ```{r, echo=FALSE}
-# Se eliminan los registros cuyo tipo de estudio no sean
-# maestría o doctorado
-becal_completo = subset(becal_completo, !(is.na(tipoestudio)))
+#Preprocesamiento
+becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # Se eliminan los registros cuyo tipo de estudio no sean maestría o doctorado
 ```
 
 ## Perfil demográfico de los becarios
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis de la distribución de becarios por edad, sexo, sector laboral, ciudad/departamento origen
+y ciudad/departamento residencia.
+
+Preprocesamiento:
+ * Para EDAD - para el histograma limitamos esto en base a los valores min,max de la columna edad. 
+ * Para SECTOR LABORAL - creamos nueva columna "sectortrabajofuncionario". Con grep() obtenemos con valor privado si es que el valor de funcionariopublicoinstitucion es NO. *) Con grep() con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
+
+Cantidad de registros: 762, excepto en el asnalisi de becarios por departameto de residencia (761)
+
+Edad - Tecnica utilizada: hist() [Histograma], boxplot() y summary(). 
+
+
+Sexo - Tecnica utilizada: table(). Contabilizamos la cantidad de registros por categoria (feminino/masculino)
+
+Sector laboral - Tecnica utilizada: table(). Contabilizamos la cantidad de registros por categoria (publico/privada)
+
+ciudad y departamento de origen - Tecnica utilizada: barplot() ; ciudad, head() de 20 elementos.
+
+
+ciudad y departamento de residencia - Tecnica utilizada: barplot() ; ciudad residencia, head() de 20 elementos.
 
 ```{r perfil_demografico}
-#########################
-# Análisis de la distribución de becarios por edad
-# Tecnica utilizada: Histograma, boxplot y summary
 paste("Cantidad de registros (n=",nrow(becal_completo),")")
-#########################
 
+# Edad
 hist(becal_completo$edad, main=paste("Distribución de becarios por edad (n=",nrow(becal_completo),")"),  ylab="Frecuencia", xlab="Edad", col = "red", xlim = c(20, 45)) #limitamos esto en base a los valores min,max de la columna edad
 
 boxplot(becal_completo$edad, col='red', main=paste("Distribución de becarios por edad (n=",nrow(becal_completo),")"), ylab='Edad')
 
-summary(becal_completo$edad)
+summary(becal_completo$edad) #summary
 
-#########################
-# Análisis de la distribución de becarios por sexo
-# Tecnica utilizada: table. Contabilizamos la cantidad de registros por categoria (feminino/masculino)
+# Sexo
 paste("Cantidad de registros (n=",nrow(becal_completo),")")
-#########################
-table(becal_completo$sexo) #para variables categoricas
+table(becal_completo$sexo) #table() para variables categoricas
 
-#########################
-# Análisis de la distribución de becarios por sector laboral
-# Tecnica utilizada: table. Contabilizamos la cantidad de registros por categoria (publico/privada)
+# Sector laboral
 paste("Cantidad de registros (n=",nrow(becal_completo),")")
-#########################
-becal_completo$funcionariopublicoinstitucion = str_trim(becal_completo$funcionariopublicoinstitucion)
-becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),'sectortrabajofuncionario'] = 'privado'
-becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),'sectortrabajofuncionario'] = 'publico' #con invert traemos aquellos registros que no hacen match con la condicion puesta
+
+becal_completo$funcionariopublicoinstitucion = str_trim(becal_completo$funcionariopublicoinstitucion)#quitamos espacios en blanco
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),'sectortrabajofuncionario'] = 'privado' #creamos nueva columna "sectortrabajofuncionario" con valor privado si es que el valor de funcionariopublicoinstitucion es NO 
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),'sectortrabajofuncionario'] = 'publico' #con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
 table(becal_completo$sectortrabajofuncionario) #para variables categoricas
 
 
-#ciudad y departamento de origen
-#ciudad
+#Ciudad de origen
 becal_completo$ciudaddeorigen = limpiar_nombres(becal_completo$ciudaddeorigen)
 dis_categoriauni = table(droplevels(as.factor(becal_completo$ciudaddeorigen)))
-categoria_ordenadas = head(sort(dis_categoriauni, decreasing = T), 30)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+categoria_ordenadas = head(sort(dis_categoriauni, decreasing = T), 20)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
 xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por ciudad de origen (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2, angle = 45)
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
-#departamento
+#Departamento de origen
 becal_completo$departamentodeorigen = limpiar_nombres(becal_completo$departamentodeorigen)
-dis_categoriauni = table(droplevels(as.factor(becal_completo$departamentodeorigen)))
-categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por departamento de origen (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2, angle = 45)
+
+becal_departamento_sin_na = subset(becal_completo, becal_completo$departamentodeorigen != 'no corresponde' & becal_completo$departamentodeorigen != 'no aplica' & becal_completo$departamentodeorigen != 'sin dato' & becal_completo$departamentodeorigen != '' ) # elimino los valores ausentes
+
+dis_categoriauni = table(droplevels(as.factor(becal_departamento_sin_na$departamentodeorigen)))
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por departamento de origen (n=", nrow(becal_departamento_sin_na),")"), ylab="Total",  col="blue", las = 2, angle = 45)
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
 
-#ciudad y departamento de residencia
-#ciudad
+#Ciudad de residencia
 becal_completo$ciudadderesidencia = limpiar_nombres(becal_completo$ciudadderesidencia)
 dis_categoriauni = table(droplevels(as.factor(becal_completo$ciudadderesidencia)))
 categoria_ordenadas = head(sort(dis_categoriauni, decreasing = T), 20)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
 xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por ciudad de residencia (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2,  angle = 45)
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
-#departamento
-#becal_sin_na = filter(becal_completo, becal_completo$departamentoderesidencia != 'no corresponde' & becal_completo$departamentoderesidencia != 'no aplica' & becal_completo$departamentoderesidencia != 'sin dato' & becal_completo$departamentoderesidencia != '' )  # elimino los valores ausentes
-
+#Departamento de residencia
 becal_completo$departamentoderesidencia = limpiar_nombres(becal_completo$departamentoderesidencia)
-dis_categoriauni = table(droplevels(as.factor(becal_completo$departamentoderesidencia)))
-categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-#dis_categoriauni = table(droplevels(as.factor(becal_sin_na['departamentoderesidencia'])))
-#categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por departamento de residencia (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2, angle = 45)
-text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
+becal_departamento_sin_na = subset(becal_completo, becal_completo$departamentoderesidencia != 'no corresponde' & becal_completo$departamentoderesidencia != 'no aplica' & becal_completo$departamentoderesidencia != 'sin dato' & becal_completo$departamentoderesidencia != '' ) # elimino los valores ausentes
+
+dis_categoriauni = table(droplevels(as.factor(becal_departamento_sin_na$departamentoderesidencia)))
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+
+xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por departamento de residencia (n=", nrow(becal_departamento_sin_na),")"), ylab="Total",  col="blue", las = 2, angle = 45)
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 ```
 
-Describir aquí los resultados
+####Resultados
+Edad, Sexo, Sector laboral, ciudad y departamento de origen, y ciudad y departamento de residencia
 
-####edad
 
-####sexo
+## Tipo de estudios, áreas de la ciencia, y disciplinas
 
-####sector laboral (público/privado)
+Análisis de la distribución de becarios por tipo de beca y disciplina
+Tecnica utilizada: barplot()
 
-####ciudad y departamento de origen
+Tipo de beca: segun tipodebecasegunprogramaaprobado y tipoestudio.
+Disciplina: head() de 20 elementos.
 
-####ciudad y departamento de residencia
-
-## Tipo de estudios, aréas de la ciencia, y disciplinas
-
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Cantidad de registros: 
 
 ```{r tipo_estudio}
-# Escribir aquí el código de análisis de la distribución de becas por 
-# tipo (maestría/doctorado) y disciplina
 
 paste("Cantidad de registros (n=", nrow(becal_completo),")")
 
+#tipo de beca (tipodebecasegunprogramaaprobado)
 becal_completo$tipodebecasegunprogramaaprobado = limpiar_nombres(becal_completo$tipodebecasegunprogramaaprobado)
 dis_categoriauni = table(droplevels(as.factor(becal_completo$tipodebecasegunprogramaaprobado)))
-categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por tipodebecasegunprogramaaprobado (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2, angle = 45)
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por tipo de beca (tipodebecasegunprogramaaprobado)(n=", nrow(becal_completo),")"), ylab="Total",  col="blue", las = 2, angle = 45)
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
+#tipo de beca (tipoestudio)
 dis_categoriauni = table(droplevels(as.factor(becal_completo$tipoestudio)))
-categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por tipodebecasegunprogramaaprobado (n=", nrow(becal_completo),")"), ylab="Total",  col="blue", angle = 45)
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por tipo de beca (tipoestudio)(n=", nrow(becal_completo),")"), ylab="Total",  col="blue", angle = 45)
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
+
+#disciplina
+becal_completo$disciplina = limpiar_nombres(becal_completo$disciplina)
+becal_disciplina_sin_na = subset(becal_completo, becal_completo$disciplina != '')
+dis_categoriauni = table(droplevels(as.factor(becal_disciplina_sin_na$disciplina)))
+categoria_ordenadas = head(sort(dis_categoriauni, decreasing = T),20)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), width = 0.85, main=paste("Becarios por disciplina (n=", nrow(becal_disciplina_sin_na),")"), ylab="Total",  col="blue", las = 2)
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 ```
 
-Describir aquí los resultados
+#######Resultados
 
 ### Duración de estudios
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis para calcular el promedio, la mediana, el mínimo, máximo, desviación estándar,
+y los cuantiles (0.25, 0.75) del tiempo de duración de los estudios
+
+Preprocesamiento: limpiamos los meses con duracion 0 y los NA
+
+Tecnica utilizada: summary(), sd() y quantile().
 
 ```{r duracion_estudio}
-# Escribir aquí el código de análisis para calcular el promedio, la mediana, el mínimo, 
-# máximo, desviación estándar, y los cuantiles (0.25, 0.75) del tiempo de duración de 
-# los estudios
-
 #Preprocesamiento
 becal_completo$mesesdeduraciondeestudios = as.numeric(becal_completo$mesesdeduraciondeestudios)
 becal_meses_duracion_limpio = subset(becal_completo, becal_completo$mesesdeduraciondeestudios > 0) #limpiamos los meses con duracion 0 y los NA
@@ -149,127 +166,164 @@ paste("Cantidad de registros (n=", nrow(becal_meses_duracion_limpio),")")
 summary(becal_meses_duracion_limpio$mesesdeduraciondeestudios)
 sd(becal_meses_duracion_limpio$mesesdeduraciondeestudios)
 quantile(becal_meses_duracion_limpio$mesesdeduraciondeestudios, probs = c(0.25, 0.75, 1))
-
-
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ### Completitud de estudios
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis para calcular los cuantiles (25%, 50%, 75%, 100%)  de completitud  de los estudios.
+Tecnica utilizada: completitud() de utils.R
 
+##falta completar
 ```{r completitud_estudio}
-# Escribir aquí el código de análisis para calcular los cuantiles (25%, 50%, 75%, 100%) 
-# de completitud  de los estudios
 
-
+#preprocesamiento
 becal_completo$mesesdeduraciondeestudios = as.numeric(becal_completo$mesesdeduraciondeestudios)
 becal_meses_duracion_limpio = subset(becal_completo, becal_completo$mesesdeduraciondeestudios > 0) #limpiamos los meses con duracion 0 y los NA
 becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('-',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos aquellos registros con iniciocobertura con formato <fecha>-<fecha>-<fecha>
 becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('Y',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos aquellos registros con iniciocobertura con formato <fecha> Y <fecha>
-#???paste("Cantidad de registros (n=", nrow(becal_meses_duracion_limpio),")")
 
-completitud_t = function(inicio, duracion) {
-  hoy = Sys.Date()
-  duracion = as.numeric(duracion)
-  inicio = as.Date(strptime(inicio, "%m/%d/%Y"))
-  aux_fin = seq(inicio, by='months',length.out=duracion)
-  fin = aux_fin[length(aux_fin)]
-  if (hoy >= fin) {
-    return (100)
-  } else {
-    meses_completados = length(seq(inicio, hoy, by='months'))-1
-    porcentaje_faltante = round((meses_completados/duracion)*100,0)
-    return (porcentaje_faltante)
-  }
-}
+paste("Cantidad de registros (n=", nrow(becal_meses_duracion_limpio),")")
 
-sapply(becal_meses_duracion_limpio$iniciocoberturadebeca, completitud2, becal_meses_duracion_limpio$mesesdeduraciondeestudios)
+#sapply(becal_meses_duracion_limpio$iniciocoberturadebeca, completitud, becal_meses_duracion_limpio$mesesdeduraciondeestudios)
 
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ## Países, ciudades, y universidades de destino
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis de la distribución de becas por país, ciudad, y universidad de destino;
 
+Tecnica: barplot()
+
+Ciudad y universidad destino: head() de 20 elementos.
 ```{r destino}
-# Escribir aquí el código de análisis de la distribución de becas por país, 
-# ciudad, y universidad de destino;
+
+paste("Cantidad de registros (n=", nrow(becal_completo),")")
+
+#Pais de destino
 becal_completo$paisdedestino = limpiar_nombres(becal_completo$paisdedestino)
 dis_pais_destino = table(droplevels(as.factor(becal_completo$paisdedestino)))
-categoria_ordenadas = sort(dis_pais_destino, decreasing = T)  # ordena las categorias de mayor a menor
-barplot(categoria_ordenadas, main=paste("Becarios por paises (n=",nrow(becal_completo),")"), ylab="Total", col="blue", las = 2)
+categoria_ordenadas = sort(dis_pais_destino, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, main=paste("Becarios por paises de destino (n=",nrow(becal_completo),")"), ylab="Total", col="blue", las = 2)
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
+#Ciudades de destino
+becal_completo$ciudaddedestinoenespanol = limpiar_nombres(becal_completo$ciudaddedestinoenespanol)
+dis_pais_destino = table(droplevels(as.factor(becal_completo$ciudaddedestinoenespanol)))
+categoria_ordenadas = head(sort(dis_pais_destino, decreasing = T), 20)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, main=paste("Becarios por ciudades de destino (n=",nrow(becal_completo),")"), ylab="Total", col="blue", las = 2)
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
+
+#Universidad de destino
 becal_completo$universidaddedestino = limpiar_nombres(becal_completo$universidaddedestino)
 dis_univ_destino = table(droplevels(as.factor(becal_completo$universidaddedestino)))
-categoria_ordenadas = sort(dis_univ_destino, decreasing = T)  # ordena las categorias de mayor a menor
-barplot(categoria_ordenadas, main=paste("Becarios por universidad (n=",nrow(becal_completo),")"), ylab="Total", col="blue", las = 2)
+categoria_ordenadas = head(sort(dis_univ_destino, decreasing = T), 20)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx= barplot(categoria_ordenadas, main=paste("Becarios por universidad de destino (n=",nrow(becal_completo),")"), ylab="Total", col="blue", las = 2)
+
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ### Becarios por rango de ranking de universidad de destino
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis que permita investigar la distribución de 
+becarios por rango de ranking de universidad de destino (top 10, top 50, 
+top 100, top 150, top 200, mayor a 200)
+
+Preprocesamiento: elimina los registros "sin dato"
+
+Tecnica: barplot()
 
 ```{r distribucion_ranking}
-# Escribir aquí el código de análisis que permita investigar la distribución de 
-# becarios por rango de ranking de universidad de destino (top 10, top 50, 
-# top 100, top 150, top 200, mayor a 200)
+
 becal_limpio = subset(becal_completo, categoriauni != "sin dato") # elimina los registros "sin dato"
 dis_categoriauni = table(droplevels(as.factor(becal_limpio$categoriauni)))
-categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
-barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de universidad (n=",
-                                        nrow(becal_limpio),")"), ylab="Total", xlab="Rango de ranking", col="blue")
+categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor. Solo se muestran los primeros 20 valores
+xx = barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de universidad (n=", nrow(becal_limpio),")"), ylab="Total", xlab="Rango de ranking", col="blue")
+text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ## Becas
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis que calcular el promedio, la mediana, el mínimo, máximo, y desviación estándar
+de los montos de beca
+
+Preprocesamiento: eliminamos NA y valores 0 de totalgralusd
+
+Tecnicas: summary() y sd()[standard deviation] 
 
 ```{r montos_beca}
-# Escribir aquí el código de análisis que calcular el promedio, la mediana
-# el mínimo, máximo, y desviación estándar de los montos de beca
+#preprocesamiento
+becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) ##eliminamos NA y valores 0
+
+summary(becal_total_limpio$totalgralusd)
+sd(becal_total_limpio$totalgralusd)
+
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ### Porcentaje de cobertura
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis que calcular los cuantiles  (25%, 50%, 75%, 100%) de cobertura
+
+Preprocesamiento: eliminamos NA y valores 0 de totalgralusd
+
+Tecnica utilizada: quantile()
 
 ```{r cobertura}
-# Escribir aquí el código de análisis que calcular los cuantiles 
-# (25%, 50%, 75%, 100%) de cobertura
+#preprocesamiento
+becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
+
+quantile(becal_total_limpio$totalgralusd, probs = c(0.25, 0.5, 0.75, 1))
+
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ### Top-10 montos de cobertura
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+##falta completar
+
+Análisis que calcular el top-10 de montos de coberturas y el tipo de estudio a que corresponden
+
 
 ```{r top10_montos}
-# Escribir aquí el código de análisis que calcular el top-10 de montos de 
-# coberturas y el tipo de estudio a que corresponden
+
+
+#becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
+#categoria_ordenada = sort(becal_total_limpio$totalgralusd, decreasing = T)
+#dis_categoriauni = table(categoria_ordenada)
+#categoria_ordenadas = head(dis_categoriauni,10)  # ordena las categorias de mayor a menor
+
+#xx = barplot(dis_categoriauni, main=paste("Becarios por rango de ranking de universidad (n=", nrow(becal_total_limpio),")"), ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
+
+#text(x = xx, y = becal_total_limpio$tipoestudio, label = becal_total_limpio$tipoestudio, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
+
+
 ```
 
-Describir aquí los resultados
+####Resultados
 
 ### Correlación entre montos de cobertura y ranking de universidades
 
-Describir aquí el análisis (técnica, cantidad de registros, etc.)
+Análisis que calcular la correlación  entre montos de cobertura y ranking de universidades
+
+Preprocesamiento: Eliminamos NA y valores 0 de totalgralusd
+
+Tecnica utilizada: cor()
 
 ```{r correlacion}
-# Escribir aquí el código de análisis que calcular la correlación 
-# entre montos de cobertura y ranking de universidades
+becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
+cor(as.numeric(becal_total_limpio$mesesdeduraciondeestudios), becal_total_limpio$totalgralusd) #estas dos variables estan fuermente relaciones. 
 ```
 
-Describir aquí los resultados
+####Resultados

@@ -207,10 +207,11 @@ becal_cobertura$totalgralusd = sapply(becal_cobertura$totalgralusd, convertir_to
 
 names(becal_cobertura) = sapply(names(becal_cobertura), limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 becal_cobertura$tipodebecasegunprogramaaprobado = sapply(becal_cobertura$tipodebecasegunprogramaaprobado, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
+becal17$tipodebecasegunprogramaaprobado = sapply(becal17$tipodebecasegunprogramaaprobado, limpiar_nombres) #aplicamos el apply y utilizamos la funcion limpiar nombres. El resultado lo actualizamos al data frame
 
 
-
-becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprogramaaprobado","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
+#becal_cobertura_filtrado = select(becal_cobertura, "ci","tipodebecasegunprogramaaprobado","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
+becal_cobertura_filtrado = select(becal_cobertura, "ci","totalgralusd") #solamente nos interesa copiar la columna "totalgralusd" a becal17, por eso filtramos las columnas necesarias
 
 becal_completo = merge(becal17, becal_cobertura_filtrado, by = c("ci"), all.x = TRUE) #hacemos el merge en becal17 de acuerdo a las columnas solicitadas
 

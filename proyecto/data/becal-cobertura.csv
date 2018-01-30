@@ -552,128 +552,225 @@ No,C.I.,Nombre y Apellido,Tipo de Beca (según Programa aprobado),Maestria / Doc
 552,1.660.345,Julio César Diarte Almada,Doctorado para Investigadores en CyT,Doctorado en Arquitectura,Universidad de Pensilvania,Estados Unidos,Capital,$           180.000
 553,3.521.992,Renato Belucci Angulo,Maestría para Profesionales en otras áreas relevantes,Master of Advertising,Universidad de Florida,Estados Unidos,Capital,$              90.000
 554,4.277.964,Aida Alice Aguilera Cano,Maestría para Profesionales en CyT,2016/2017 : M1 Biologie Agrosciences2017/2018 : M2 Biologie Agrosciences,Universidad Bordeaux,Francia,Capital,$              61.721
-555,3.646.491,Alejandra Wu Chuang,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie intégrative2017-2018 : M2 Biologie et Physiologie des organismes",Universidad Paris 6 - UPMC,Francia,Capital,$              61.881
-556,4.233.823,Alexandra Clarissa Bayer Wildberger,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire2017-2018 : M2 Biologie moléculaire et cellulaire - spécialité Biochimie et biologie",Universidad Paris 6 - UPMC,Francia,Alto Paraná,$              61.721
-557,2.921.444,Alexis Gabriel Bogado López,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie industrielle des réseaux. Parcours Stratégies industrielles etréseaux énergétiques",Universidad Montpellier,Francia,Capital,$              61.881
-558,3.463.943,Amaia Nazábal Ruiz Díaz,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique2017-2018 : M2 Informatique Spécialité Image",Universidad Lyon,Francia,Capital,$              62.694
-559,4.907.482,Amaias Maria Elizabeth Avalos Céspedes,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie Santé Cursus Scientifique : Génomique, biologie moléculaire etcellulaire",Universidad Paris Saclay,Francia,Capital,$              61.721
+555,3.646.491,Alejandra Wu Chuang,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie intégrative
+2017-2018 : M2 Biologie et Physiologie des organismes",Universidad Paris 6 - UPMC,Francia,Capital,$              61.881
+556,4.233.823,Alexandra Clarissa Bayer Wildberger,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire
+2017-2018 : M2 Biologie moléculaire et cellulaire - spécialité Biochimie et biologie",Universidad Paris 6 - UPMC,Francia,Alto Paraná,$              61.721
+557,2.921.444,Alexis Gabriel Bogado López,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie industrielle des réseaux. Parcours Stratégies industrielles et
+réseaux énergétiques",Universidad Montpellier,Francia,Capital,$              61.881
+558,3.463.943,Amaia Nazábal Ruiz Díaz,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique
+2017-2018 : M2 Informatique Spécialité Image",Universidad Lyon,Francia,Capital,$              62.694
+559,4.907.482,Amaias Maria Elizabeth Avalos Céspedes,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie Santé Cursus Scientifique : Génomique, biologie moléculaire et
+cellulaire",Universidad Paris Saclay,Francia,Capital,$              61.721
 560,4.323.064,Ana Clarizza Rivarola Sena,Doctorado para Investigadores en CyT,Ecole doctorale ED 340 BMIC Biologie moléculaire Intégrative et Cellulaire,Universidad Lyon,Francia,San Pedro,$           107.927
-561,2.035.732,Ana Teresa Vargas Frutos,Doctorado para Investigadores en CyT,"Master 2 Transport et mobilité - Ecole d'Urbanisme de Paris/Ponts ParisTech/UPEM/UPEC",Universidad Ponts ParisTech,Francia,Capital,$              20.319
-562,2.037.255,Aura Estela Chaparro Pineda,Maestría para Profesionales en CyT,"2016-2017 : M1 Sciences et Techniques des Activités Physiques et Sportives2017-2018 : M2 Activités Physiques pour la Santé - Parcours  Gestion de la Santé par",Universidad Montpellier,Francia,Capital,$              61.721
-563,2.978.314,Camila Alejandra Muñoz Dentice,Maestría para Profesionales en Educación,"2016-2017 : M1 Communication, Formation, Technologie2017-2018 : M2 Communication, Formation, Technologie",Universidad Strasbourg,Francia,Capital,$              62.085
-564,4.147.711,Carolina Viviana Duarte Hospital,Maestría para Profesionales en CyT,"2016/2017 : M1 Nutrition et Sciences des Aliments2017/2018 : M2 Ingénierie des produits et procédés ou M2 Microbiologie et génie",Universidad Paris Saclay,Francia,Capital,$              61.721
-565,3.777.150,Christian Daniel Santacruz Flor,Maestría para Investigadores en CyT,"2016-2017 : M1 STE Ecologie - Spécialité Gestion intégrée des agrosystèmes et des forêts,Option Management forestier et logistique",Universidad Bordeaux,Francia,Capital,$              61.881
-566,4.511.367,Cinthia Raquel Aguilar Benitez,Maestría para Profesionales en CyT,"2016-2017 : M1 informatique2017-2018 : M2 informatique - Spécialité Systèmes et Applications Répartis (SAR) OU",Universidad Paris 6 - UPMC,Francia,Alto Paraná,$              61.721
-567,3.178.891,Claudia Emilia Quevedo Luraschi,Maestría para Profesionales en otras áreas relevantes,"2016-2017: M1 Sciences humaines et sociales mention psychologie spécialité psychologiesociale : gestion des menaces sociales et environnementales",Universidad Paris 5 (Descartes),Francia,Capital,$              62.085
-568,4.664.658,Claudia Maria Ferreira Algarin,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports, Parcous Transports etlogistique",Universidad Montpellier,Francia,Capital,$              62.085
-569,3.994.110,Claudia Montserrat Gómez Leguizamón,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences de l'Univers, environnement, écologie2017-2018 : M2 Sciences de l'Univers, environnement, écologie - Spécialité",Universidad Paris 6 - UPMC,Francia,Central,$              61.721
-570,4.360.273,Dahiana Elizabeth Ayala Alfonso,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences sociales Parcours Sociologie de l'innovation et recompositionssociales (SIRS)",Universidad Pompeu Fabra,España,Capital,$              62.212
-571,3.266.150,Daisy Isabel Ferreira Gimenez,Maestría para Profesionales en otras áreas relevantes,"2016/2017 : M1 Santé Publique2017/2018 : M2 Santé Publique",Universidad Lyon,Francia,Capital,$              61.721
-572,1.783.344,Diego Luis Britez Gonzalez,Maestría para Profesionales en CyT,"2016-2017 : M1 Mécanique et ingénierie, spécialité Génie mécanique2017-2018 : M2 Mécanique et ingénierie, spécialité Génie mécanique",Universidad Bordeaux,Francia,Capital,$              61.721
-573,3.367.451,Eduardo Andres Gomez Ibarra,Maestría para Profesionales en CyT,"2016-2017 : M1 Génie biomédical2017-2018 : M2  Génie biomédical",Universidad Paris 5 (Descartes),Francia,Capital,$              61.721
-574,2.634.833,Enrique Caballero Ruiz,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports, Parcours Transports etlogistique",Universidad Montpellier,Francia,Paraguari,$              62.085
-575,3.247.493,Eugenia Eliana González Espinoza,Maestría para Profesionales en CyT,"2016-2017 M1  Psychologie sociale: gestion des menaces sociales et environnementales2017-2018 M2  Psychologie sociale: gestion des menaces sociales et environnementales",Universidad Paris 5 (Descartes),Francia,Ñeembucú,$              62.085
-576,3.357.147,Evany Mariel Heinichen Candia,Maestría para Profesionales en CyT,"2016-2017 : M1 Santé2017-2018 : M2 Expertise en gérontologie (a priori plus dispensé ou à distance)",Universidad Paris 6 - UPMC,Francia,Central,$              61.721
-577,4.006.868,Fátima Belén Gauna Cristaldo,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Psychologie2017-2018 : M2 Psychologie spécialité Psychologie Sociale de la Santé",Universidad Aix Marseille,Francia,Capital,$              61.721
-578,3.444.454,Francisco Javier Villalba Figueredo,Maestría para Profesionales en CyT,"2016-2017 : M1 Electronique-Electrotechnique-Automatique (EEA)2017-2018 : M2 Electronique-Electrotechnique-Automatique (EEA), Spécialité Conversion",Universidad Federal Toulouse,Francia,Alto Paraná,$              61.881
-579,2.482.204,Gabriel Eduardo Pereira Bogado,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Ingénierie économique et entreprise2017-2018 : M2 Economie de l'énergie et de l'environnement",Universidad Grenoble,Francia,Capital,$              61.881
-580,5.029.534,Génesis María Rolón Irala,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Psychologie - Spécialité Neuropsychologie2017-2018 : M2 Psychologie - Spécialité Neuropsychologie",Universidad de Navarra,España,Capital,$              33.718
-581,3.822.408,Gerardo Agustín Larreinegabe Ferreira,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique2017-2018 : M2 Informatique",Universidad Grenoble,Francia,Capital,$              61.721
-582,2.478.388,Gissel María Katherine Maidana Rosas,Maestría para Profesionales en otras áreas relevantes,"2016 - 2017 : M1 Santé Publique2017 - 2018 : M2 Santé Publique",Universidad Lyon,Francia,Capital,$              62.694
+561,2.035.732,Ana Teresa Vargas Frutos,Doctorado para Investigadores en CyT,"Master 2 Transport et mobilité - Ecole d'Urbanisme de Paris/Ponts Paris
+Tech/UPEM/UPEC",Universidad Ponts ParisTech,Francia,Capital,$              20.319
+562,2.037.255,Aura Estela Chaparro Pineda,Maestría para Profesionales en CyT,"2016-2017 : M1 Sciences et Techniques des Activités Physiques et Sportives
+2017-2018 : M2 Activités Physiques pour la Santé - Parcours  Gestion de la Santé par",Universidad Montpellier,Francia,Capital,$              61.721
+563,2.978.314,Camila Alejandra Muñoz Dentice,Maestría para Profesionales en Educación,"2016-2017 : M1 Communication, Formation, Technologie
+2017-2018 : M2 Communication, Formation, Technologie",Universidad Strasbourg,Francia,Capital,$              62.085
+564,4.147.711,Carolina Viviana Duarte Hospital,Maestría para Profesionales en CyT,"2016/2017 : M1 Nutrition et Sciences des Aliments
+2017/2018 : M2 Ingénierie des produits et procédés ou M2 Microbiologie et génie",Universidad Paris Saclay,Francia,Capital,$              61.721
+565,3.777.150,Christian Daniel Santacruz Flor,Maestría para Investigadores en CyT,"2016-2017 : M1 STE Ecologie - Spécialité Gestion intégrée des agrosystèmes et des forêts,
+Option Management forestier et logistique",Universidad Bordeaux,Francia,Capital,$              61.881
+566,4.511.367,Cinthia Raquel Aguilar Benitez,Maestría para Profesionales en CyT,"2016-2017 : M1 informatique
+2017-2018 : M2 informatique - Spécialité Systèmes et Applications Répartis (SAR) OU",Universidad Paris 6 - UPMC,Francia,Alto Paraná,$              61.721
+567,3.178.891,Claudia Emilia Quevedo Luraschi,Maestría para Profesionales en otras áreas relevantes,"2016-2017: M1 Sciences humaines et sociales mention psychologie spécialité psychologie
+sociale : gestion des menaces sociales et environnementales",Universidad Paris 5 (Descartes),Francia,Capital,$              62.085
+568,4.664.658,Claudia Maria Ferreira Algarin,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports, Parcous Transports et
+logistique",Universidad Montpellier,Francia,Capital,$              62.085
+569,3.994.110,Claudia Montserrat Gómez Leguizamón,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences de l'Univers, environnement, écologie
+2017-2018 : M2 Sciences de l'Univers, environnement, écologie - Spécialité",Universidad Paris 6 - UPMC,Francia,Central,$              61.721
+570,4.360.273,Dahiana Elizabeth Ayala Alfonso,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences sociales Parcours Sociologie de l'innovation et recompositions
+sociales (SIRS)",Universidad Pompeu Fabra,España,Capital,$              62.212
+571,3.266.150,Daisy Isabel Ferreira Gimenez,Maestría para Profesionales en otras áreas relevantes,"2016/2017 : M1 Santé Publique
+2017/2018 : M2 Santé Publique",Universidad Lyon,Francia,Capital,$              61.721
+572,1.783.344,Diego Luis Britez Gonzalez,Maestría para Profesionales en CyT,"2016-2017 : M1 Mécanique et ingénierie, spécialité Génie mécanique
+2017-2018 : M2 Mécanique et ingénierie, spécialité Génie mécanique",Universidad Bordeaux,Francia,Capital,$              61.721
+573,3.367.451,Eduardo Andres Gomez Ibarra,Maestría para Profesionales en CyT,"2016-2017 : M1 Génie biomédical
+2017-2018 : M2  Génie biomédical",Universidad Paris 5 (Descartes),Francia,Capital,$              61.721
+574,2.634.833,Enrique Caballero Ruiz,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports, Parcours Transports et
+logistique",Universidad Montpellier,Francia,Paraguari,$              62.085
+575,3.247.493,Eugenia Eliana González Espinoza,Maestría para Profesionales en CyT,"2016-2017 M1  Psychologie sociale: gestion des menaces sociales et environnementales
+2017-2018 M2  Psychologie sociale: gestion des menaces sociales et environnementales",Universidad Paris 5 (Descartes),Francia,Ñeembucú,$              62.085
+576,3.357.147,Evany Mariel Heinichen Candia,Maestría para Profesionales en CyT,"2016-2017 : M1 Santé
+2017-2018 : M2 Expertise en gérontologie (a priori plus dispensé ou à distance)",Universidad Paris 6 - UPMC,Francia,Central,$              61.721
+577,4.006.868,Fátima Belén Gauna Cristaldo,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Psychologie
+2017-2018 : M2 Psychologie spécialité Psychologie Sociale de la Santé",Universidad Aix Marseille,Francia,Capital,$              61.721
+578,3.444.454,Francisco Javier Villalba Figueredo,Maestría para Profesionales en CyT,"2016-2017 : M1 Electronique-Electrotechnique-Automatique (EEA)
+2017-2018 : M2 Electronique-Electrotechnique-Automatique (EEA), Spécialité Conversion",Universidad Federal Toulouse,Francia,Alto Paraná,$              61.881
+579,2.482.204,Gabriel Eduardo Pereira Bogado,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Ingénierie économique et entreprise
+2017-2018 : M2 Economie de l'énergie et de l'environnement",Universidad Grenoble,Francia,Capital,$              61.881
+580,5.029.534,Génesis María Rolón Irala,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Psychologie - Spécialité Neuropsychologie
+2017-2018 : M2 Psychologie - Spécialité Neuropsychologie",Universidad de Navarra,España,Capital,$              33.718
+581,3.822.408,Gerardo Agustín Larreinegabe Ferreira,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique
+2017-2018 : M2 Informatique",Universidad Grenoble,Francia,Capital,$              61.721
+582,2.478.388,Gissel María Katherine Maidana Rosas,Maestría para Profesionales en otras áreas relevantes,"2016 - 2017 : M1 Santé Publique
+2017 - 2018 : M2 Santé Publique",Universidad Lyon,Francia,Capital,$              62.694
 583,3.183.223,Gloria Maria Lucia Delgado Frutos,Maestría para Investigadores en CyT,2016-2017 : M2 Biologie Santé finalité Sciences du Végétal,Universidad Paris Saclay,Francia,Capital,$              61.721
-584,3.801.316,Griselda Asuncion Meza Ocampos,Maestría para Investigadores en CyT,"2016 - 2017 : M1 Santé Publique2017 - 2018 : M2 Santé Publique",Universidad Paris Saclay,Francia,Capital,$              62.694
-585,4.643.808,Guillermo Anibal Achucarro Candia,Maestría para Profesionales en CyT,"2016 - 2017 : M1 Eau, spécialité Eau & ressources   - Hydrologie et RisquesEnvironnement HYDRE",Universidad Montpellier,Francia,Canadá,$              61.721
-586,3.919.442,Heidy María Vera Peralta,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire2017-2018 : M2 Biologie moléculaire et cellulaire - Spécialité Microbiologie - Parcours",Universidad Paris 6 - UPMC,Francia,Central,$              62.694
-587,4.059.994,Henry David Rivas Ullón,Maestría para Investigadores en CyT,"2016-2017 : M1 Géographie et Sciences des territoires -2017-2018 : M2 Géographie et Sciences des territoires - Spécialité : Télédétection et",Universidad Paris 7 (Diderot),Francia,Guairá,$              62.694
-588,2.478.350,Hugo Daniel Villalba Torres,Maestría para Investigadores en CyT,"2016-2017 : M1 Santé publique2016-2017 : M2 Santé publique et risques liés à l’environnement",Universidad Paris Saclay,Francia,Capital,$              61.881
-589,3.644.154,Iris Carolina Valdez Achucarro,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences pour les défis de l'environnnement - Climat EnvironnementApplications et Recherche",Universidad Paris Saclay,Francia,Capital,$              61.881
-590,3.516.363,Iván Enrique Ballasch Moreno,Maestría para Profesionales en otras áreas relevantes,"2016-2017: M1 Sciences et technologies, mention neurosciences2017-2018: M2 Sciences et technologies, mention neurosciences",Universidad Aix Marseille,Francia,Capital,$              62.085
-591,4.796.463,Jazmín Guadalupe Ojeda Rojas,Maestría para Investigadores en CyT,"2016-2017 : M1 Risques et environnement2017-2018 : M2 Spécialité : Télédétection et Géomatique  Appliquées à l'Environnement",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
-592,2.865.599,Johanna Ghiringheli Perez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Activités Physiques pour la Santé - Parcours Réhabilitation en ActivitésPhysiques Adaptées  (RAPA)",Universidad Montpellier,Francia,Ñeembucú,$              61.721
-593,3.517.226,José Gabriel González Gómez,Maestría para Investigadores en CyT,"2016-2017 : M1 Infectiologie : Microbiologie, Virologie, Immunologie (IMVI)2017-2018 : M2 Infectiologie : Microbiologie, Virologie, Immunologie (IMVI) - Spécialité",Universidad Paris 7 (Diderot),Francia,Capital,$              61.493
-594,3.512.693,José Javier Bonzi Arévalos,Maestría para Profesionales en CyT,"2016-2017 : M1 Mécanique des Solides et du génie Civil2017-2018 : M2 Mécanique des solides et du Génie Civil - Parcours Ingénierie de la",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
-595,3.493.932,Juan José Cáceres Díaz,Maestría para Profesionales en CyT,"2016-2017 : M1 Mathématiques appliquées2017-2018 : M2 Mathématiques financières",Universidad Paris Saclay,Francia,Capital,$              61.721
-596,4.348.515,Julian Heriberto Caballero Vargas,Maestría para Profesionales en CyT,"2016-2017 M1 Energie2017-2018 M2 Energie",Universidad Montpellier,Francia,Capital,$              61.721
-597,3.898.551,Julien Marie Demelenne,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences humaines sociales, mention Etudes politiques2017-2018 : M2 Sciences humaines sociales, mention Etudes politiques",Universidad EHESS Paris Sorbonne,Francia,Central,$              61.881
-598,4.486.721,Karin Andrea Armoa Araujo,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Risques et Environnement2017-2018 : M2  Développement durable, management environnemental et géomatique",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
-599,3.240.213,Karla Andrea Golin Galeano,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences de la terre et des planètes. Spécialité Géologie de l'explorationet des réservoirs (GER)",Universidad Montpellier,Francia,Canindeyú,$              61.721
+584,3.801.316,Griselda Asuncion Meza Ocampos,Maestría para Investigadores en CyT,"2016 - 2017 : M1 Santé Publique
+2017 - 2018 : M2 Santé Publique",Universidad Paris Saclay,Francia,Capital,$              62.694
+585,4.643.808,Guillermo Anibal Achucarro Candia,Maestría para Profesionales en CyT,"2016 - 2017 : M1 Eau, spécialité Eau & ressources   - Hydrologie et Risques
+Environnement HYDRE",Universidad Montpellier,Francia,Canadá,$              61.721
+586,3.919.442,Heidy María Vera Peralta,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire
+2017-2018 : M2 Biologie moléculaire et cellulaire - Spécialité Microbiologie - Parcours",Universidad Paris 6 - UPMC,Francia,Central,$              62.694
+587,4.059.994,Henry David Rivas Ullón,Maestría para Investigadores en CyT,"2016-2017 : M1 Géographie et Sciences des territoires -
+2017-2018 : M2 Géographie et Sciences des territoires - Spécialité : Télédétection et",Universidad Paris 7 (Diderot),Francia,Guairá,$              62.694
+588,2.478.350,Hugo Daniel Villalba Torres,Maestría para Investigadores en CyT,"2016-2017 : M1 Santé publique
+2016-2017 : M2 Santé publique et risques liés à l’environnement",Universidad Paris Saclay,Francia,Capital,$              61.881
+589,3.644.154,Iris Carolina Valdez Achucarro,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences pour les défis de l'environnnement - Climat Environnement
+Applications et Recherche",Universidad Paris Saclay,Francia,Capital,$              61.881
+590,3.516.363,Iván Enrique Ballasch Moreno,Maestría para Profesionales en otras áreas relevantes,"2016-2017: M1 Sciences et technologies, mention neurosciences
+2017-2018: M2 Sciences et technologies, mention neurosciences",Universidad Aix Marseille,Francia,Capital,$              62.085
+591,4.796.463,Jazmín Guadalupe Ojeda Rojas,Maestría para Investigadores en CyT,"2016-2017 : M1 Risques et environnement
+2017-2018 : M2 Spécialité : Télédétection et Géomatique  Appliquées à l'Environnement",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
+592,2.865.599,Johanna Ghiringheli Perez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Activités Physiques pour la Santé - Parcours Réhabilitation en Activités
+Physiques Adaptées  (RAPA)",Universidad Montpellier,Francia,Ñeembucú,$              61.721
+593,3.517.226,José Gabriel González Gómez,Maestría para Investigadores en CyT,"2016-2017 : M1 Infectiologie : Microbiologie, Virologie, Immunologie (IMVI)
+2017-2018 : M2 Infectiologie : Microbiologie, Virologie, Immunologie (IMVI) - Spécialité",Universidad Paris 7 (Diderot),Francia,Capital,$              61.493
+594,3.512.693,José Javier Bonzi Arévalos,Maestría para Profesionales en CyT,"2016-2017 : M1 Mécanique des Solides et du génie Civil
+2017-2018 : M2 Mécanique des solides et du Génie Civil - Parcours Ingénierie de la",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
+595,3.493.932,Juan José Cáceres Díaz,Maestría para Profesionales en CyT,"2016-2017 : M1 Mathématiques appliquées
+2017-2018 : M2 Mathématiques financières",Universidad Paris Saclay,Francia,Capital,$              61.721
+596,4.348.515,Julian Heriberto Caballero Vargas,Maestría para Profesionales en CyT,"2016-2017 M1 Energie
+2017-2018 M2 Energie",Universidad Montpellier,Francia,Capital,$              61.721
+597,3.898.551,Julien Marie Demelenne,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences humaines sociales, mention Etudes politiques
+2017-2018 : M2 Sciences humaines sociales, mention Etudes politiques",Universidad EHESS Paris Sorbonne,Francia,Central,$              61.881
+598,4.486.721,Karin Andrea Armoa Araujo,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Risques et Environnement
+2017-2018 : M2  Développement durable, management environnemental et géomatique",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
+599,3.240.213,Karla Andrea Golin Galeano,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Sciences de la terre et des planètes. Spécialité Géologie de l'exploration
+et des réservoirs (GER)",Universidad Montpellier,Francia,Canindeyú,$              61.721
 600,3.657.818,Laura Adriana Rodriguez Zuárez,Maestría para Profesionales en otras áreas relevantes,Agrocient spécialité produits de consommation alimentaire,Universidad Aix Marseille,Francia,Amambay,$              62.694
-601,3.638.561,Laura Jazmin Alvarenga Segovia,Maestría para Profesionales en CyT,"2016-2017 : M1 Energe électrique; conversion, matériaux, développement durableE2CMD",Universidad Federal Toulouse,Francia,Central,$              61.721
-602,4.478.205,Laurie Alice Vera Jimenez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Histoire et Civilisations comparées - Spécialité Ville, Architecture,Patrimoine",Universidad Paris 7 (Diderot),Francia,Capital,$              62.694
-603,4.072.475,Leticia María Alejandra Segovia Cabrera,Maestría para Investigadores en CyT,"2016-2017 : M1 Santé publique2017-2018 : M2R Santé publique - Spécialité Epidemologie Clinique",Universidad Federal Toulouse,Francia,Capital,$              61.721
-604,3.197.280,Lilian Carolina Aquino Verón,Maestría para Profesionales en Educación,"2016/2017 : M1 Master Education Formation2017/2018 : M2 Master Education Formation",Universidad Aix Marseille,Francia,Capital,$              62.085
-605,3.636.535,Lino César Ramirez Ayala,Doctorado para Investigadores en CyT,"Réorientation du sujet de thèse en cours - Cambio del campo de investigación pendienteProcessus de placement à relancer en conséquence - El proceso de colocación se hará",Universidad Autonoma de Barcelona,España,Capital,$              78.668
-606,3.866.885,Liz Paola Noguera Zayas,Maestría para Profesionales en CyT,"2016-2017 : M1 Emergence des maladies paraistaires et infectieuses2017-2018 : M2 Emergence des maladies paraistaires et infectieuses",Universidad Montpellier,Francia,Itapúa,$              62.694
-607,3.203.552,Lucia Jazmín Martinez Mendoza,Maestría para Profesionales en CyT,"2016-2017 M1  Biologie santé, spécialité Microbiologie-immunologie2017-2018 M2  Biologie santé, spécialité Microbiologie-immunologie",Universidad Bordeaux,Francia,Capital,$              62.694
-608,2.818.411,Luis María Ramirez Chamorro,Maestría para Investigadores en CyT,"Doctorat génétiqueIsntitute for Integrative Biology of Cell",Universidad Paris Saclay,Francia,Capital,$           108.740
-609,3.761.472,Marco Antonio Mendieta Avila,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Géographie, Aménagement, Environnement et Développement parcoursExploitation et  Développement des Réseaux de Transports Publics",Universidad de Navarra,España,Capital,$              39.332
-610,4.047.848,Maria Carolina Doria Morel,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Innovation, entreprise et société - Voie Sciences Humaines & Sociales2017-2018 : M2 Innovation, entreprise et société",Universidad Paris Saclay,Francia,Capital,$              65.897
-611,2.290.311,Maria Cristina Penayo Ortellado,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Méthodes du génie des procédés2017-2018 : M2  Procédés, Energie, Environnement",Universidad Paris Saclay,Francia,Capital,$              66.870
-612,3.551.864,María de los Angeles Yakisich Agüero,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Énergie (ex G2Sco)2017-2018 : M2 Énergie (ex G2Sco)",Universidad Montpellier,Francia,Central,$              65.897
-613,2.908.996,Maria Fatima Francia Acuña,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie intégrative : Physiologie et neurosciences Parcours animale pré-clinique et clinique",Universidad Complutense de Madrid,España,Capital,$              35.332
-614,4.351.211,Maria Ines Campos Mongelos,Maestría para Investigadores en CyT,"2016-2017: M1 Biologie, Santé2017-2018 : M2 Vectorologie, Thérapie Génique et Vaccinologie  OU M2",Universidad Federal Toulouse,Francia,Capital,$              61.721
-615,3.514.125,Maria Jose Ibarra Salomon,Maestría para Profesionales en CyT,"2016-2017 : M1 BC2T Biochimie, cellules, cibles thérapeutiques2017-2018 : M2P BC2T - Biotechnologie pharmaceutique et thérapies innovantes",Universidad Paris 7 (Diderot),Francia,Central,$              61.721
-616,3.865.266,María Lidia Villalba Benitez,Doctorado para Investigadores en CyT,"Doctorat de droit dans le domaine de la ""Responsabilité Sociale et Environnementale(RSE) dans le transport aérien""",Universidad Paris Saclay,Francia,Capital,$           108.130
-617,3.181.438,María Marcelina Sánchez Irala,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie Santé, génomique, biologie moléculaire et cellulaire, cursusscientifique",Universidad Paris Saclay,Francia,Central,$              62.694
-618,4.628.909,Maria Verónica Avalos Robertti,Maestría para Profesionales en CyT,"2016-2017 : M1 Chimie2017-2018 : M2 Chimie, ingénierie chimique",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
-619,3.205.492,Mariano José Lara Castro Maldonado,Maestría para Profesionales en Educación,"2016-2017 : M1 Sciences de l'éducation2017-2018 : M2 Sciences de l'éducation Spécialité Coopération internationale en",Universidad Paris 5 (Descartes),Francia,Capital,$              62.085
-620,3.367.838,Melissa Jacqueline Pereira Bittar,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Gestion des ressources humaines2017-2018 : M2 Gestion des ressources humaines",Universidad Paris Saclay,Francia,Central,$              61.881
-621,4.351.476,Nadia Maria Mercado Vera,Maestría para Profesionales en CyT,"2016-2017 M1  Sciences sociales - Développement durable2017-2018 M2  Développement agricole durable, sécurité alimentaire par le",Universidad Paris Saclay,Francia,Capital,$              62.694
-622,3.653.858,Nathalia Helena Zaracho Echague,Maestría para Investigadores en CyT,"2016/2017 : M1 Biologie Agrosciences2017/2018 : M2 Biologie Agrosciences",Universidad Bordeaux,Francia,Capital,$              61.881
-623,4.082.429,Nathalia Mariel Acosta Delvalle,Maestría para Investigadores en CyT,"2016 - 2017 M1 Biologie et Valorisation des Plantes, parcours Plantes, Environnement etGénie Ecologique.",Universidad Strasbourg,Francia,Itapúa,$              61.721
-624,4.387.382,Nelson Osmar Bobadilla Coronel,Maestría para Profesionales en CyT,"2016-2017 : M1 Sciences du Médicament2017-2018 : M2 Sciences du Médicament – Ciblage thérapeutique et épithélium",Universidad Lyon,Francia,Amambay,$              61.721
-625,4.062.985,Nilda Elizabeth Portillo Torales,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences du médicament2017-2018 : M2 Microbiologie",Universidad Paris Saclay,Francia,Capital,$              62.694
-626,4.686.593,Olga Carolina Aquino Alfonso,Maestría para Investigadores en CyT,"2016-2017 : M1 Biodiversité Écologie Évolution - B2E - Parcours Bioget : Biodiversitévégétale et Gestion  des Ecosystèmes Tropicaux",Universidad Montpellier,Francia,Central,$              61.721
-627,3.369.172,Pablo Rafael Fleitas Paniaga,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences et techniques des activités physiques et sportives2017-2018 : M2 STAPS Spécialité Sciences du Mouvement Humain (SMH) ou STPAS",Universidad Montpellier,Francia,Capital,$              61.721
-628,5.390.534,Pablo Raúl Armoa Ortiz,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire2017-2018 : M2 Biologie moléculaire et cellulaire - spécialité Biochimie et biologie",Universidad Paris 6 - UPMC,Francia,Caaguazú,$              61.721
-629,3.735.181,Paola Giovanna Ayala Fernandez,Maestría para Profesionales en CyT,"2016-2017 : M1 Electronique, Energie électrique, Automatique (EEA)2017-2018 : M2 Electronique, Energie électrique, Automatique (EEA)- Parcours Systèmes",Universidad Grenoble,Francia,Capital,$              61.721
-630,3.706.536,Ramón Ariel Acosta López,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique2017-2018 : M2 Informatique - Spécialité Sécurité, Fiabilité et Performance du",Universidad Paris 6 - UPMC,Francia,Caazapá,$              61.721
-631,2.482.732,Raúl Augusto Vega Britez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports2017-2018 : M2 Economie, environnement, énergie et transports",Universidad Montpellier,Francia,Capital,$              62.085
-632,3.796.764,René Cristóbal Azcurra Irigoita,Maestría para Investigadores en CyT,"2016-2017: M1 Informatique2017-2018: M2 Informatique - Spécialité SFPN - Sécurité, fiabilité et performance du",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
-633,3.807.238,Rodrigo José Genes Faraldo,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique2017-2018 : M2 Informatique - Spécialité science et technologie du logiciel",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
-634,3.410.303,Rose Marie Lefebvre Blasco,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Développement et aménagement touristique des territoires2017-2018 : M2 Indifférencié Développement et aménagement touristique des territoires",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
-635,4.392.661,Ruth Alejandra Ubrán Acuña,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Nutrition et Sciences des Aliments (NSA)2017-2018 : M2 Ingiénierie des produits et des procédés OU Nutrition et santé OU",Universidad Paris Saclay,Francia,Central,$              61.721
-636,3.512.312,Ruth Diana Alvarenga Duarte,Maestría para Profesionales en CyT,"2016/2017 : M1 Santé Publique2017/2018 : M2 Santé Publique",Universidad Paris Saclay,Francia,Capital,$              61.721
-637,3.764.555,Santiago Javier Medina Kennedy,Maestría para Profesionales en CyT,"2016 - 2017 : M1 Géographie Environnementale2017 - 2018 : M2 Géographie Environnementale",Universidad Strasbourg,Francia,Capital,$              62.694
-638,3.414.991,Verónica Irene Miño Marsal,Maestría para Profesionales en CyT,"2016-2017 : M1 Urbanisme et aménagement2017-2018 : M2   Urbanisme et aménagement   Parcours Stratégie, Projets, Maîtrise",Universidad Bordeaux,Francia,Capital,$              62.085
+601,3.638.561,Laura Jazmin Alvarenga Segovia,Maestría para Profesionales en CyT,"2016-2017 : M1 Energe électrique; conversion, matériaux, développement durable
+E2CMD",Universidad Federal Toulouse,Francia,Central,$              61.721
+602,4.478.205,Laurie Alice Vera Jimenez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Histoire et Civilisations comparées - Spécialité Ville, Architecture,
+Patrimoine",Universidad Paris 7 (Diderot),Francia,Capital,$              62.694
+603,4.072.475,Leticia María Alejandra Segovia Cabrera,Maestría para Investigadores en CyT,"2016-2017 : M1 Santé publique
+2017-2018 : M2R Santé publique - Spécialité Epidemologie Clinique",Universidad Federal Toulouse,Francia,Capital,$              61.721
+604,3.197.280,Lilian Carolina Aquino Verón,Maestría para Profesionales en Educación,"2016/2017 : M1 Master Education Formation
+2017/2018 : M2 Master Education Formation",Universidad Aix Marseille,Francia,Capital,$              62.085
+605,3.636.535,Lino César Ramirez Ayala,Doctorado para Investigadores en CyT,"Réorientation du sujet de thèse en cours - Cambio del campo de investigación pendiente
+Processus de placement à relancer en conséquence - El proceso de colocación se hará",Universidad Autonoma de Barcelona,España,Capital,$              78.668
+606,3.866.885,Liz Paola Noguera Zayas,Maestría para Profesionales en CyT,"2016-2017 : M1 Emergence des maladies paraistaires et infectieuses
+2017-2018 : M2 Emergence des maladies paraistaires et infectieuses",Universidad Montpellier,Francia,Itapúa,$              62.694
+607,3.203.552,Lucia Jazmín Martinez Mendoza,Maestría para Profesionales en CyT,"2016-2017 M1  Biologie santé, spécialité Microbiologie-immunologie
+2017-2018 M2  Biologie santé, spécialité Microbiologie-immunologie",Universidad Bordeaux,Francia,Capital,$              62.694
+608,2.818.411,Luis María Ramirez Chamorro,Maestría para Investigadores en CyT,"Doctorat génétique
+Isntitute for Integrative Biology of Cell",Universidad Paris Saclay,Francia,Capital,$           108.740
+609,3.761.472,Marco Antonio Mendieta Avila,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Géographie, Aménagement, Environnement et Développement parcours
+Exploitation et  Développement des Réseaux de Transports Publics",Universidad de Navarra,España,Capital,$              39.332
+610,4.047.848,Maria Carolina Doria Morel,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Innovation, entreprise et société - Voie Sciences Humaines & Sociales
+2017-2018 : M2 Innovation, entreprise et société",Universidad Paris Saclay,Francia,Capital,$              65.897
+611,2.290.311,Maria Cristina Penayo Ortellado,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Méthodes du génie des procédés
+2017-2018 : M2  Procédés, Energie, Environnement",Universidad Paris Saclay,Francia,Capital,$              66.870
+612,3.551.864,María de los Angeles Yakisich Agüero,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Énergie (ex G2Sco)
+2017-2018 : M2 Énergie (ex G2Sco)",Universidad Montpellier,Francia,Central,$              65.897
+613,2.908.996,Maria Fatima Francia Acuña,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie intégrative : Physiologie et neurosciences Parcours animale pré-
+clinique et clinique",Universidad Complutense de Madrid,España,Capital,$              35.332
+614,4.351.211,Maria Ines Campos Mongelos,Maestría para Investigadores en CyT,"2016-2017: M1 Biologie, Santé
+2017-2018 : M2 Vectorologie, Thérapie Génique et Vaccinologie  OU M2",Universidad Federal Toulouse,Francia,Capital,$              61.721
+615,3.514.125,Maria Jose Ibarra Salomon,Maestría para Profesionales en CyT,"2016-2017 : M1 BC2T Biochimie, cellules, cibles thérapeutiques
+2017-2018 : M2P BC2T - Biotechnologie pharmaceutique et thérapies innovantes",Universidad Paris 7 (Diderot),Francia,Central,$              61.721
+616,3.865.266,María Lidia Villalba Benitez,Doctorado para Investigadores en CyT,"Doctorat de droit dans le domaine de la ""Responsabilité Sociale et Environnementale
+(RSE) dans le transport aérien""",Universidad Paris Saclay,Francia,Capital,$           108.130
+617,3.181.438,María Marcelina Sánchez Irala,Maestría para Profesionales en CyT,"2016-2017 : M1 Biologie Santé, génomique, biologie moléculaire et cellulaire, cursus
+scientifique",Universidad Paris Saclay,Francia,Central,$              62.694
+618,4.628.909,Maria Verónica Avalos Robertti,Maestría para Profesionales en CyT,"2016-2017 : M1 Chimie
+2017-2018 : M2 Chimie, ingénierie chimique",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
+619,3.205.492,Mariano José Lara Castro Maldonado,Maestría para Profesionales en Educación,"2016-2017 : M1 Sciences de l'éducation
+2017-2018 : M2 Sciences de l'éducation Spécialité Coopération internationale en",Universidad Paris 5 (Descartes),Francia,Capital,$              62.085
+620,3.367.838,Melissa Jacqueline Pereira Bittar,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Gestion des ressources humaines
+2017-2018 : M2 Gestion des ressources humaines",Universidad Paris Saclay,Francia,Central,$              61.881
+621,4.351.476,Nadia Maria Mercado Vera,Maestría para Profesionales en CyT,"2016-2017 M1  Sciences sociales - Développement durable
+2017-2018 M2  Développement agricole durable, sécurité alimentaire par le",Universidad Paris Saclay,Francia,Capital,$              62.694
+622,3.653.858,Nathalia Helena Zaracho Echague,Maestría para Investigadores en CyT,"2016/2017 : M1 Biologie Agrosciences
+2017/2018 : M2 Biologie Agrosciences",Universidad Bordeaux,Francia,Capital,$              61.881
+623,4.082.429,Nathalia Mariel Acosta Delvalle,Maestría para Investigadores en CyT,"2016 - 2017 M1 Biologie et Valorisation des Plantes, parcours Plantes, Environnement et
+Génie Ecologique.",Universidad Strasbourg,Francia,Itapúa,$              61.721
+624,4.387.382,Nelson Osmar Bobadilla Coronel,Maestría para Profesionales en CyT,"2016-2017 : M1 Sciences du Médicament
+2017-2018 : M2 Sciences du Médicament – Ciblage thérapeutique et épithélium",Universidad Lyon,Francia,Amambay,$              61.721
+625,4.062.985,Nilda Elizabeth Portillo Torales,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences du médicament
+2017-2018 : M2 Microbiologie",Universidad Paris Saclay,Francia,Capital,$              62.694
+626,4.686.593,Olga Carolina Aquino Alfonso,Maestría para Investigadores en CyT,"2016-2017 : M1 Biodiversité Écologie Évolution - B2E - Parcours Bioget : Biodiversité
+végétale et Gestion  des Ecosystèmes Tropicaux",Universidad Montpellier,Francia,Central,$              61.721
+627,3.369.172,Pablo Rafael Fleitas Paniaga,Maestría para Investigadores en CyT,"2016-2017 : M1 Sciences et techniques des activités physiques et sportives
+2017-2018 : M2 STAPS Spécialité Sciences du Mouvement Humain (SMH) ou STPAS",Universidad Montpellier,Francia,Capital,$              61.721
+628,5.390.534,Pablo Raúl Armoa Ortiz,Maestría para Investigadores en CyT,"2016-2017 : M1 Biologie moléculaire et cellulaire
+2017-2018 : M2 Biologie moléculaire et cellulaire - spécialité Biochimie et biologie",Universidad Paris 6 - UPMC,Francia,Caaguazú,$              61.721
+629,3.735.181,Paola Giovanna Ayala Fernandez,Maestría para Profesionales en CyT,"2016-2017 : M1 Electronique, Energie électrique, Automatique (EEA)
+2017-2018 : M2 Electronique, Energie électrique, Automatique (EEA)- Parcours Systèmes",Universidad Grenoble,Francia,Capital,$              61.721
+630,3.706.536,Ramón Ariel Acosta López,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique
+2017-2018 : M2 Informatique - Spécialité Sécurité, Fiabilité et Performance du",Universidad Paris 6 - UPMC,Francia,Caazapá,$              61.721
+631,2.482.732,Raúl Augusto Vega Britez,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Economie, environnement, énergie et transports
+2017-2018 : M2 Economie, environnement, énergie et transports",Universidad Montpellier,Francia,Capital,$              62.085
+632,3.796.764,René Cristóbal Azcurra Irigoita,Maestría para Investigadores en CyT,"2016-2017: M1 Informatique
+2017-2018: M2 Informatique - Spécialité SFPN - Sécurité, fiabilité et performance du",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
+633,3.807.238,Rodrigo José Genes Faraldo,Maestría para Profesionales en CyT,"2016-2017 : M1 Informatique
+2017-2018 : M2 Informatique - Spécialité science et technologie du logiciel",Universidad Paris 6 - UPMC,Francia,Capital,$              61.721
+634,3.410.303,Rose Marie Lefebvre Blasco,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Développement et aménagement touristique des territoires
+2017-2018 : M2 Indifférencié Développement et aménagement touristique des territoires",Universidad Paris 1 (Panthéon Sorbonne),Francia,Capital,$              62.085
+635,4.392.661,Ruth Alejandra Ubrán Acuña,Maestría para Profesionales en otras áreas relevantes,"2016-2017 : M1 Nutrition et Sciences des Aliments (NSA)
+2017-2018 : M2 Ingiénierie des produits et des procédés OU Nutrition et santé OU",Universidad Paris Saclay,Francia,Central,$              61.721
+636,3.512.312,Ruth Diana Alvarenga Duarte,Maestría para Profesionales en CyT,"2016/2017 : M1 Santé Publique
+2017/2018 : M2 Santé Publique",Universidad Paris Saclay,Francia,Capital,$              61.721
+637,3.764.555,Santiago Javier Medina Kennedy,Maestría para Profesionales en CyT,"2016 - 2017 : M1 Géographie Environnementale
+2017 - 2018 : M2 Géographie Environnementale",Universidad Strasbourg,Francia,Capital,$              62.694
+638,3.414.991,Verónica Irene Miño Marsal,Maestría para Profesionales en CyT,"2016-2017 : M1 Urbanisme et aménagement
+2017-2018 : M2   Urbanisme et aménagement   Parcours Stratégie, Projets, Maîtrise",Universidad Bordeaux,Francia,Capital,$              62.085
 639,2.621.810,Delia Lucia Cañete Estigarribia,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,Capital,$              29.856
-640,4.227.528,Griselda Sosa Zorrilla,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Univesidad Complutense de Madrid,España,Paraguari,$              31.394
+640,4.227.528,Griselda Sosa Zorrilla,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Univesidad Complutense de Madrid,España,Paraguari,$              31.394
 641,3.743.139,César Elias Velázquez,Maestría para Profesionales en Educación,Máster Universitario en Profesorado,Universidad de Navarra,España,San Pedro,$              30.318
-642,3.694.948,Liz Daiana Ibarrola Meza,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+642,3.694.948,Liz Daiana Ibarrola Meza,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 643,3.394.769,Sandra Carolina Quiñonez González,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Caaguazú,$              29.856
 644,3.798.897,Diana Concepcion Bordon de Llano,Maestría para Profesionales en Educación,Máster en Intervención Educativa y Psicología,Universidad de Navarra,España,Capital,$              30.318
 645,4.105.376,Liz Mariela Britez Brizuela,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,San Pedro,$              29.856
 646,2.530.355,Miguel Angel Aquino Gutiérrez,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
-647,3.520.130,Cynthia Elena Caríssimo Báez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+647,3.520.130,Cynthia Elena Caríssimo Báez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 648,3.582.755,Maria Romina Ramirez  Speratti,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Itapúa,$              30.318
-649,3.246.432,Nery Antonio Martinez Tabare,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+649,3.246.432,Nery Antonio Martinez Tabare,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 650,1.876.857,Ana Elizabeth Rios Bareiro,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Capital,$              30.318
 651,4.554.771,Elena Analiheser Carreras Corbalan,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Concepción,$              31.394
 652,4.393.204,Maria Julia Gavilan Romero,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Paraguari,$              30.318
 653,3.747.193,Cristhian Abel Aquino González,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Alto Paraná,$              30.318
 654,4.095.073,Nelson Villalba Barreto,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Caaguazú,$              31.394
 655,3.032.594,María del Carmen Maciel Barboza,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,Itapúa,$              29.856
-656,4.657.819,Oscar Misael Sosa Gómez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-657,3.472.717,Silvana Patricia Antonioli Ortíz,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+656,4.657.819,Oscar Misael Sosa Gómez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+657,3.472.717,Silvana Patricia Antonioli Ortíz,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 658,4.455.303,RAMON BRITEZ PORTILLO,Maestría para Profesionales en Educación,Máster Universitario en Profesorado,Universidad de Navarra,España,Guairá,$              30.318
-659,4.017.503,CRISTHIAN RENE RAMIREZ APONTE,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+659,4.017.503,CRISTHIAN RENE RAMIREZ APONTE,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 660,3.891.213,Claudia Isabel Pereira Fernández,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Concepción,$              29.856
 661,3.425.034,Mónica Nathalia López Cáceres,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Ñeembucú,$              30.318
-662,4.311.480,Sara Domínguez Acosta,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+662,4.311.480,Sara Domínguez Acosta,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 663,2.423.191,Maria Lucia Rivas Benitez,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Capital,$              30.318
 664,4.434.063,César Joel Páez Fretes,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Capital,$              30.318
-665,3.817.013,Sonia Elizabeth Sanabria Irigoyen,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-666,2.196.407,Hugo Daniel Yahari,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-667,4.682.458,Ana Beatriz Duarte Verdun,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+665,3.817.013,Sonia Elizabeth Sanabria Irigoyen,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+666,2.196.407,Hugo Daniel Yahari,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+667,4.682.458,Ana Beatriz Duarte Verdun,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 668,2.086.489,Guillermo Enrique Benitez Villalobos,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Caaguazú,$              31.394
-669,4.127.152,Ancelma Raquel Valiente González,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
-670,3.820.249,Mary Liliana Martínez Caballero,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Caaguazú,$              31.394
+669,4.127.152,Ancelma Raquel Valiente González,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
+670,3.820.249,Mary Liliana Martínez Caballero,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Caaguazú,$              31.394
 671,4.009.488,Robert Raúl Riveros Zelaya,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Paraguari,$              30.318
 672,3.817.779,Jorge Servin,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Caaguazú,$              30.318
-673,3.369.756,Verónica Cristina Vera Jiménez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-674,3.569.266,Natasha Romina Ferreira Limprich,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+673,3.369.756,Verónica Cristina Vera Jiménez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+674,3.569.266,Natasha Romina Ferreira Limprich,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 675,2.698.272,Terecita Dejesus Setrini Maciel,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Itapúa,$              29.856
-676,3.837.752,Marlyn Noemí López Rojas,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+676,3.837.752,Marlyn Noemí López Rojas,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 677,4.175.631,Richard Recalde Adorno,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Central,$              30.318
 678,3.510.7,Rossana Carolina Franco Quiñonez,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
 679,3.305.222,Cynthia Raquel Rolón Cañete,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
@@ -682,27 +779,39 @@ No,C.I.,Nombre y Apellido,Tipo de Beca (según Programa aprobado),Maestria / Doc
 682,3.674.763,Nilsa Mariela Galeano de Insaurralde,Maestría para Profesionales en Educación,Máster Universitario en Profesorado,Universidad Navarra,España,Guairá,$              30.318
 683,3.672.094,María Graciela Rolón,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,Central,$              29.856
 684,3.981.620,Rosalina Mercado Zárate,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Guairá,$              31.394
-685,2.070.544,Stefanía González Biedermann,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-686,4.341.169,Maria Victoria Argaña Villalba,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
-687,1.427.901,Paola Rosanna Racchi Salvadó,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+685,2.070.544,Stefanía González Biedermann,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+686,4.341.169,Maria Victoria Argaña Villalba,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+687,1.427.901,Paola Rosanna Racchi Salvadó,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 688,1.796.795,Maria Verónica Llamas Gómez,Maestría para Profesionales en Educación,"Máster en Didácticas Especificas en el Aula, Museos y Espacios Naturales",Universidad Autónoma de Madrid,España,Capital,$              29.856
-689,4.053.490,Maria Cristina Cano Caballero,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
+689,4.053.490,Maria Cristina Cano Caballero,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
 690,3.658.691,Paula Herminia Vazquez Delgadillo,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
-691,3.858.307,Jorge Anibal Maldonado Agüero,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+691,3.858.307,Jorge Anibal Maldonado Agüero,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 692,4.066.649,Adela Enciso Ferreira,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,San Pedro,$              30.318
 693,2.036.652,Fabiana Insaurralde Godoy,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,Caaguazú,$              29.856
-694,3.783.054,Elida Mariza Lesme Ramirez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Cordillera,$              31.394
+694,3.783.054,Elida Mariza Lesme Ramirez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Cordillera,$              31.394
 695,4.021.565,GERARDO MARTINEZ ORTIZ,Maestría para Profesionales en Educación,"Máster en Didácticas Especificas en el Aula, Museos y Espacios Naturales",Universidad Autónoma de Madrid,España,Guairá,$              29.856
-696,3.416.069,Gladys Emilce Almada Acosta,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
+696,3.416.069,Gladys Emilce Almada Acosta,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
 697,4.663.109,Estela Jadiyi Gonzlez Melida,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Capital,$              30.318
-698,3.770.537,Ariana Josefina Cañete Villalba,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+698,3.770.537,Ariana Josefina Cañete Villalba,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
 699,4.024.685,Yeni Alicia Servin Mendieta,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Cordillera,$              30.318
 700,4.193.850,Nancy Liliana Arce Oviedo,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Caaguazú,$              31.394
-701,2.345.362,Liza Graciela Benitez Sanabria,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Alto Paraná,$              31.394
+701,2.345.362,Liza Graciela Benitez Sanabria,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Alto Paraná,$              31.394
 702,4.026.385,Mariela Ramona Ramirez Bogado,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Concepción,$              31.394
-703,3.630.262,Katiana Soledad Solís Gómez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Ñeembucú,$              31.394
-704,3.171.115,Sandra Laury Elizabeth Haurón figueredo,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Itapúa,$              31.394
-705,3.402.975,Ninfa González Orrego,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Paraguari,$              31.394
+703,3.630.262,Katiana Soledad Solís Gómez,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Ñeembucú,$              31.394
+704,3.171.115,Sandra Laury Elizabeth Haurón figueredo,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Itapúa,$              31.394
+705,3.402.975,Ninfa González Orrego,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Paraguari,$              31.394
 706,3.543.792,Rosalba Jara Torres,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Paraguari,$              29.856
 707,3.590.339,Fatima Rocio Rodriguez Fromherz,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Amambay,$              31.394
 708,3.472.564,MARIA LORENA LARRE SACHERO,Maestría para Profesionales en Educación,"Máster en Didácticas Especificas en el Aula, Museos y Espacios Naturales",Universidad Autónoma de Madrid,España,Capital,$              29.856
@@ -710,31 +819,41 @@ No,C.I.,Nombre y Apellido,Tipo de Beca (según Programa aprobado),Maestria / Doc
 710,3.777.303,Luz Rebeca Molinas Villalba,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Alto Paraná,$              31.394
 711,3.692.985,Lourdes Alegre Pereira,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
 712,3.788.896,CARMEN CACERES DOMINGUEZ,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Concepción,$              31.394
-713,3.485.721,Fátima del Rosario Dávalos Florentín,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
-714,3.426.520,Inés Herminia Quintana Ramos,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad enOrientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+713,3.485.721,Fátima del Rosario Dávalos Florentín,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
+714,3.426.520,Inés Herminia Quintana Ramos,Maestría para Profesionales en Educación,"Máster en Formación Internacional Especialidad del Profesorado Especialidad en
+Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 715,3.977.116,MARIA DIGNA MARIN NUÑEZ,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Concepción,$              31.394
 716,3.497.511,José María Castillo Vega,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Capital,$              31.394
 717,2.276.841,Susana Brisueña Perez,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Concepción,$              30.318
 718,2.092.957,Claudia Carolina Parquet Ruiz Diaz,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Capital,$              29.856
 719,4.192.952,Nimia Mercedes Natalia Chaparro Gamarra,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Cordillera,$              31.394
-720,4.680.546,Gilda Rosana Arroyo Guainer,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Boquerón,$              31.394
+720,4.680.546,Gilda Rosana Arroyo Guainer,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Boquerón,$              31.394
 721,3.599.363,Ana María Barreto Araujo,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Caaguazú,$              29.856
-722,3.509.598,Laura Elizabeth Molinas Avalos,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+722,3.509.598,Laura Elizabeth Molinas Avalos,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 723,3.431.901,Francisco Javier Colman Ramirez,Maestría para Profesionales en Educación,"Máster en Didácticas Especificas en el Aula, Museos y Espacios Naturales",Universidad Autónoma de Madrid,España,Capital,$              29.856
 724,3.549.873,CYNTHIA MARIA TORRES DECOUD,Maestría para Profesionales en Educación,Máster de calidad y mejora de la educación,Universidad Autónoma de Madrid,España,Paraguari,$              29.856
-725,3.003.960,María Estela Martínez González,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Caaguazú,$              31.394
+725,3.003.960,María Estela Martínez González,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Caaguazú,$              31.394
 726,4.224.783,VIVIANA CELESTE FERREIRA VALDEZ,Maestría para Profesionales en Educación,"Máster en Especialización en didácticas en el aula, museos y espacios naturales",Universidad Complutense de Madrid,España,Concepción,$              29.856
-727,4.075.799,Nancy Mercedes Martinez Caceres,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
+727,4.075.799,Nancy Mercedes Martinez Caceres,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,San Pedro,$              31.394
 728,3.522.334,OLGA ADILI ACOSTA MOREL,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Paraguari,$              31.394
 729,2.459.980,Rocio Maria Celeste Palacios Zuiderwyk,Maestría para Profesionales en Educación,Máster en tecnologías de la información y la comunicación en educación y formación,Universidad Autónoma de Madrid,España,Itapúa,$              29.856
 730,3.467.544,Jorge Javier Segovia Yegros,Maestría para Profesionales en Educación,Máster en Profesorado,Universidad de Navarra,España,Itapúa,$              30.318
 731,4.117.661,Elvio Vera Godoy,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Univesidad Complutense de Madrid,España,Caaguazú,$              31.394
-732,3.661.416,Vicenta Martínez Fariña,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
-733,3.837.272,Ever Daniel Cáceres Rolín,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Itapúa,$              31.394
-734,4.378.740,Juana Romelia Penayo Diaz,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
+732,3.661.416,Vicenta Martínez Fariña,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Concepción,$              31.394
+733,3.837.272,Ever Daniel Cáceres Rolín,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Itapúa,$              31.394
+734,4.378.740,Juana Romelia Penayo Diaz,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Capital,$              31.394
 735,3.665.225,Valentina Aquino Araujo,Maestría para Profesionales en Educación,Máster Universitario en Estudios Avanzados en Educación Social,Universidad Complutense de Madrid,España,Itapúa,$              31.394
 736,5.179.216,Daniela Ester Irala,Maestría para Profesionales en Educación,"Máster en Especialización en didácticas en el aula, museos y espacios naturales",Universidad Autónoma de Madrid,España,Argentina,$              29.856
-737,3.723.815,Hilda Ramona Benítez Fernández,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del ProfesoradoEspecialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
+737,3.723.815,Hilda Ramona Benítez Fernández,Maestría para Profesionales en Educación,"Máster Universitario en Formación Internacional Especializada del Profesorado
+Especialidad en Orientación Educativa",Universidad Complutense de Madrid,España,Central,$              31.394
 738,3.481.977,Gabriela María Fretes Centurión,Becas de Doctorado,,,Estados Unidos,Capital,$              20.270
 739,,Jose Fernando Báez Martinez,,,,,,$           180.000
 740,,Lourdes Martinez Rojas,,,,,,$           180.000
@@ -810,7 +929,8 @@ No,C.I.,Nombre y Apellido,Tipo de Beca (según Programa aprobado),Maestria / Doc
 810,1.477.464,"Romero, María Laura",Maestría para Profesionales en Educación,Maestría en Psicología Educacional,Universidad de Buenos Aires (UBA),Argentina,Capital,2 7.819
 811,4.373.804,"Romero Sarubbi, Giovanna Leticia",Maestría para Profesionales en Educación,Maestría en Educación Internacional y Desarrollo,University of Pennsylvania,Estados Unidos,Capital,7 7.000
 812,2.194.461,"Ruiz Díaz, Jazmín",Maestría para Investigación en CyT,Máster en Industrias Culturales y Creativas,King s College London,Reino Unido,,
-813,1.528.119,"Ruiz Zubizarreta, Joaquín",Doctorado en Ciencias y Tecnología,Doctorado en Antropología social y etnología,"École des hautes études en sciences sociales (EHESS) / ParisSciences et Lettres (PSL) / École normale supérieure (ENS)",Francia,,
+813,1.528.119,"Ruiz Zubizarreta, Joaquín",Doctorado en Ciencias y Tecnología,Doctorado en Antropología social y etnología,"École des hautes études en sciences sociales (EHESS) / Paris
+Sciences et Lettres (PSL) / École normale supérieure (ENS)",Francia,,
 814,3.382.719,"Ruttia Vittone, Maria Betania",Maestría para Profesionales en Educación,Máster de Artes Visuales y Educación: Un Enfoque Construccionista,Universidad de Barcelona,España,,
 815,4.490.412,"Sanchez Capurro, Carmen Celeste",Maestría para Profesionales en Educación,Máster en Educación para la Justicia Social,Universidad Autónoma de Madrid,España,,
 816,3.896.940,"Sánchez, Denise Pamela",Maestría para Investigación en CyT,Maestría en Calidad de Alimentos de Origen Animal,Universidad Autónoma de Barcelona,España,Capital,3 2.532
@@ -886,23 +1006,63 @@ No,C.I.,Nombre y Apellido,Tipo de Beca (según Programa aprobado),Maestria / Doc
 886,1757023,Felisa Elizabeth Lopez Baez,Programa 2,"Didáctica, métodos de enseñanza y aprendizaje, ingeniería educativa",Faculté d’Education – Université de Montpelier,Francia,Misiones,"€ 23.812,20"
 887,2162568,Cristina Isabel Leguizamon,Programa 2,"Didáctica, métodos de enseñanza y aprendizaje, ingeniería educativa",Faculté d’Education – Université de Montpelier,Francia,Capital,"€ 23.812,20"
 888,1868456,María Magdalena Montiel,Programa 2,"Didáctica, métodos de enseñanza y aprendizaje, ingeniería educativa",Faculté d’Education – Université de Montpelier,Francia,Concepción,"€ 23.812,20"
-889,3379833,Vilma Elizabeth Enciso Gavilán,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Ñeembucú,"€ 22.934,43"
-890,695112,Ida Silvana Oviedo Colina,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Central,"€ 23.066,43"
-891,3416407,Milia Dalila Molas de Penayo,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,San Pedro,"€ 22.934,43"
-892,3576551,Liz Paola Lugo Benitez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Central,"€ 23.066,43"
-893,3677716,Rosalba Bernal,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
-894,2939960,Alfredo Santander Martinez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Alto Paraná,"€ 22.934,43"
-895,2039478,Claudia Britez de Perez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Capital,"€ 22.934,43"
-896,2104288,Claudia Ines Arzamendia,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Capital,"€ 23.066,43"
-897,2890037,Zully Elizabeth Duarte Torres,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Cordillera,"€ 22.934,43"
-898,2995859,Marlene Barrios Gimenez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
-899,3217341,Lilian Graciela Ramos,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Concepción,"€ 22.934,43"
-900,3697544,Lilian Rosa Mercado Pintos,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Guairá,"€ 22.934,43"
-901,1815992,Blanca Eloisa Benitez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Presidente Hayes,"€ 23.066,43"
-902,1538093,Liz Del Carmen Peralta de Acuña,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Itapúa,"€ 22.934,43"
-903,2265459,Isidro Manuel Amarilla Molas,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Capital,"€ 22.934,43"
-904,1177862,María Ines Cáceres Frontino,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Alto Paraná,"€ 23.066,43"
-905,3294922,Laura Adelaida Melgarejo Torres,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
-906,3281373,Nancy Carlina Coronel Riveros,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Concepción,"€ 22.934,43"
-907,3361741,Florencio Brizuela Bernal,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,Concepción,"€ 22.934,43"
-908,3554415,María Elena Benítez Leiva,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) ToulouseMidi Pyrénées",Francia,San Pedro,"€ 22.934,43"
+889,3379833,Vilma Elizabeth Enciso Gavilán,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Ñeembucú,"€ 22.934,43"
+890,695112,Ida Silvana Oviedo Colina,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Central,"€ 23.066,43"
+891,3416407,Milia Dalila Molas de Penayo,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,San Pedro,"€ 22.934,43"
+892,3576551,Liz Paola Lugo Benitez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Central,"€ 23.066,43"
+893,3677716,Rosalba Bernal,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
+894,2939960,Alfredo Santander Martinez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Alto Paraná,"€ 22.934,43"
+895,2039478,Claudia Britez de Perez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Capital,"€ 22.934,43"
+896,2104288,Claudia Ines Arzamendia,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Capital,"€ 23.066,43"
+897,2890037,Zully Elizabeth Duarte Torres,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Cordillera,"€ 22.934,43"
+898,2995859,Marlene Barrios Gimenez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
+899,3217341,Lilian Graciela Ramos,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Concepción,"€ 22.934,43"
+900,3697544,Lilian Rosa Mercado Pintos,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Guairá,"€ 22.934,43"
+901,1815992,Blanca Eloisa Benitez,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Presidente Hayes,"€ 23.066,43"
+902,1538093,Liz Del Carmen Peralta de Acuña,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Itapúa,"€ 22.934,43"
+903,2265459,Isidro Manuel Amarilla Molas,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Capital,"€ 22.934,43"
+904,1177862,María Ines Cáceres Frontino,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Alto Paraná,"€ 23.066,43"
+905,3294922,Laura Adelaida Melgarejo Torres,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Caaguazú,"€ 22.934,43"
+906,3281373,Nancy Carlina Coronel Riveros,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Concepción,"€ 22.934,43"
+907,3361741,Florencio Brizuela Bernal,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,Concepción,"€ 22.934,43"
+908,3554415,María Elena Benítez Leiva,Programa 3,"Didáctica, métodos de enseñanza y aprendizajes de las ciencias matemáticas, física, química,
+ciencias de la vida y de la tierra","Ecole supérieure du professorat et de l'éducation (ESPE) Toulouse
+Midi Pyrénées",Francia,San Pedro,"€ 22.934,43"
