@@ -23,7 +23,7 @@ becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # Se eliminan los
 ```
 
 ## Perfil demográfico de los becarios
-
+###limpiar datos de ciudades y departamentos(?)
 Análisis de la distribución de becarios por edad, sexo, sector laboral, ciudad/departamento origen
 y ciudad/departamento residencia.
 
@@ -173,9 +173,8 @@ quantile(becal_meses_duracion_limpio$mesesdeduraciondeestudios, probs = c(0.25, 
 ### Completitud de estudios
 
 Análisis para calcular los cuantiles (25%, 50%, 75%, 100%)  de completitud  de los estudios.
-Tecnica utilizada: completitud() de utils.R
+Tecnica utilizada: completitud() de utils.R y quantile(). Funcionn agregada completitud_for
 
-##falta completar
 ```{r completitud_estudio}
 
 #preprocesamiento
@@ -183,10 +182,41 @@ becal_completo$mesesdeduraciondeestudios = as.numeric(becal_completo$mesesdedura
 becal_meses_duracion_limpio = subset(becal_completo, becal_completo$mesesdeduraciondeestudios > 0) #limpiamos los meses con duracion 0 y los NA
 becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('-',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos aquellos registros con iniciocobertura con formato <fecha>-<fecha>-<fecha>
 becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('Y',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos aquellos registros con iniciocobertura con formato <fecha> Y <fecha>
+becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('al',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos aquellos registros con iniciocobertura con formato <fecha> al <fecha>
+becal_meses_duracion_limpio = becal_meses_duracion_limpio[grep('010/16',becal_meses_duracion_limpio$iniciocoberturadebeca, invert = TRUE),] #eliminamos el caso de uno de los registros con fecha 1/010/16, donde el formato del anho no corresponde
 
 paste("Cantidad de registros (n=", nrow(becal_meses_duracion_limpio),")")
 
-#sapply(becal_meses_duracion_limpio$iniciocoberturadebeca, completitud, becal_meses_duracion_limpio$mesesdeduraciondeestudios)
+##### Version de completitud de utils.R con el loop for. Esto soluciona un error con el sapply
+completitud_for = function(x) {
+  list <- integer(0)
+  for(i in seq_len(nrow(x))){
+    
+    inicio = x[i,'iniciocoberturadebeca']
+    duracion = x[i,'mesesdeduraciondeestudios']
+    
+    hoy = Sys.Date()
+    duracion = as.numeric(duracion)
+    inicio = as.Date(strptime(inicio, "%m/%d/%Y"))
+    aux_fin = seq(inicio, by='months',length.out=duracion)
+    fin = aux_fin[length(aux_fin)]
+    if (hoy >= fin) {
+      list <- c(list,100)
+    } else {
+      meses_completados = length(seq(inicio, hoy, by='months'))-1
+      porcentaje_faltante = round((meses_completados/duracion)*100,0)
+      list <- c(list,porcentaje_faltante)
+    }
+  }
+  
+  return(list)
+}
+
+#####
+x = completitud_for(becal_meses_duracion_limpio)
+summary(x)
+quantile(x, probs = c(0.25, 0.5, 0.75, 1))
+
 
 ```
 
@@ -298,16 +328,15 @@ Análisis que calcular el top-10 de montos de coberturas y el tipo de estudio a q
 
 ```{r top10_montos}
 
+becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
+becal_total_unique_values = becal_total_limpio[!duplicated(becal_total_limpio$totalgralusd),]#solo tomamos valores unicos de los montos, de manera a agarrar el top de los montos 
 
-#becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
-#categoria_ordenada = sort(becal_total_limpio$totalgralusd, decreasing = T)
-#dis_categoriauni = table(categoria_ordenada)
-#categoria_ordenadas = head(dis_categoriauni,10)  # ordena las categorias de mayor a menor
+categoria_ordenada = becal_total_unique_values[order(-becal_total_unique_values$totalgralusd),]#ordenamos el dataset por monto de cobertura (descendente) 
 
-#xx = barplot(dis_categoriauni, main=paste("Becarios por rango de ranking de universidad (n=", nrow(becal_total_limpio),")"), ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
+#becarios_cobertura_top_10 =  table(droplevels(as.factor(categoria_ordenada$tipoestudio)), categoria_ordenada$totalgralusd)
+becarios_cobertura_top_10 = head(categoria_ordenada[,c('tipoestudio','totalgralusd')],10)#tomamos los primeros diez valores
 
-#text(x = xx, y = becal_total_limpio$tipoestudio, label = becal_total_limpio$tipoestudio, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
-
+becarios_cobertura_top_10 #TOP-10 Montos de cobertura
 
 ```
 
@@ -323,7 +352,8 @@ Tecnica utilizada: cor()
 
 ```{r correlacion}
 becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
-cor(as.numeric(becal_total_limpio$mesesdeduraciondeestudios), becal_total_limpio$totalgralusd) #estas dos variables estan fuermente relaciones. 
+cor(as.numeric(becal_total_limpio$mesesdeduraciondeestudios), becal_total_limpio$totalgralusd) #correlacion. 
 ```
 
 ####Resultados
+High Positive correlation

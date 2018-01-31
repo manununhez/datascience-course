@@ -5,13 +5,13 @@
 library(stringi)
 
 # Funcion que convierte montos expresados en variables del tipo caracter a montos del tipo entero.
-# Para ello convierte los montos en euros a dolaresm, utilizando el cambio 1E->1.17USD, ademÃ¡s
-# elimina los signos de dolar y euro asÃ­ como tambiÃ©n los puntos y espacios vacios. Finalmente,
-# redondea los montos decimales incrementando el parte entera si el primer digito despuÃ©s de la coma 
+# Para ello convierte los montos en euros a dolaresm, utilizando el cambio 1E->1.17USD, además
+# elimina los signos de dolar y euro así como también los puntos y espacios vacios. Finalmente,
+# redondea los montos decimales incrementando el parte entera si el primer digito después de la coma 
 # es mayor a 5
 convertir_totalgeneral = function(monto) {
-  if (grepl('â‚¬',monto)) {
-    monto = gsub('â‚¬', '', monto)     # eliminar signo euro
+  if (grepl('???',monto)) {
+    monto = gsub('???', '', monto)     # eliminar signo euro
     monto = gsub(' ', '', monto)     # eliminar espacios vacios
     monto = gsub('\\.', '', monto)   # eliminar punto
     monto = gsub('\\,', '.', monto)  # remplazar coma por punto
@@ -21,8 +21,8 @@ convertir_totalgeneral = function(monto) {
     return(monto)
   }  else {
     monto = gsub('\\$', '', monto)  # eliminar signo dolar
-    monto = gsub(' ', '', monto)     # eliminar espacios vacios
     monto = gsub('\\.', '', monto)   # eliminar punto
+    monto = gsub(' ', '', monto)     # eliminar espacios vacios
     monto = gsub('\\,', '.', monto)  # remplazar coma por punto
     monto = as.numeric(monto)        # convertir a tipo numerico
     monto = round(monto)
@@ -47,9 +47,9 @@ convertir_fecha_textual = function(fecha_ad) {
   }
 }
 
-# FunciÃ³n que limpia nombres utilizando la siguiente heuristica. Los nombres son convertidos a 
-# minÃºsculas sin espacios vacÃ­os y conteniendo solo caracteres a-z sin artÃ­culos ni acentos, ni Ã±s, 
-# ni parÃ©ntesis, ni /, etc. 
+# Función que limpia nombres utilizando la siguiente heuristica. Los nombres son convertidos a 
+# minúsculas sin espacios vacíos y conteniendo solo caracteres a-z sin artículos ni acentos, ni ñs, 
+# ni paréntesis, ni /, etc. 
 limpiar_nombres = function(nombre) {
   nombre = tolower(nombre)  # pasar a minusculas
   nombre = stri_trans_general(nombre, 'latin-ascii')  # remover acentos
@@ -57,23 +57,23 @@ limpiar_nombres = function(nombre) {
   return (nombre)
 }
 
-# FunciÃ³n que elimina acentos, espacios vacios redundantes, y convierte texto a minÃºscula
+# Función que elimina acentos, espacios vacios redundantes, y convierte texto a minúscula
 normalizar_texto = function(texto) {
   texto = tolower(texto)  # pasar texto a minusculas
   texto = stri_trans_general(texto, 'latin-ascii')  # remover acentos
   #texto = gsub('[^a-z\\s]', '', texto)  # remover caracteres no alfabeticos excepto espacio
-  texto = str_trim(texto) # elimina espacios vacios de adelante y atrÃ¡s
+  texto = str_trim(texto) # elimina espacios vacios de adelante y atrás
   return (texto)
 }
 
-# FunciÃ³n que calcula el nivel de completitud del estudio. Recibe como parÃ¡metros la fecha de 
-# inicio de la cobertura y la duraciÃ³n del estudio. Devuelve un nÃºmero de 0-100 indicando
+# Función que calcula el nivel de completitud del estudio. Recibe como parámetros la fecha de 
+# inicio de la cobertura y la duración del estudio. Devuelve un número de 0-100 indicando
 # el porcentaje de completitud del estudio.
 completitud = function(inicio, duracion) {
   hoy = Sys.Date()
   duracion = as.numeric(duracion)
   inicio = as.Date(strptime(inicio, "%m/%d/%Y"))
-  aux_fin = seq(inicio, by='months',length.out=duracion)
+  aux_fin = seq(inicio, by='months',length=duracion)
   fin = aux_fin[length(aux_fin)]
   if (hoy >= fin) {
     return (100)

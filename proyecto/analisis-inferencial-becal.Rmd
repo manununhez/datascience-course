@@ -1,0 +1,112 @@
+---
+title: "Template Tarea: Inferencia Estadística"
+author: ""
+date: "12/7/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+library(stringr)
+source('utils.R') #importamos libreria
+becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFactors = F, fileEncoding = "utf-8") #leemos los datos del archivo correspondiente y lo guardamos en una variable local
+```
+
+```{r, echo=FALSE}
+#Preprocesamiento
+becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # Se eliminan los registros cuyo tipo de estudio no sean maestría o doctorado
+```
+
+## Diferencia en la cantidad de meses de estudio entre hombres y mujeres
+
+Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
+
+Técnica:Sexo -> Categorico 
+        Meses de estudio -> Discreto
+        ----
+        T-test/ANOVA
+          
+          
+```{r diferencia_becas_sexo}
+# Escribir aquí el código que compute la diferencia en la cantidad de becas 
+# asignadas a hombre y mujeres
+
+becarios_masculino = nrow(becal_completo[grep('Masculino', becal_completo$sexo),])
+becarios_femenino = nrow(becal_completo[grep('Femenino', becal_completo$sexo),])
+diff_becarios_x_sexo = becarios_femenino - becarios_masculino
+
+```
+
+Describir aquí los resultados
+
+## Diferencia en edad entre becarios funcionarios públicos y becarios trabajadores del sector privado
+
+Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
+
+```{r diferencia_becas_sector}
+# Escribir aquí el código que calcule diferencia en cantidad de becas 
+# adjudicadas a funcionarios públicos y trabajadores del sector privado
+
+becal_completo$funcionariopublicoinstitucion = str_trim(becal_completo$funcionariopublicoinstitucion)#quitamos espacios en blanco
+sectortrabajofuncionario_privado = nrow(becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),])#valor privado si es que el valor de funcionariopublicoinstitucion es NO 
+sectortrabajofuncionario_publico = nrow(becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),]) #con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
+
+diff_funcionario_publico_privado = sectortrabajofuncionario_privado - sectortrabajofuncionario_publico
+
+```
+
+Describir aquí los resultados
+
+### Diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
+
+Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas
+
+```{r diferencia_becas_tipo}
+# Escribir aquí el código que calcule la diferencia en cantidad de becas 
+# por tipo (maestría/doctorado)
+
+becarios_maestria = nrow(becal_completo[grep('maestria', becal_completo$tipoestudio),])
+becarios_doctorado = nrow(becal_completo[grep('doctorado', becal_completo$tipoestudio),])
+diff_becarios_tipoestudio = becarios_maestria - becarios_doctorado
+
+```
+
+Describir aquí los resultados
+
+### Diferencia en la cantidad de meses de estudio entre los residentes de la capital, central, e interior
+
+Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
+
+```{r diferencia_becas_ciudad_residencia}
+# Escribir aquí el código que compute la diferencia entre cantidad de becas 
+# adjudicadas a gente residente en la capital y gente residente en el interior
+becal_completo$departamentoderesidencia = limpiar_nombres(becal_completo$departamentoderesidencia)
+
+becal_departamento_sin_na = subset(becal_completo, becal_completo$departamentoderesidencia != 'no corresponde' & becal_completo$departamentoderesidencia != 'no aplica' & becal_completo$departamentoderesidencia != 'sin dato' & becal_completo$departamentoderesidencia != '' ) # elimino los valores ausentes
+
+becarios_central = nrow(becal_departamento_sin_na[grep('central', becal_completo$departamentoderesidencia),])
+becarios_interior = nrow(becal_departamento_sin_na[grep('central', becal_completo$departamentoderesidencia, invert = TRUE),])
+diff_becarios_central_interior = becarios_interior - becarios_central
+```
+
+Describir aquí los resultados
+
+## Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios
+
+Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
+
+```{r diferencia_becas_lugar_residencia}
+# Escribir aquí el código que analize la diferencia en montos adjudicados entre 
+# becarios que viven en Asunción y becarios que residen en el interior del país
+becal_completo$ciudadderesidencia = limpiar_nombres(becal_completo$ciudadderesidencia)
+
+becarios_asuncion = nrow(becal_completo[grep('asuncion', becal_completo$ciudadderesidencia),])
+becarios_fuera_asuncion = nrow(becal_completo[grep('asuncion', becal_completo$ciudadderesidencia, invert = TRUE),])
+diff_becarios_asuncion_interior = becarios_fuera_asuncion - becarios_asuncion
+
+```
+
+Describir aquí los resultados

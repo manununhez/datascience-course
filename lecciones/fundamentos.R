@@ -203,7 +203,7 @@ library(stringr)
 becal[1:2,'Condici?n']
 str_trim(becal[1:2,'Condici?n'])  # eliminar espacios vac?o al inicio y final del texto
 str_trim(becal_c[c(1,210,843),'Total.General'])  # eliminar espacios vac?o al inicio y final del texto 
-# (NO FUNCIONA ACA porQUE STR_TRIM SOLO TE ELIMINA LOS ESPACIoS REDUNDANTES AL COMIENZO Y AL FINAL. SE deberia hacer una expresion regular para quitar los espacios en medio)
+                                                 # (NO FUNCIONA ACA porQUE STR_TRIM SOLO TE ELIMINA LOS ESPACIoS REDUNDANTES AL COMIENZO Y AL FINAL. SE deberia hacer una expresion regular para quitar los espacios en medio)
 
 becal_c[1,'Universidad.de.Destino']
 nchar(becal_c[1,'Universidad.de.Destino'])  # contar el n?mero de caracteres del texto
@@ -221,7 +221,7 @@ becal_c$C.I.<- str_trim(gsub(',', '', becal_c[,'C.I.'])) #quitar comas
 becal_c$C.I.<- str_trim(gsub('\\.', '', becal_c[,'C.I.'])) #quitar puntos
 
 ambos_becal = merge(becal, becal_c, by.x="C.I.", by.y="C.I.", all.y=TRUE) #all.y porque los que estan en bacal2017 no todos recibieron la beca. En becal_cobertura si recibieron las becas. 
-#VERIFICAR -- EL MERGE SOLO TIENE 907 filas x 44 columnas
+                                                                          #VERIFICAR -- EL MERGE SOLO TIENE 907 filas x 44 columnas
 
 
 #Dplyr
@@ -245,10 +245,10 @@ head(select(becal_gs, Total.General, total_gs), 5)
 
 
 #5/12/17 analisis exploratorio
-hist(as.numeric(becal17$edad), main=paste("Distribuci髇 de becarios por edad (n=",nrow(becal17),")"), 
+hist(as.numeric(becal17$edad), main=paste("Distribuci贸n de becarios por edad (n=",nrow(becal17),")"), 
      ylab="Frecuencia", xlab="Edad", col = "red")
 
-hist(as.numeric(becal17$edad), main=paste("Distribuci髇 de becarios por edad (n=",nrow(becal17),")"), 
+hist(as.numeric(becal17$edad), main=paste("Distribuci贸n de becarios por edad (n=",nrow(becal17),")"), 
      ylab="Frecuencia", xlab="Edad", col = "red", xlim = c(20, 40))
 
 summary(as.numeric(becal17$edad)) #min, max, media, mean
@@ -259,7 +259,7 @@ quantile(as.numeric(becal17$edad), probs = c(0.40, 0.65, 0.90)) #valores especif
 
 quantile(as.numeric(becal17$edad), probs = c(0.40, 0.65, 0.90), na.rm = TRUE) #na.rm elimina NA
 
-boxplot(as.numeric(becal17$edad), col='red', main='Distribuci髇 de edad de becarios', 
+boxplot(as.numeric(becal17$edad), col='red', main='Distribuci贸n de edad de becarios', 
         ylab='Edad')
 
 var(becal17$edad) #varianza para variables numericas
@@ -273,7 +273,7 @@ barplot(table(becal17$universidaddedestino),
         ylab="Total", xlab="Rango de ranking", col="blue", las = 2)
 
 #limpieza del grafico ##
-becal_limpio = subset(becal_completo, categoriauni != "sin dato") # elimina los registros "sin dato"
+becal_limpio = subset(becal17, categoriauni != "sin dato") # elimina los registros "sin dato"
 dis_categoriauni = table(droplevels(as.factor(becal_limpio$categoriauni)))
 categoria_ordenadas = sort(dis_categoriauni, decreasing = T)  # ordena las categorias de mayor a menor
 barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de universidad (n=",
@@ -292,16 +292,16 @@ barplot(categoria_ordenadas, main=paste("Becarios por rango de ranking de univer
 ### Scatter Plots, grafico de puntos - Relaciones entre dos variables numericas!!!!
 
 plot(becal_completo$mesesdeduraciondeestudios, becal_completo$totalgralusd, 
-     ylab="Costo Total en USD", xlab="Duraci髇 Estudio en Meses",
-     main="Meses de Duraci髇 por Costo de Estudio")
+     ylab="Costo Total en USD", xlab="Duraci贸n Estudio en Meses",
+     main="Meses de Duraci贸n por Costo de Estudio")
 
 #promedios condicionales - PARA SOLUCIONAR OVERPLOTTING
 groupo_meses = group_by(becal_completo, mesesdeduraciondeestudios)
 total_x_gm = summarize(groupo_meses, 
                        total_mean = mean(totalgralusd))
 plot(total_x_gm$mesesdeduraciondeestudios, total_x_gm$total_mean, 
-     ylab="Costo Total Promedio en USD", xlab="Duraci髇 Estudio en Meses",
-     main="Meses de Duraci髇 por Costo de Estudio")
+     ylab="Costo Total Promedio en USD", xlab="Duraci贸n Estudio en Meses",
+     main="Meses de Duraci贸n por Costo de Estudio")
 
 
 #Relaciones entre dos variables: cateogircas y numericas:::: BOXplots
@@ -310,7 +310,22 @@ plot(total_x_gm$mesesdeduraciondeestudios, total_x_gm$total_mean,
 #correlaciones
 becal_sin_na = filter(becal_completo, totalgralusd != 'NA')  # elimino los valores ausentes
 cor(as.numeric(becal_sin_na$mesesdeduraciondeestudios), becal_sin_na$totalgralusd) #estas dos variables estan fuermente relaciones. 
-#Mientras mas largo el estudio, es mas costoso. 
+                                                                      #Mientras mas largo el estudio, es mas costoso. 
 
 #Pero no se puede decir que es una relacion de causalidad, pueden haber mas factores. 
-#Correlacion no implica causalidad.
+                                                                      #Correlacion no implica causalidad.
+
+
+hh <- t(VADeaths)[, 5:1]
+mybarcol <- "gray20"
+mp <- barplot(hh, beside = TRUE,
+              col = c("lightblue", "mistyrose",
+                      "lightcyan", "lavender"),
+              legend = colnames(VADeaths), ylim = c(0,100),
+              main = "Death Rates in Virginia", font.main = 4,
+              sub = "Faked upper 2*sigma error bars", col.sub = mybarcol,
+              cex.names = 1.5)
+#segments(mp, hh, mp, hh + 2*sqrt(1000*hh/100), col = mybarcol, lwd = 1.5)
+#stopifnot(dim(mp) == dim(hh))  # corresponding matrices
+mtext(side = 1, at = colMeans(mp), line = -5,
+      text = paste("Mean", formatC(hh)), col = "red")
