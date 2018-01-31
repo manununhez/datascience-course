@@ -29,7 +29,9 @@ Técnica:Sexo -> Categorico
         ----
         T-test/ANOVA
           
-          
+H0:  No existe diferencia en cantidad de meses de estudio entre hombres y mujeres.
+HA:  Existe diferencia en cantidad de meses de estudio entre hombres y mujeres.
+
 ```{r diferencia_becas_sexo}
 # Escribir aquí el código que compute la diferencia en la cantidad de becas 
 # asignadas a hombre y mujeres
@@ -38,6 +40,7 @@ becarios_masculino = nrow(becal_completo[grep('Masculino', becal_completo$sexo),
 becarios_femenino = nrow(becal_completo[grep('Femenino', becal_completo$sexo),])
 diff_becarios_x_sexo = becarios_femenino - becarios_masculino
 
+summary(aov(becal_completo$mesesdeduraciondeestudios ~ becal_completo$sexo, data=becal_completo))#test ANOVA mesesduracion/sexo
 ```
 
 Describir aquí los resultados
@@ -46,15 +49,27 @@ Describir aquí los resultados
 
 Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
 
+Tecnica:  Edad -> discreta
+          Funcionarios p/p -> categorica
+          -----------------
+          T-test/ANOVA
+          
+H0: No existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.
+HA: Existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.
+
 ```{r diferencia_becas_sector}
 # Escribir aquí el código que calcule diferencia en cantidad de becas 
 # adjudicadas a funcionarios públicos y trabajadores del sector privado
 
 becal_completo$funcionariopublicoinstitucion = str_trim(becal_completo$funcionariopublicoinstitucion)#quitamos espacios en blanco
-sectortrabajofuncionario_privado = nrow(becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),])#valor privado si es que el valor de funcionariopublicoinstitucion es NO 
-sectortrabajofuncionario_publico = nrow(becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),]) #con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion),'sectortrabajofuncionario'] = 'privado' #creamos nueva columna "sectortrabajofuncionario" con valor privado si es que el valor de funcionariopublicoinstitucion es NO 
+becal_completo[grep('NO',becal_completo$funcionariopublicoinstitucion, invert = TRUE),'sectortrabajofuncionario'] = 'publico' #con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
+sectortrabajofuncionario_privado = nrow(becal_completo[grep('privado',becal_completo$sectortrabajofuncionario),])#valor privado si es que el valor de funcionariopublicoinstitucion es NO 
+sectortrabajofuncionario_publico = nrow(becal_completo[grep('publico',becal_completo$sectortrabajofuncionario),]) #con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
 
 diff_funcionario_publico_privado = sectortrabajofuncionario_privado - sectortrabajofuncionario_publico
+
+summary(aov(becal_completo$edad ~ becal_completo$sectortrabajofuncionario, data=becal_completo))#test ANOVA edad/sectortrabajofuncionario
 
 ```
 
@@ -64,13 +79,26 @@ Describir aquí los resultados
 
 Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas
 
+Tecnica: ranking univ -> categorico
+         tipoestudio(maestria/doc) -> categorico
+         -------
+         Chi-square
+         
+H0: No existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
+H1: Existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
+
 ```{r diferencia_becas_tipo}
 # Escribir aquí el código que calcule la diferencia en cantidad de becas 
 # por tipo (maestría/doctorado)
+becal_completo[grep('maestria',becal_completo$tipoestudio),'tipoestudio_md'] = 'maestria' #creamos nueva columna "tipoestudio_md" con valor maestria/doctorado
+
+becal_completo[grep('doctorado',becal_completo$tipoestudio),'tipoestudio_md'] = 'doctorado' #creamos nueva columna "tipoestudio_md" con valor maestria/doctorado
 
 becarios_maestria = nrow(becal_completo[grep('maestria', becal_completo$tipoestudio),])
 becarios_doctorado = nrow(becal_completo[grep('doctorado', becal_completo$tipoestudio),])
 diff_becarios_tipoestudio = becarios_maestria - becarios_doctorado
+
+chisq.test(table(becal_completo$tipoestudio_md, becal_completo$categoriauni))
 
 ```
 
@@ -80,6 +108,14 @@ Describir aquí los resultados
 
 Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
 
+TEcnica:  mesesduracion -> discreto
+          departamentoresidencia -> categorico
+          #-----
+          T-test/ANOVA
+  
+H0: No existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.
+HA: Existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.
+  
 ```{r diferencia_becas_ciudad_residencia}
 # Escribir aquí el código que compute la diferencia entre cantidad de becas 
 # adjudicadas a gente residente en la capital y gente residente en el interior
@@ -90,14 +126,37 @@ becal_departamento_sin_na = subset(becal_completo, becal_completo$departamentode
 becarios_central = nrow(becal_departamento_sin_na[grep('central', becal_completo$departamentoderesidencia),])
 becarios_interior = nrow(becal_departamento_sin_na[grep('central', becal_completo$departamentoderesidencia, invert = TRUE),])
 diff_becarios_central_interior = becarios_interior - becarios_central
+
+
+
+central = grep('central', becal_departamento_sin_na$departamentoderesidencia)
+capital = grep('capital', becal_departamento_sin_na$departamentoderesidencia)
+total = c(central,capital)
+
+becal_departamento_sin_na[-total, 'departamentoresidencia_l'] = 'interior'
+becal_departamento_sin_na[central, 'departamentoresidencia_l'] = 'central'
+becal_departamento_sin_na[capital, 'departamentoresidencia_l'] = 'capital'
+
+
+summary(aov(becal_departamento_sin_na$mesesdeduraciondeestudios ~ becal_departamento_sin_na$departamentoresidencia_l, data=becal_completo))#test ANOVA edad/sectortrabajofuncionario
+
 ```
 
 Describir aquí los resultados
 
 ## Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios
 
+
 Describir aquí el análisis (técnica, cantidad de registros, etc.) Explicar cuales fueron las hipótesis H0 y HA consideradas, además del nivel de significancia establecido
 
+
+TEcnica: Sexo -> categorico
+          Pais destino -> categorico
+          ------
+          Chi-square
+
+H0: Existe igual cantidad de becarios y becarias en los paises destino top_5
+H1: El numero de mujeres y hombres en los paises destino top_5 es diferente
 ```{r diferencia_becas_lugar_residencia}
 # Escribir aquí el código que analize la diferencia en montos adjudicados entre 
 # becarios que viven en Asunción y becarios que residen en el interior del país
@@ -106,6 +165,13 @@ becal_completo$ciudadderesidencia = limpiar_nombres(becal_completo$ciudadderesid
 becarios_asuncion = nrow(becal_completo[grep('asuncion', becal_completo$ciudadderesidencia),])
 becarios_fuera_asuncion = nrow(becal_completo[grep('asuncion', becal_completo$ciudadderesidencia, invert = TRUE),])
 diff_becarios_asuncion_interior = becarios_fuera_asuncion - becarios_asuncion
+
+x = head(sort(table(becal_completo$paisdedestino), decreasing = TRUE), 5) #top5 descendent
+y = as.data.frame(x)
+
+top_5_paisesdestino = becal_completo[grep(paste(as.vector(y$Var1),collapse="|"), becal_completo$paisdedestino),] #seleccionamos las filas de los top5
+chisq.test(table(top_5_paisesdestino$sexo, top_5_paisesdestino$paisdedestino))#chisq test
+
 
 ```
 
