@@ -20,19 +20,19 @@ becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFact
 becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # Se eliminan los registros cuyo tipo de estudio no sean maestría o doctorado
 ```
 
-## Diferencia en la cantidad de meses de estudio entre hombres y mujeres
+### Diferencia en la cantidad de meses de estudio entre hombres y mujeres
 
-###Hipotesis consideradas:
+####Hipotesis consideradas:
 * H0:  No existe diferencia en cantidad de meses de estudio entre hombres y mujeres (son lo mismo).
 * HA:  Existe diferencia en cantidad de meses de estudio entre hombres y mujeres (al menos uno no es igual a los otros).
 
 Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia en cantidad de meses de acuerdo el sexo. 
 
-###Variables:
+####Variables:
 * Sexo -> Categorico 
 * Meses de estudio -> Discreto
 
-###Técnica: 
+####Técnica: 
 * ANOVA
 ```{r diferencia_becas_sexo}
 paste("Cantidad de registros (n=", nrow(becal_completo),")")
@@ -46,23 +46,23 @@ diff_becarios_x_sexo = becarios_femenino - becarios_masculino
 summary(aov(becal_completo$mesesdeduraciondeestudios ~ becal_completo$sexo, data=becal_completo))#test ANOVA mesesduracion/sexo
 ```
 
-###Resultados
+####Resultados
 El valor de la estadistica F obtenida es 6.294, y el p-value (Pr(>F)) es 0.0123. 
 Como el valor de p-value es menor a alpha (0.05), los datos a mano aportan evidencia para rechazar H0 en favor de HA, es decir, existen ciertas diferencias en cantidad de meses de estudio entre hombres y mujeres (al menos una por el sexo).
  
-## Diferencia en edad entre becarios funcionarios públicos y becarios trabajadores del sector privado
+### Diferencia en edad entre becarios funcionarios públicos y becarios trabajadores del sector privado
 
-###Hipotesis consideradas:          
+####Hipotesis consideradas:          
 * H0: No existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.
 * HA: Existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.
 
 Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia de edad entre becarios publicos y privados. 
 
-###Variables:
+####Variables:
 * Edad -> discreta
 * Funcionarios p/p -> categorica
 
-###Técnica:
+####Técnica:
 * ANOVA
 
 
@@ -85,23 +85,23 @@ summary(aov(becal_completo$edad ~ becal_completo$sectortrabajofuncionario, data=
 
 ```
 
-###Resultados
+####Resultados
 El valor de la estadistica F obtenida es 67.61, y el p-value (Pr(>F)) es 8.61e-16. 
 Como el valor de p-value es menor a alpha (0.05), y considerando el codigo [***], nos indica que los datos a mano aportan evidencia SIGNIFICATIVA para rechazar H0 en favor de HA, es decir, existen bastante diferencia de edad entre becarios funcionarios publicos y los del sector privado.
 
-##Diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
+### Diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
 
-###Hipotesis consideradas:          
+####Hipotesis consideradas:          
 * H0: No existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
 * HA: Existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado
 
 Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia en el ranking de las universidades para los masterados y doctorados. 
 
-###Variables:
+####Variables:
 * ranking univ -> categorico
 * tipoestudio(maestria/doc) -> categorico
 
-###Tecnica:
+####Tecnica:
 * Chi-square
 
 
@@ -125,23 +125,23 @@ chisq.test(table(becal_completo$tipoestudio_md, becal_completo$categoriauni))
 
 ```
 
-###Resultados
+####Resultados
 
 El valor de p-value es 0.1063 segun el Chi-squared test. Este valor es mayor a alpha (0.05), lo que no aporta evidencia para rechazar H0, es decir, que puede no existir diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado.
 
-## Diferencia en la cantidad de meses de estudio entre los residentes de la capital, central, e interior
+### Diferencia en la cantidad de meses de estudio entre los residentes de la capital, central, e interior
 
-###Hipotesis consideradas:          
+####Hipotesis consideradas:          
 * H0: No existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.
 * HA: Existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.
 
 Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia entre la cantidad de meses de estudio entre los becarios residentes de la capital, central, e interior.
 
-###Variables:
+####Variables:
 * mesesduracion -> discreto
 * departamentoresidencia -> categorico
           
-###Tecnica:
+####Tecnica:
 * ANOVA
 
 
@@ -173,25 +173,25 @@ summary(aov(becal_departamento_sin_na$mesesdeduraciondeestudios ~ becal_departam
 
 ```
 
-###Resultados
+####Resultados
 
 El valor de la estadistica F es 3.932 y el p-value (Pr(>F)) es 0.02. Este valor es menor a alpha (0.05), lo que significa que los datos a mano pueden aportar evidencia para rechazar H0. Es decir, se podria decir que existe cierta diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.
 
-## Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios
+### Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios
 
 
-###Hipotesis consideradas:  
+####Hipotesis consideradas:  
 * H0: Existe igual cantidad de becarios y becarias en los paises destino top_5
 * HA: El numero de mujeres y hombres en los paises destino top_5 es diferente
 
 Inicialmente asumimos H0 es verdadera, es decir que existe igual cantidad de becarios y becarias en los paises destino top_5.
 
 
-###Variables:
+####Variables:
 * Sexo -> categorico
 * Pais destino -> categorico
 
-###Tecnica:
+####Tecnica:
 * Chi-square
 
 
@@ -217,5 +217,5 @@ chisq.test(table(top_5_paisesdestino$sexo, top_5_paisesdestino$paisdedestino))#c
 
 ```
 
-###Resultados
+####Resultados
 El valor de p-value es 0.01298. Este valor es menor a alpha (0.05), lo que significa que los datos a mano pueden aportar ciertas evidencias para rechazar H0, es decir, podriamos decir que el numero de mujeres y hombres en los paises destino top_5 es diferente.

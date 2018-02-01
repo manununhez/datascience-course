@@ -123,25 +123,25 @@ $(document).ready(function () {
 </div>
 
 
-<div id="diferencia-en-la-cantidad-de-meses-de-estudio-entre-hombres-y-mujeres" class="section level2">
-<h2>Diferencia en la cantidad de meses de estudio entre hombres y mujeres</h2>
-<div id="hipotesis-consideradas" class="section level3">
-<h3>Hipotesis consideradas:</h3>
+<div id="diferencia-en-la-cantidad-de-meses-de-estudio-entre-hombres-y-mujeres" class="section level3">
+<h3>Diferencia en la cantidad de meses de estudio entre hombres y mujeres</h3>
+<div id="hipotesis-consideradas" class="section level4">
+<h4>Hipotesis consideradas:</h4>
 <ul>
 <li>H0: No existe diferencia en cantidad de meses de estudio entre hombres y mujeres (son lo mismo).</li>
 <li>HA: Existe diferencia en cantidad de meses de estudio entre hombres y mujeres (al menos uno no es igual a los otros).</li>
 </ul>
 <p>Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia en cantidad de meses de acuerdo el sexo.</p>
 </div>
-<div id="variables" class="section level3">
-<h3>Variables:</h3>
+<div id="variables" class="section level4">
+<h4>Variables:</h4>
 <ul>
 <li>Sexo -&gt; Categorico</li>
 <li>Meses de estudio -&gt; Discreto</li>
 </ul>
 </div>
-<div id="tecnica" class="section level3">
-<h3>Técnica:</h3>
+<div id="tecnica" class="section level4">
+<h4>Técnica:</h4>
 <ul>
 <li>ANOVA</li>
 </ul>
@@ -161,30 +161,30 @@ summary(aov(becal_completo$mesesdeduraciondeestudios ~ becal_completo$sexo, data
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 2 observations deleted due to missingness</code></pre>
 </div>
-<div id="resultados" class="section level3">
-<h3>Resultados</h3>
+<div id="resultados" class="section level4">
+<h4>Resultados</h4>
 <p>El valor de la estadistica F obtenida es 6.294, y el p-value (Pr(&gt;F)) es 0.0123. Como el valor de p-value es menor a alpha (0.05), los datos a mano aportan evidencia para rechazar H0 en favor de HA, es decir, existen ciertas diferencias en cantidad de meses de estudio entre hombres y mujeres (al menos una por el sexo).</p>
 </div>
 </div>
-<div id="diferencia-en-edad-entre-becarios-funcionarios-publicos-y-becarios-trabajadores-del-sector-privado" class="section level2">
-<h2>Diferencia en edad entre becarios funcionarios públicos y becarios trabajadores del sector privado</h2>
-<div id="hipotesis-consideradas-1" class="section level3">
-<h3>Hipotesis consideradas:</h3>
+<div id="diferencia-en-edad-entre-becarios-funcionarios-publicos-y-becarios-trabajadores-del-sector-privado" class="section level3">
+<h3>Diferencia en edad entre becarios funcionarios públicos y becarios trabajadores del sector privado</h3>
+<div id="hipotesis-consideradas-1" class="section level4">
+<h4>Hipotesis consideradas:</h4>
 <ul>
 <li>H0: No existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.</li>
 <li>HA: Existe diferencia de edad entre becarios funcionarios publicos y los del sector privado.</li>
 </ul>
 <p>Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia de edad entre becarios publicos y privados.</p>
 </div>
-<div id="variables-1" class="section level3">
-<h3>Variables:</h3>
+<div id="variables-1" class="section level4">
+<h4>Variables:</h4>
 <ul>
 <li>Edad -&gt; discreta</li>
 <li>Funcionarios p/p -&gt; categorica</li>
 </ul>
 </div>
-<div id="tecnica-1" class="section level3">
-<h3>Técnica:</h3>
+<div id="tecnica-1" class="section level4">
+<h4>Técnica:</h4>
 <ul>
 <li>ANOVA</li>
 </ul>
@@ -212,30 +212,30 @@ summary(aov(becal_completo$edad ~ becal_completo$sectortrabajofuncionario, data=
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div id="resultados-1" class="section level3">
-<h3>Resultados</h3>
+<div id="resultados-1" class="section level4">
+<h4>Resultados</h4>
 <p>El valor de la estadistica F obtenida es 67.61, y el p-value (Pr(&gt;F)) es 8.61e-16. Como el valor de p-value es menor a alpha (0.05), y considerando el codigo [***], nos indica que los datos a mano aportan evidencia SIGNIFICATIVA para rechazar H0 en favor de HA, es decir, existen bastante diferencia de edad entre becarios funcionarios publicos y los del sector privado.</p>
 </div>
 </div>
-<div id="diferencia-en-el-ranking-de-las-universidades-de-los-que-estudian-maestria-versus-los-que-estudian-doctorado" class="section level2">
-<h2>Diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado</h2>
-<div id="hipotesis-consideradas-2" class="section level3">
-<h3>Hipotesis consideradas:</h3>
+<div id="diferencia-en-el-ranking-de-las-universidades-de-los-que-estudian-maestria-versus-los-que-estudian-doctorado" class="section level3">
+<h3>Diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado</h3>
+<div id="hipotesis-consideradas-2" class="section level4">
+<h4>Hipotesis consideradas:</h4>
 <ul>
 <li>H0: No existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado</li>
 <li>HA: Existe diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado</li>
 </ul>
 <p>Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia en el ranking de las universidades para los masterados y doctorados.</p>
 </div>
-<div id="variables-2" class="section level3">
-<h3>Variables:</h3>
+<div id="variables-2" class="section level4">
+<h4>Variables:</h4>
 <ul>
 <li>ranking univ -&gt; categorico</li>
 <li>tipoestudio(maestria/doc) -&gt; categorico</li>
 </ul>
 </div>
-<div id="tecnica-2" class="section level3">
-<h3>Tecnica:</h3>
+<div id="tecnica-2" class="section level4">
+<h4>Tecnica:</h4>
 <ul>
 <li>Chi-square</li>
 </ul>
@@ -262,30 +262,30 @@ chisq.test(table(becal_completo$tipoestudio_md, becal_completo$categoriauni))</c
 ## data:  table(becal_completo$tipoestudio_md, becal_completo$categoriauni)
 ## X-squared = 10.469, df = 6, p-value = 0.1063</code></pre>
 </div>
-<div id="resultados-2" class="section level3">
-<h3>Resultados</h3>
+<div id="resultados-2" class="section level4">
+<h4>Resultados</h4>
 <p>El valor de p-value es 0.1063 segun el Chi-squared test. Este valor es mayor a alpha (0.05), lo que no aporta evidencia para rechazar H0, es decir, que puede no existir diferencia en el ranking de las universidades de los que estudian maestría versus los que estudian doctorado.</p>
 </div>
 </div>
-<div id="diferencia-en-la-cantidad-de-meses-de-estudio-entre-los-residentes-de-la-capital-central-e-interior" class="section level2">
-<h2>Diferencia en la cantidad de meses de estudio entre los residentes de la capital, central, e interior</h2>
-<div id="hipotesis-consideradas-3" class="section level3">
-<h3>Hipotesis consideradas:</h3>
+<div id="diferencia-en-la-cantidad-de-meses-de-estudio-entre-los-residentes-de-la-capital-central-e-interior" class="section level3">
+<h3>Diferencia en la cantidad de meses de estudio entre los residentes de la capital, central, e interior</h3>
+<div id="hipotesis-consideradas-3" class="section level4">
+<h4>Hipotesis consideradas:</h4>
 <ul>
 <li>H0: No existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.</li>
 <li>HA: Existe diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.</li>
 </ul>
 <p>Inicialmente asumimos H0 es verdadera, es decir que no existe una diferencia entre la cantidad de meses de estudio entre los becarios residentes de la capital, central, e interior.</p>
 </div>
-<div id="variables-3" class="section level3">
-<h3>Variables:</h3>
+<div id="variables-3" class="section level4">
+<h4>Variables:</h4>
 <ul>
 <li>mesesduracion -&gt; discreto</li>
 <li>departamentoresidencia -&gt; categorico</li>
 </ul>
 </div>
-<div id="tecnica-3" class="section level3">
-<h3>Tecnica:</h3>
+<div id="tecnica-3" class="section level4">
+<h4>Tecnica:</h4>
 <ul>
 <li>ANOVA</li>
 </ul>
@@ -322,30 +322,30 @@ summary(aov(becal_departamento_sin_na$mesesdeduraciondeestudios ~ becal_departam
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 2 observations deleted due to missingness</code></pre>
 </div>
-<div id="resultados-3" class="section level3">
-<h3>Resultados</h3>
+<div id="resultados-3" class="section level4">
+<h4>Resultados</h4>
 <p>El valor de la estadistica F es 3.932 y el p-value (Pr(&gt;F)) es 0.02. Este valor es menor a alpha (0.05), lo que significa que los datos a mano pueden aportar evidencia para rechazar H0. Es decir, se podria decir que existe cierta diferencia entre la cantidad de meses de estudio entre los residentes de la capital, central, e interior.</p>
 </div>
 </div>
-<div id="relacion-entre-sexo-de-los-becarios-y-pais-de-destino.-considerar-solo-los-cinco-paises-con-mas-becarios" class="section level2">
-<h2>Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios</h2>
-<div id="hipotesis-consideradas-4" class="section level3">
-<h3>Hipotesis consideradas:</h3>
+<div id="relacion-entre-sexo-de-los-becarios-y-pais-de-destino.-considerar-solo-los-cinco-paises-con-mas-becarios" class="section level3">
+<h3>Relación entre sexo de los becarios y país de destino. Considerar solo los cinco países con más becarios</h3>
+<div id="hipotesis-consideradas-4" class="section level4">
+<h4>Hipotesis consideradas:</h4>
 <ul>
 <li>H0: Existe igual cantidad de becarios y becarias en los paises destino top_5</li>
 <li>HA: El numero de mujeres y hombres en los paises destino top_5 es diferente</li>
 </ul>
 <p>Inicialmente asumimos H0 es verdadera, es decir que existe igual cantidad de becarios y becarias en los paises destino top_5.</p>
 </div>
-<div id="variables-4" class="section level3">
-<h3>Variables:</h3>
+<div id="variables-4" class="section level4">
+<h4>Variables:</h4>
 <ul>
 <li>Sexo -&gt; categorico</li>
 <li>Pais destino -&gt; categorico</li>
 </ul>
 </div>
-<div id="tecnica-4" class="section level3">
-<h3>Tecnica:</h3>
+<div id="tecnica-4" class="section level4">
+<h4>Tecnica:</h4>
 <ul>
 <li>Chi-square</li>
 </ul>
@@ -371,8 +371,8 @@ chisq.test(table(top_5_paisesdestino$sexo, top_5_paisesdestino$paisdedestino))#c
 ## data:  table(top_5_paisesdestino$sexo, top_5_paisesdestino$paisdedestino)
 ## X-squared = 12.675, df = 4, p-value = 0.01298</code></pre>
 </div>
-<div id="resultados-4" class="section level3">
-<h3>Resultados</h3>
+<div id="resultados-4" class="section level4">
+<h4>Resultados</h4>
 <p>El valor de p-value es 0.01298. Este valor es menor a alpha (0.05), lo que significa que los datos a mano pueden aportar ciertas evidencias para rechazar H0, es decir, podriamos decir que el numero de mujeres y hombres en los paises destino top_5 es diferente.</p>
 </div>
 </div>

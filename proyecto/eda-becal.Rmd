@@ -22,28 +22,26 @@ becal_completo = read.csv('./data/becal_completo.csv', header = T, stringsAsFact
 becal_completo = subset(becal_completo, !(is.na(tipoestudio))) # Se eliminan los registros cuyo tipo de estudio no sean maestría o doctorado
 ```
 
-## Perfil demográfico de los becarios
-###limpiar datos de ciudades y departamentos(?)
+### Perfil demográfico de los becarios
 Análisis de la distribución de becarios por edad, sexo, sector laboral, ciudad/departamento origen
 y ciudad/departamento residencia.
 
-Preprocesamiento:
- * Para EDAD - para el histograma limitamos esto en base a los valores min,max de la columna edad. 
- * Para SECTOR LABORAL - creamos nueva columna "sectortrabajofuncionario". Con grep() obtenemos con valor privado si es que el valor de funcionariopublicoinstitucion es NO. *) Con grep() con invert traemos aquellos registros que no hacen match con la condicion puesta. Los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico"
+#### Preprocesamiento:
 
-Cantidad de registros: 762, excepto en el asnalisi de becarios por departameto de residencia (761)
+* Para EDAD: el histograma se limita en base a los valores min,max de la columna edad, a fin de obtener un mejor grafico. 
+* Para SECTOR LABORAL: creamos nueva columna "sectortrabajofuncionario". Con grep() obtenemos con valor privado si es que el valor de funcionariopublicoinstitucion es NO. Por otra parte, con grep() y el atributo 'invert' obtenemos aquellos registros que no hacen match con la condicion puesta. Es decir, los valores de funcionariopublicoinstitucion distintos a NO se consideran "publico".
+* Observacion: no se considero limpiar valores de ciudades y departamentos: valores que no eran ciudades, valores que no eran departamentos.
 
-Edad - Tecnica utilizada: hist() [Histograma], boxplot() y summary(). 
+#### Cantidad de registros
+* 762, excepto en el analisis de becarios por departameto de residencia: 761.
 
+#### Tecnicas utilizadas:
 
-Sexo - Tecnica utilizada: table(). Contabilizamos la cantidad de registros por categoria (feminino/masculino)
-
-Sector laboral - Tecnica utilizada: table(). Contabilizamos la cantidad de registros por categoria (publico/privada)
-
-ciudad y departamento de origen - Tecnica utilizada: barplot() ; ciudad, head() de 20 elementos.
-
-
-ciudad y departamento de residencia - Tecnica utilizada: barplot() ; ciudad residencia, head() de 20 elementos.
+* Edad: hist() [Histograma], boxplot() y summary(). 
+* Sexo: table(). Contabilizamos la cantidad de registros por categoria (feminino/masculino)
+* Sector laboral: table(). Contabilizamos la cantidad de registros por categoria (publico/privada)
+* Ciudad y departamento de origen: barplot(). Para limitar el grafico de ciudad, utilizamos head() de 20 elementos.
+* Ciudad y departamento de residencia: barplot(). Para limitar el grafico de ciudad, utilizamos head() de 20 elementos.
 
 ```{r perfil_demografico}
 paste("Cantidad de registros (n=",nrow(becal_completo),")")
@@ -106,18 +104,26 @@ text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex 
 ```
 
 ####Resultados
-Edad, Sexo, Sector laboral, ciudad y departamento de origen, y ciudad y departamento de residencia
+* Edad: la distribucion de edades es aproximadamente normal. El mas joven de los becarios tiene 22 años, y el mayor tiene 43. El promedio de edades es de 29 años.
+* Sexo: existe mayor cantidad de becarias que becarios.
+* Sector laboral: existe mayor cantidad de becarios que trabajan en el sector privado, antes que el publico.
+* Ciudad y departamento de origen: la mayor cantidad de los becarios proviene de Asuncion, seguido por Encarnacion y San Lorenzo. La mayor cantidad son originarios de la capital, seguido por originarios del departamento Central, y luego Itapua.
+* Ciudad y departamento de residencia: la mayor cantidad de becarios vive en Asuncion, seguido por San lorenzo, Fernando de la Mora y Lambare. La mayor cantidad de becarios vive en la capital, seguido por el departamento Central, y luego Itapua.
 
 
-## Tipo de estudios, áreas de la ciencia, y disciplinas
+### Tipo de estudios, áreas de la ciencia, y disciplinas
 
-Análisis de la distribución de becarios por tipo de beca y disciplina
-Tecnica utilizada: barplot()
+Análisis de la distribución de becarios por tipo de beca y disciplina.
 
-Tipo de beca: segun tipodebecasegunprogramaaprobado y tipoestudio.
-Disciplina: head() de 20 elementos.
+####Tecnica utilizada
+* Por tipo de beca: barplot()
+* Por disciplina: barplot()
 
-Cantidad de registros: 
+####Consideraciones:
+* Para el analisis del tipo de beca, se consideraron analizar las columnas 'tipodebecasegunprogramaaprobado' y 'tipoestudio'.
+* Para el analisis de las disciplinas, fue necesario utilizar la funcion head(), limitando el grafico a 20 elementos.
+
+####Cantidad de registros: 
 
 ```{r tipo_estudio}
 
@@ -145,16 +151,22 @@ xx = barplot(categoria_ordenadas, ylim = c(0, 1.1* max(categoria_ordenadas)), wi
 text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex = 0.8, col = "red") ## Add text at top of bars
 ```
 
-#######Resultados
+####Resultados
+* Tipo de beca: la mayor cantidad de las becas van orientadas a la maestria, especificamente a la maestria profesional. Entre estas, destacan la maestria para profesionales en otras areas relevantes y maestria para profesionales en cyt. La maestria academica (maestria para profesionales en educacion) sigue en la lista con mayor cantidad de becarios. Por el ultimo, el doctorado para investigadores en cyt, con un total de 74 becarios.
+* Disciplina: la disciplina mas elegida por los becarios es Economia y Negocios, con un total de 66 becarios. Siguen la Otras ingenierías y tecnologías, Ciencias Politicas y Ciencias de la Educacion. Con menos cantidad de selecciones encontramos a Ingeniería y Tecnología, y a Comunicación y medios.
 
 ### Duración de estudios
 
-Análisis para calcular el promedio, la mediana, el mínimo, máximo, desviación estándar,
-y los cuantiles (0.25, 0.75) del tiempo de duración de los estudios
+Análisis para calcular el promedio, la mediana, el mínimo, máximo, desviación estándar, y los cuantiles (0.25, 0.75) del tiempo de duración de los estudios.
 
-Preprocesamiento: limpiamos los meses con duracion 0 y los NA
+####Preprocesamiento
+* Limpiamos los meses con duracion 0 y los NA (columna 'mesesdeduraciondeestudios').
 
-Tecnica utilizada: summary(), sd() y quantile().
+####Tecnica utilizada
+* Para encontrar el promedio, la mediana, el mínimo y máximo, utilizamos la funcion summary().
+* Para la desviación estándar utilizamos la funcion sd().
+* Para los cuantiles, usamos quantile().
+
 
 ```{r duracion_estudio}
 #Preprocesamiento
@@ -169,11 +181,22 @@ quantile(becal_meses_duracion_limpio$mesesdeduraciondeestudios, probs = c(0.25, 
 ```
 
 ####Resultados
+* Minimo: 9 meses; Maximo: 53 meses
+* Promedio: 19.29 meses
+* Desviacion standar: 9.132723
+* Cuantiles: 0.25 -> 13; 0.75 -> 0.24; 1-> 53
 
 ### Completitud de estudios
 
 Análisis para calcular los cuantiles (25%, 50%, 75%, 100%)  de completitud  de los estudios.
-Tecnica utilizada: completitud() de utils.R y quantile(). Funcionn agregada completitud_for
+
+####Preprocesamiento:
+* Limpiamos los meses con duracion 0 y los NA (columna 'mesesdeduraciondeestudios').
+* Eliminamos registros con formato de fecha de inicio de cobertura incorrecto o incompleto (columna 'iniciocoberturadebeca').
+
+####Tecnica utilizada:
+* Basandonos en la funcion completitud() de utils.R, generamos la funcion completitud_for(). Ambas funciones trabajan de la misma forma, solo varia el loop (con completitud() y sapply() o apply(), generaba error de length.out de duracion).
+* Para analizar los cuantiles utilizamos quantile().
 
 ```{r completitud_estudio}
 
@@ -201,11 +224,11 @@ completitud_for = function(x) {
     aux_fin = seq(inicio, by='months',length.out=duracion)
     fin = aux_fin[length(aux_fin)]
     if (hoy >= fin) {
-      list <- c(list,100)
+      list <- c(list,100) #generamos nueva lista con los valores del porcentaje almacenados y adjuntamos el valor determinado
     } else {
       meses_completados = length(seq(inicio, hoy, by='months'))-1
       porcentaje_faltante = round((meses_completados/duracion)*100,0)
-      list <- c(list,porcentaje_faltante)
+      list <- c(list,porcentaje_faltante) #generamos nueva lista con los valores del porcentaje almacenados y adjuntamos el valor determinado
     }
   }
   
@@ -221,14 +244,19 @@ quantile(x, probs = c(0.25, 0.5, 0.75, 1))
 ```
 
 ####Resultados
+* El minimo porcentaje de completitud de la beca es del 5% (recien iniciadas). Hay becas ya culminadas.
+* Los cuantiles obtenidos son: 0.25-> 74.75; 0.5->100; 0.75->100; 1->100
 
-## Países, ciudades, y universidades de destino
+### Países, ciudades, y universidades de destino
 
 Análisis de la distribución de becas por país, ciudad, y universidad de destino;
 
-Tecnica: barplot()
+####Tecnica utilizada:
+* Tanto para analizar la distribucion de becas por pais, ciudad y universidad destino, utilizamos barplot().
 
-Ciudad y universidad destino: head() de 20 elementos.
+####Consideraciones:
+* Para limitar los valores del grafico de ciudad y universidad destino, utilizamos head() de 20 elementos.
+
 ```{r destino}
 
 paste("Cantidad de registros (n=", nrow(becal_completo),")")
@@ -258,16 +286,20 @@ text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex 
 ```
 
 ####Resultados
+* Los paises destino mas elegidos por los becarios son España, Francia,  Argentina, Australia y Reino Unido.
+* Las ciudades destino mas elegidas son Barcelona, MAdrid y Buenos Aires.
+* Las universidades mas elegidas para realizar la beca son: Universidad de Barcelona, Universidad Complutense de Madrid, Universidad Autonoma de Barcelona, Universidad de Buenos Aires y Universidad Autonoma de Madrid.
 
 ### Becarios por rango de ranking de universidad de destino
 
-Análisis que permita investigar la distribución de 
-becarios por rango de ranking de universidad de destino (top 10, top 50, 
+Análisis que permita investigar la distribución de becarios por rango de ranking de universidad de destino (top 10, top 50, 
 top 100, top 150, top 200, mayor a 200)
 
-Preprocesamiento: elimina los registros "sin dato"
+####Preprocesamiento: 
+* Eliminamos los registros "sin dato" de la columna 'categoriauni'
 
-Tecnica: barplot()
+####Tecnica utlizada: 
+barplot()
 
 ```{r distribucion_ranking}
 
@@ -280,15 +312,19 @@ text(x = xx, y = categoria_ordenadas, label = categoria_ordenadas, pos = 3, cex 
 ```
 
 ####Resultados
+* La opcion mas elegida por becarios corresponde a universidades con ranking mayor a 200. Solo 20 becarios pertenecen a universidades dentro del top 10.
 
-## Becas
+### Becas
 
 Análisis que calcular el promedio, la mediana, el mínimo, máximo, y desviación estándar
 de los montos de beca
 
-Preprocesamiento: eliminamos NA y valores 0 de totalgralusd
+####Preprocesamiento:
+* Eliminamos NA y valores 0 de la columna 'totalgralusd'
 
-Tecnicas: summary() y sd()[standard deviation] 
+####Tecnicas utilizadas: 
+* Para encontrar el promedio, la mediana, el mínimo, máximo, utilizamos summary().
+* Para encontrar la desviacion estandar, sd(). 
 
 ```{r montos_beca}
 #preprocesamiento
@@ -300,14 +336,19 @@ sd(becal_total_limpio$totalgralusd)
 ```
 
 ####Resultados
+* La cobertura de beca mas cara es de 180000USD. La mas barata es de 8600USD. El promedio del costo de cobertura es de 49292USD.
+* La desviacion estandar es de 22728.26
 
 ### Porcentaje de cobertura
 
 Análisis que calcular los cuantiles  (25%, 50%, 75%, 100%) de cobertura
 
-Preprocesamiento: eliminamos NA y valores 0 de totalgralusd
+####Preprocesamiento: 
+* Eliminamos NA y valores 0 de la columna 'totalgralusd'.
 
-Tecnica utilizada: quantile()
+
+####Tecnica utilizada: 
+* Para cuantiles, la funcion quantile().
 
 ```{r cobertura}
 #preprocesamiento
@@ -318,12 +359,19 @@ quantile(becal_total_limpio$totalgralusd, probs = c(0.25, 0.5, 0.75, 1))
 ```
 
 ####Resultados
+* 0.25-> 31394; 0.5->41925; 0.75->61721; 1->180000
 
 ### Top-10 montos de cobertura
 
-##falta completar
+Análisis que calcular el top-10 de montos de coberturas y el tipo de estudio a que corresponden.
 
-Análisis que calcular el top-10 de montos de coberturas y el tipo de estudio a que corresponden
+####Preprocesamiento:
+* Eliminamos NA y valores 0 de la columna 'totalgralusd'.
+* Encontramos los distintos montos de cobertura en la columna 'totalgralusd', utilizando duplicated().
+* Ordenamos los montos de manera descendente, y con head() tomamos los 10 primeros montos.
+
+####Tecnica utilizada:
+* Analisis de tabla (data frame)
 
 
 ```{r top10_montos}
@@ -341,14 +389,17 @@ becarios_cobertura_top_10 #TOP-10 Montos de cobertura
 ```
 
 ####Resultados
+* Considerando las universidades posicionadas en el top-10, el mayor monto de cobertura es de 180000USD por doctorado. La menor cobertura tambien corresponde a doctorado, y el monto es de 100100USD. Entre los top-10, se encuentran una maestria profesional y maestria academica, de 146132USD y 108740USD, respectivamente.
 
 ### Correlación entre montos de cobertura y ranking de universidades
 
 Análisis que calcular la correlación  entre montos de cobertura y ranking de universidades
 
-Preprocesamiento: Eliminamos NA y valores 0 de totalgralusd
+####Preprocesamiento:
+* Eliminamos NA y valores 0 de la columna 'totalgralusd'
 
-Tecnica utilizada: cor()
+####Tecnica utilizada: 
+* PAra analizar la correlacion, utilizamos la funcion cor().
 
 ```{r correlacion}
 becal_total_limpio = subset(becal_completo, becal_completo$totalgralusd > 0) #eliminamos NA y valores 0
@@ -356,4 +407,4 @@ cor(as.numeric(becal_total_limpio$mesesdeduraciondeestudios), becal_total_limpio
 ```
 
 ####Resultados
-High Positive correlation
+* High Positive correlation: 0.6506823 entre montos de cobertura y ranking de universidades.
